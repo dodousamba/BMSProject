@@ -1,0 +1,8 @@
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\BMS_DAL\bin\Debug\BMS_DAL.dll.config
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\BMS_DAL\bin\Debug\BMS_DAL.dll
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\BMS_DAL\bin\Debug\BMS_DAL.pdb
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\BMS_DAL\bin\Debug\EntityFramework.dll
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\BMS_DAL\bin\Debug\EntityFramework.xml
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\BMS_DAL\bin\Debug\zh-Hans\EntityFramework.resources.dll
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\BMS_DAL\obj\Debug\BMS_DAL.dll
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\BMS_DAL\obj\Debug\BMS_DAL.pdb

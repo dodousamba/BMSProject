@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BMS_DAL", "BMS_DAL\BMS_DAL.csproj", "{84DD6E33-DCD5-478A-BF06-98B8BF5A6158}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{EDE9FD76-0C2A-4EC0-AB1E-538E0E09836C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BMS_Win", "BMS_Win\BMS_Win.csproj", "{2FAAC0CE-B040-4757-8052-FD5DEC184ABD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoLib", "DemoLib\DemoLib.csproj", "{353162A7-C5B6-4A2E-9A5B-C2A3A21B8F5D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{84DD6E33-DCD5-478A-BF06-98B8BF5A6158}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84DD6E33-DCD5-478A-BF06-98B8BF5A6158}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84DD6E33-DCD5-478A-BF06-98B8BF5A6158}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84DD6E33-DCD5-478A-BF06-98B8BF5A6158}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FAAC0CE-B040-4757-8052-FD5DEC184ABD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FAAC0CE-B040-4757-8052-FD5DEC184ABD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FAAC0CE-B040-4757-8052-FD5DEC184ABD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FAAC0CE-B040-4757-8052-FD5DEC184ABD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{353162A7-C5B6-4A2E-9A5B-C2A3A21B8F5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{353162A7-C5B6-4A2E-9A5B-C2A3A21B8F5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{353162A7-C5B6-4A2E-9A5B-C2A3A21B8F5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{353162A7-C5B6-4A2E-9A5B-C2A3A21B8F5D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2FAAC0CE-B040-4757-8052-FD5DEC184ABD} = {EDE9FD76-0C2A-4EC0-AB1E-538E0E09836C}
+		{353162A7-C5B6-4A2E-9A5B-C2A3A21B8F5D} = {EDE9FD76-0C2A-4EC0-AB1E-538E0E09836C}
+	EndGlobalSection
+EndGlobal

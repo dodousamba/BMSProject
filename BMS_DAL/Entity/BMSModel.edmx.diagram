@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f0dadc5cd33a4a42ad6ff9d384431e08" Name="关系图1" >
+        <EntityTypeShape EntityType="BMSModel.TSys_User" Width="1.5" PointX="1" PointY="1.25" />
+        <EntityTypeShape EntityType="BMSModel.TFixture" Width="1.5" PointX="2.625" PointY="1.25" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

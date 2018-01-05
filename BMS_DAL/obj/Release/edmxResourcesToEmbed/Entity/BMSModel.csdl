@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="BMSModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="BMSModelContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TUsers" EntityType="BMSModel.TUser" />
+  </EntityContainer>
+  <EntityType Name="TUser">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="String" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="None" />
+    <Property Type="String" Name="NAME" Nullable="false" />
+    <Property Type="String" Name="PWD" Nullable="false" />
+    <Property Type="String" Name="USERTYPE" Nullable="false" />
+  </EntityType>
+</Schema>

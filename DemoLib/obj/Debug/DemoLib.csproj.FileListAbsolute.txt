@@ -1,0 +1,11 @@
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\DemoLib\bin\Debug\DemoLib.dll
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\DemoLib\bin\Debug\DemoLib.pdb
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\DemoLib\obj\Debug\DemoLib.csproj.GenerateResource.Cache
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\DemoLib\obj\Debug\DemoLib.dll
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\DemoLib\obj\Debug\DemoLib.pdb
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\DemoLib\obj\Debug\DemoLib.dll.licenses
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\DemoLib\obj\Debug\DemoLib.FFixture.resources
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\DemoLib\obj\Debug\DemoLib.DemoContainer.resources
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\DemoLib\obj\Debug\DemoLib.FInvoice.resources
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\DemoLib\obj\Debug\DemoLib.FUser.resources
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\DemoLib\obj\Debug\DemoLib.FOnProgress.resources

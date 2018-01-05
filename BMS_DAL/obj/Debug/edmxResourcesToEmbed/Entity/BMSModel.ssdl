@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BMSModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="BMSModelStoreContainer">
+    <EntitySet Name="TSys_Users" EntityType="BMSModel.Store.TSys_Users" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="TSys_Users">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NAME" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PWD" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="USERTYPE" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+</Schema>
