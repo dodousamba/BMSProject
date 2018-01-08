@@ -61,6 +61,65 @@ namespace BMS_Service
             return r;
         }
 
+        public BMS_DAL.DS.BMSDS GetFixtureRelation()
+        {
+            BMS_DAL.DS.BMSDS ds = new BMS_DAL.DS.BMSDS();
+            using (BMS_DAL.DS.BMSDSTableAdapters.TFixturesTableAdapter ta = new BMS_DAL.DS.BMSDSTableAdapters.TFixturesTableAdapter())
+            {
+                try
+                {
+                    ds.Merge(ta.GetData());
+                }
+                catch (Exception ex) { throw ex; }
+            }
+            using (BMS_DAL.DS.BMSDSTableAdapters.TInvoicesTableAdapter ta = new BMS_DAL.DS.BMSDSTableAdapters.TInvoicesTableAdapter())
+            {
+                try
+                {
+                    ds.Merge(ta.GetData());
+                }
+                catch (Exception ex) { throw ex; }
+            }
+            using (BMS_DAL.DS.BMSDSTableAdapters.TInvoiceDetailsTableAdapter ta = new BMS_DAL.DS.BMSDSTableAdapters.TInvoiceDetailsTableAdapter())
+            {
+                try
+                {
+                    ds.Merge(ta.GetData());
+                }
+                catch (Exception ex) { throw ex; }
+            }
+            return ds;
+        }
+
+        public int UpdateFixtureRelation(BMS_DAL.DS.BMSDS ds)
+        {
+            int r = 0;
+
+            if (ds.TInvoiceDetails.GetChanges() != null)
+            {
+                using (BMS_DAL.DS.BMSDSTableAdapters.TInvoiceDetailsTableAdapter ta = new BMS_DAL.DS.BMSDSTableAdapters.TInvoiceDetailsTableAdapter())
+                {
+                    r = ta.UpdateWithTrans(ds.TInvoiceDetails);
+                }
+            }
+            if (ds.TInvoices.GetChanges() != null)
+            {
+                using (BMS_DAL.DS.BMSDSTableAdapters.TInvoicesTableAdapter ta = new BMS_DAL.DS.BMSDSTableAdapters.TInvoicesTableAdapter())
+                {
+                    r = ta.UpdateWithTrans(ds.TInvoices);
+                }
+            }
+            if (ds.TFixtures.GetChanges() != null)
+            {
+                using (BMS_DAL.DS.BMSDSTableAdapters.TFixturesTableAdapter ta = new BMS_DAL.DS.BMSDSTableAdapters.TFixturesTableAdapter())
+                {
+                    r = ta.UpdateWithTrans(ds.TFixtures);
+                }
+            }
+           
+            return r;
+        }
+
 
         public BMS_DAL.DS.BMSDS.TInvoicesDataTable GetInvoice()
         {
@@ -86,5 +145,32 @@ namespace BMS_Service
             }
             return r;
         }
+
+
+        public BMS_DAL.DS.BMSDS.TInvoiceDetailsDataTable GetInvoiceDetail()
+        {
+            using (BMS_DAL.DS.BMSDSTableAdapters.TInvoiceDetailsTableAdapter ta = new BMS_DAL.DS.BMSDSTableAdapters.TInvoiceDetailsTableAdapter())
+            {
+                try
+                {
+                    return ta.GetData();
+                }
+                catch (Exception ex) { throw ex; }
+            }
+        }
+
+        public int UpdateInvoiceDetail(BMS_DAL.DS.BMSDS.TInvoiceDetailsDataTable dt)
+        {
+            int r = 0;
+            if (dt.GetChanges() != null)
+            {
+                using (BMS_DAL.DS.BMSDSTableAdapters.TInvoiceDetailsTableAdapter ta = new BMS_DAL.DS.BMSDSTableAdapters.TInvoiceDetailsTableAdapter())
+                {
+                    r = ta.UpdateWithTrans(dt);
+                }
+            }
+            return r;
+        }
+
     }
 }

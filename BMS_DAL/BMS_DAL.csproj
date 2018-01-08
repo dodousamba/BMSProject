@@ -77,6 +77,9 @@
     <Compile Include="Entity\TInvoice.cs">
       <DependentUpon>BMSModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entity\TInvoiceDetail.cs">
+      <DependentUpon>BMSModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity\TSys_User.cs">
       <DependentUpon>BMSModel.tt</DependentUpon>
     </Compile>

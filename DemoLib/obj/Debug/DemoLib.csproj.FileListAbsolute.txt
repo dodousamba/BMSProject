@@ -9,7 +9,6 @@ C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\DemoLib\bin\Debu
 C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\DemoLib\obj\Debug\DemoLib.csprojResolveAssemblyReference.cache
 C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\DemoLib\obj\Debug\DemoLib.DemoContainer.resources
 C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\DemoLib\obj\Debug\DemoLib.csproj.GenerateResource.Cache
-C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\DemoLib\obj\Debug\DemoLib.dll.licenses
 C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\DemoLib\obj\Debug\DemoLib.dll
 C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\DemoLib\obj\Debug\DemoLib.pdb
 C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\DemoLib\bin\Debug\BMS_DAL.dll
@@ -44,3 +43,6 @@ C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\DemoLib\
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\DemoLib\obj\Debug\DemoLib.FixtureItem.resources
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\DemoLib\obj\Debug\DemoLib.dll.licenses
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\DemoLib\obj\Debug\DemoLib.InvoiceItem.resources
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\DemoLib\obj\Debug\DemoLib.FixtureItem.resources
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\DemoLib\obj\Debug\DemoLib.InvoiceItem.resources
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\DemoLib\obj\Debug\DemoLib.dll.licenses

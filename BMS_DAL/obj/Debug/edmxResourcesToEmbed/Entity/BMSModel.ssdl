@@ -5,6 +5,7 @@
     <EntitySet Name="TFixtures" EntityType="BMSModel.Store.TFixtures" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TVessels" EntityType="BMSModel.Store.TVessels" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TInvoices" EntityType="BMSModel.Store.TInvoices" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TInvoiceDetails" EntityType="BMSModel.Store.TInvoiceDetails" store:Type="Tables" Schema="dbo" />
   </EntityContainer>
   <EntityType Name="TSys_Users">
     <Key>
@@ -64,7 +65,7 @@
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="FIXNO" Type="nvarchar(max)" Nullable="false" />
     <Property Name="REFNO" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="INVOICE_DATE" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="INVOICE_DATE" Type="datetimeoffset" Nullable="false" />
     <Property Name="MESSES" Type="nvarchar(max)" Nullable="false" />
     <Property Name="VSL_ID" Type="int" Nullable="false" />
     <Property Name="CP_DATE" Type="datetimeoffset" Nullable="false" />
@@ -86,7 +87,22 @@
     <Property Name="STATUS" Type="nvarchar(max)" Nullable="false" />
     <Property Name="REMARK" Type="nvarchar(max)" Nullable="false" />
     <Property Name="OPER" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="OP_DT" Type="decimal" Nullable="false" />
+    <Property Name="OP_DT" Type="datetimeoffset" Nullable="false" />
     <Property Name="RECEIVABLEDATE" Type="datetimeoffset" Nullable="false" />
+    <Property Name="FIX_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TInvoiceDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="C1" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="C2" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="C3" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="C4" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="C5" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OPER" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OP_DT" Type="datetimeoffset" Nullable="false" />
+    <Property Name="INVOICE_ID" Type="int" Nullable="false" />
   </EntityType>
 </Schema>

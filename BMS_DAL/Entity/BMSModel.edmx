@@ -10,6 +10,7 @@
     <EntitySet Name="TFixtures" EntityType="BMSModel.Store.TFixtures" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TVessels" EntityType="BMSModel.Store.TVessels" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TInvoices" EntityType="BMSModel.Store.TInvoices" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TInvoiceDetails" EntityType="BMSModel.Store.TInvoiceDetails" store:Type="Tables" Schema="dbo" />
   </EntityContainer>
   <EntityType Name="TSys_Users">
     <Key>
@@ -69,7 +70,7 @@
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="FIXNO" Type="nvarchar(max)" Nullable="false" />
     <Property Name="REFNO" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="INVOICE_DATE" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="INVOICE_DATE" Type="datetimeoffset" Nullable="false" />
     <Property Name="MESSES" Type="nvarchar(max)" Nullable="false" />
     <Property Name="VSL_ID" Type="int" Nullable="false" />
     <Property Name="CP_DATE" Type="datetimeoffset" Nullable="false" />
@@ -91,8 +92,23 @@
     <Property Name="STATUS" Type="nvarchar(max)" Nullable="false" />
     <Property Name="REMARK" Type="nvarchar(max)" Nullable="false" />
     <Property Name="OPER" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="OP_DT" Type="decimal" Nullable="false" />
+    <Property Name="OP_DT" Type="datetimeoffset" Nullable="false" />
     <Property Name="RECEIVABLEDATE" Type="datetimeoffset" Nullable="false" />
+    <Property Name="FIX_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TInvoiceDetails">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="C1" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="C2" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="C3" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="C4" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="C5" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OPER" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OP_DT" Type="datetimeoffset" Nullable="false" />
+    <Property Name="INVOICE_ID" Type="int" Nullable="false" />
   </EntityType>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -103,6 +119,7 @@
           <EntitySet Name="TFixtures" EntityType="BMSModel.TFixture" />
           <EntitySet Name="TVessels" EntityType="BMSModel.TVessel" />
           <EntitySet Name="TInvoices" EntityType="BMSModel.TInvoice" />
+          <EntitySet Name="TInvoiceDetails" EntityType="BMSModel.TInvoiceDetail" />
         </EntityContainer>
         <EntityType Name="TSys_User">
           <Key>
@@ -162,7 +179,7 @@
           <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="FIXNO" Nullable="false" />
           <Property Type="String" Name="REFNO" Nullable="false" />
-          <Property Type="String" Name="INVOICE_DATE" Nullable="false" />
+          <Property Type="DateTimeOffset" Name="INVOICE_DATE" Nullable="false" />
           <Property Type="String" Name="MESSES" Nullable="false" />
           <Property Type="Int32" Name="VSL_ID" Nullable="false" />
           <Property Type="DateTimeOffset" Name="CP_DATE" Nullable="false" />
@@ -184,8 +201,23 @@
           <Property Type="String" Name="STATUS" Nullable="false" />
           <Property Type="String" Name="REMARK" Nullable="false" />
           <Property Type="String" Name="OPER" Nullable="false" />
-          <Property Type="Decimal" Name="OP_DT" Nullable="false" />
+          <Property Type="DateTimeOffset" Name="OP_DT" Nullable="false" />
           <Property Type="DateTimeOffset" Name="RECEIVABLEDATE" Nullable="false" />
+          <Property Type="Int32" Name="FIX_ID" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TInvoiceDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="C1" Nullable="false" />
+          <Property Type="String" Name="C2" Nullable="false" />
+          <Property Type="String" Name="C3" Nullable="false" />
+          <Property Type="String" Name="C4" Nullable="false" />
+          <Property Type="String" Name="C5" Nullable="false" />
+          <Property Type="String" Name="OPER" Nullable="false" />
+          <Property Type="DateTimeOffset" Name="OP_DT" Nullable="false" />
+          <Property Type="Int32" Name="INVOICE_ID" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -277,6 +309,22 @@
           <ScalarProperty Name="OPER" ColumnName="OPER" />
           <ScalarProperty Name="OP_DT" ColumnName="OP_DT" />
           <ScalarProperty Name="RECEIVABLEDATE" ColumnName="RECEIVABLEDATE" />
+          <ScalarProperty Name="FIX_ID" ColumnName="FIX_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TInvoiceDetails">
+      <EntityTypeMapping TypeName="IsTypeOf(BMSModel.TInvoiceDetail)">
+        <MappingFragment StoreEntitySet="TInvoiceDetails">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="C1" ColumnName="C1" />
+          <ScalarProperty Name="C2" ColumnName="C2" />
+          <ScalarProperty Name="C3" ColumnName="C3" />
+          <ScalarProperty Name="C4" ColumnName="C4" />
+          <ScalarProperty Name="C5" ColumnName="C5" />
+          <ScalarProperty Name="OPER" ColumnName="OPER" />
+          <ScalarProperty Name="OP_DT" ColumnName="OP_DT" />
+          <ScalarProperty Name="INVOICE_ID" ColumnName="INVOICE_ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

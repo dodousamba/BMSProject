@@ -17,7 +17,7 @@ namespace BMS_DAL.Entity
         public int ID { get; set; }
         public string FIXNO { get; set; }
         public string REFNO { get; set; }
-        public string INVOICE_DATE { get; set; }
+        public System.DateTimeOffset INVOICE_DATE { get; set; }
         public string MESSES { get; set; }
         public int VSL_ID { get; set; }
         public System.DateTimeOffset CP_DATE { get; set; }
@@ -39,7 +39,8 @@ namespace BMS_DAL.Entity
         public string STATUS { get; set; }
         public string REMARK { get; set; }
         public string OPER { get; set; }
-        public decimal OP_DT { get; set; }
+        public System.DateTimeOffset OP_DT { get; set; }
         public System.DateTimeOffset RECEIVABLEDATE { get; set; }
+        public int FIX_ID { get; set; }
     }
 }

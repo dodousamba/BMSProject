@@ -24,9 +24,21 @@ namespace BMS_Service
         int UpdateFixture(BMS_DAL.DS.BMSDS.TFixturesDataTable dt);
 
         [OperationContract]
+        BMS_DAL.DS.BMSDS GetFixtureRelation();
+
+        [OperationContract]
+        int UpdateFixtureRelation(BMS_DAL.DS.BMSDS ds);
+
+        [OperationContract]
         BMS_DAL.DS.BMSDS.TInvoicesDataTable GetInvoice();
 
         [OperationContract]
         int UpdateInvoice(BMS_DAL.DS.BMSDS.TInvoicesDataTable dt);
+
+        [OperationContract]
+        BMS_DAL.DS.BMSDS.TInvoiceDetailsDataTable GetInvoiceDetail();
+
+        [OperationContract]
+        int UpdateInvoiceDetail(BMS_DAL.DS.BMSDS.TInvoiceDetailsDataTable dt);
     }
 }

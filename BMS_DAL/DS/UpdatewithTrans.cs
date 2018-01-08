@@ -74,4 +74,21 @@ namespace BMS_DAL.DS.BMSDSTableAdapters
             return r;
         }
     }
+    public partial class TInvoiceDetailsTableAdapter
+    {
+        public int UpdateWithTrans(BMS_DAL.DS.BMSDS.TInvoiceDetailsDataTable dt)
+        {
+            int r = 0;
+            using (System.Transactions.TransactionScope ts = new System.Transactions.TransactionScope())
+            {
+                try
+                {
+                    r = this.Adapter.Update(dt);
+                    ts.Complete();
+                }
+                catch (Exception ex) { throw ex; }
+            }
+            return r;
+        }
+    }
 }

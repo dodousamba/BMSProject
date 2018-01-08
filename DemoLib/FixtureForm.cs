@@ -11,7 +11,7 @@ namespace DemoLib
 {
     public partial class FixtureForm : Form
     {
-        private BMS_DAL.DS.BMSDS.TFixturesDataTable _dt = new BMS_DAL.DS.BMSDS.TFixturesDataTable();
+        private BMS_DAL.DS.BMSDS _ds = new BMS_DAL.DS.BMSDS();
         private BMS_Service.DAService _daservice = new BMS_Service.DAService();
 
         private static FixtureForm _instance = null;
@@ -34,10 +34,14 @@ namespace DemoLib
         {
             base.OnLoad(e);
 
-            this._dt = _daservice.GetFixture();
-            this.BindData();
-
             this.AttachEvent();
+        }
+        protected override void OnActivated(EventArgs e)
+        {
+            base.OnActivated(e);
+
+            this._ds = _daservice.GetFixtureRelation();
+            this.BindData();
         }
         protected override void OnClosed(EventArgs e)
         {
@@ -78,12 +82,12 @@ namespace DemoLib
                 switch (item.ShowDialog())
                 {
                     case DialogResult.OK:
-                        MessageBox.Show(string.Format("Update {0} rows", this._daservice.UpdateFixture(this._dt)));
-                        this._dt = _daservice.GetFixture();
+                        MessageBox.Show(string.Format("Update {0} rows", this._daservice.UpdateFixtureRelation(this._ds)));
+                        this._ds = _daservice.GetFixtureRelation();
                         this.BindData();
                         break;
                     case DialogResult.Cancel:
-                        this._dt.RejectChanges();
+                        this._ds.RejectChanges();
                         break;
                 }
             }
@@ -101,19 +105,19 @@ namespace DemoLib
             if (MessageBox.Show(nString, "Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk).Equals(DialogResult.OK))
             {
                 datarowitem.Delete();
-                MessageBox.Show(string.Format("Delete {0} rows", this._daservice.UpdateFixture(this._dt)));
-                this._dt = _daservice.GetFixture();
+                MessageBox.Show(string.Format("Delete {0} rows", this._daservice.UpdateFixtureRelation(this._ds)));
+                this._ds = _daservice.GetFixtureRelation();
                 this.BindData();
             }
             else
             {
-                this._dt.RejectChanges();
+                this._ds.RejectChanges();
             }
         }
 
         void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
-            var datarowitem = this._dt.NewTFixturesRow();
+            var datarowitem = this._ds.TFixtures.NewTFixturesRow();
             datarowitem.VSL_ID = 1;
             datarowitem.CP_DATE = DateTime.Now;
             datarowitem.CP_TYPE = "VC";
@@ -145,22 +149,21 @@ namespace DemoLib
             switch (item.ShowDialog())
             {
                 case DialogResult.OK:
-                    this._dt.AddTFixturesRow(datarowitem);
-                    MessageBox.Show(string.Format("Add {0} rows", this._daservice.UpdateFixture(this._dt)));
-                    this._dt = _daservice.GetFixture();
+                    this._ds.TFixtures.AddTFixturesRow(datarowitem);
+                    MessageBox.Show(string.Format("Add {0} rows", this._daservice.UpdateFixtureRelation(this._ds)));
+                    this._ds = _daservice.GetFixtureRelation();
                     this.BindData();
                     break;
                 case DialogResult.Cancel:
                     datarowitem = null;
-                    this._dt.RejectChanges();
+                    this._ds.RejectChanges();
                     break;
             }
         }
 
-
         private void BindData()
         {
-            this.bindingSource1.DataSource = this._dt;
+            this.bindingSource1.DataSource = this._ds.TFixtures;
             this.bindingNavigator1.BindingSource = this.bindingSource1;
             this.gridControl1.DataSource = this.bindingSource1;
         }

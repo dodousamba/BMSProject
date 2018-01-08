@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
--- Date Created: 01/08/2018 17:19:36
--- Generated from EDMX file: C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\BMS_DAL\Entity\BMSModel.edmx
+-- Date Created: 01/08/2018 23:05:13
+-- Generated from EDMX file: C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_DAL\Entity\BMSModel.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -33,6 +33,9 @@ IF OBJECT_ID(N'[dbo].[TVessels]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[TInvoices]', 'U') IS NOT NULL
     DROP TABLE [dbo].[TInvoices];
+GO
+IF OBJECT_ID(N'[dbo].[TInvoiceDetails]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[TInvoiceDetails];
 GO
 
 -- --------------------------------------------------
@@ -95,7 +98,7 @@ CREATE TABLE [dbo].[TInvoices] (
     [ID] int IDENTITY(1,1) NOT NULL,
     [FIXNO] nvarchar(max)  NOT NULL,
     [REFNO] nvarchar(max)  NOT NULL,
-    [INVOICE_DATE] nvarchar(max)  NOT NULL,
+    [INVOICE_DATE] datetimeoffset  NOT NULL,
     [MESSES] nvarchar(max)  NOT NULL,
     [VSL_ID] int  NOT NULL,
     [CP_DATE] datetimeoffset  NOT NULL,
@@ -117,8 +120,23 @@ CREATE TABLE [dbo].[TInvoices] (
     [STATUS] nvarchar(max)  NOT NULL,
     [REMARK] nvarchar(max)  NOT NULL,
     [OPER] nvarchar(max)  NOT NULL,
-    [OP_DT] decimal(18,0)  NOT NULL,
-    [RECEIVABLEDATE] datetimeoffset  NOT NULL
+    [OP_DT] datetimeoffset  NOT NULL,
+    [RECEIVABLEDATE] datetimeoffset  NOT NULL,
+    [FIX_ID] int  NOT NULL
+);
+GO
+
+-- Creating table 'TInvoiceDetails'
+CREATE TABLE [dbo].[TInvoiceDetails] (
+    [ID] int IDENTITY(1,1) NOT NULL,
+    [C1] nvarchar(max)  NOT NULL,
+    [C2] nvarchar(max)  NOT NULL,
+    [C3] nvarchar(max)  NOT NULL,
+    [C4] nvarchar(max)  NOT NULL,
+    [C5] nvarchar(max)  NOT NULL,
+    [OPER] nvarchar(max)  NOT NULL,
+    [OP_DT] datetimeoffset  NOT NULL,
+    [INVOICE_ID] int  NOT NULL
 );
 GO
 
@@ -147,6 +165,12 @@ GO
 -- Creating primary key on [ID] in table 'TInvoices'
 ALTER TABLE [dbo].[TInvoices]
 ADD CONSTRAINT [PK_TInvoices]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- Creating primary key on [ID] in table 'TInvoiceDetails'
+ALTER TABLE [dbo].[TInvoiceDetails]
+ADD CONSTRAINT [PK_TInvoiceDetails]
     PRIMARY KEY CLUSTERED ([ID] ASC);
 GO
 

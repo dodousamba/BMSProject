@@ -9,6 +9,7 @@
         <EntityTypeShape EntityType="BMSModel.TFixture" Width="1.5" PointX="5.125" PointY="0.5" />
         <EntityTypeShape EntityType="BMSModel.TVessel" Width="1.5" PointX="2.625" PointY="1.25" />
         <EntityTypeShape EntityType="BMSModel.TInvoice" Width="1.5" PointX="6.875" PointY="0.5" />
+        <EntityTypeShape EntityType="BMSModel.TInvoiceDetail" Width="1.5" PointX="9" PointY="1.375" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

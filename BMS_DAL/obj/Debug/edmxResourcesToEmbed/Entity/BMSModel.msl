@@ -85,6 +85,22 @@
           <ScalarProperty Name="OPER" ColumnName="OPER" />
           <ScalarProperty Name="OP_DT" ColumnName="OP_DT" />
           <ScalarProperty Name="RECEIVABLEDATE" ColumnName="RECEIVABLEDATE" />
+          <ScalarProperty Name="FIX_ID" ColumnName="FIX_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TInvoiceDetails">
+      <EntityTypeMapping TypeName="IsTypeOf(BMSModel.TInvoiceDetail)">
+        <MappingFragment StoreEntitySet="TInvoiceDetails">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="C1" ColumnName="C1" />
+          <ScalarProperty Name="C2" ColumnName="C2" />
+          <ScalarProperty Name="C3" ColumnName="C3" />
+          <ScalarProperty Name="C4" ColumnName="C4" />
+          <ScalarProperty Name="C5" ColumnName="C5" />
+          <ScalarProperty Name="OPER" ColumnName="OPER" />
+          <ScalarProperty Name="OP_DT" ColumnName="OP_DT" />
+          <ScalarProperty Name="INVOICE_ID" ColumnName="INVOICE_ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

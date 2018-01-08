@@ -29,5 +29,6 @@ namespace BMS_DAL.Entity
         public DbSet<TFixture> TFixtures { get; set; }
         public DbSet<TVessel> TVessels { get; set; }
         public DbSet<TInvoice> TInvoices { get; set; }
+        public DbSet<TInvoiceDetail> TInvoiceDetails { get; set; }
     }
 }
