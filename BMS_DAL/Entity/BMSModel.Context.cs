@@ -27,5 +27,7 @@ namespace BMS_DAL.Entity
     
         public DbSet<TSys_User> TSys_Users { get; set; }
         public DbSet<TFixture> TFixtures { get; set; }
+        public DbSet<TVessel> TVessels { get; set; }
+        public DbSet<TInvoice> TInvoices { get; set; }
     }
 }

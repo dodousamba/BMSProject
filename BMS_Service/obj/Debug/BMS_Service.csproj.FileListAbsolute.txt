@@ -1,0 +1,11 @@
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_Service\obj\Debug\BMS_Service.csprojResolveAssemblyReference.cache
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_Service\bin\Debug\BMS_Service.dll.config
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_Service\bin\Debug\BMS_Service.dll
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_Service\bin\Debug\BMS_Service.pdb
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_Service\bin\Debug\BMS_DAL.dll
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_Service\bin\Debug\EntityFramework.dll
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_Service\bin\Debug\BMS_DAL.pdb
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_Service\bin\Debug\EntityFramework.xml
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_Service\bin\Debug\zh-Hans\EntityFramework.resources.dll
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_Service\obj\Debug\BMS_Service.dll
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_Service\obj\Debug\BMS_Service.pdb

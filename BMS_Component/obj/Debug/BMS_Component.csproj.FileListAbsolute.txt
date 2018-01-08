@@ -1,0 +1,5 @@
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_Component\bin\Debug\BMS_Component.dll
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_Component\bin\Debug\BMS_Component.pdb
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_Component\obj\Debug\BMS_Component.csprojResolveAssemblyReference.cache
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_Component\obj\Debug\BMS_Component.dll
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_Component\obj\Debug\BMS_Component.pdb

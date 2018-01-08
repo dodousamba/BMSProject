@@ -2,6 +2,9 @@
 <Schema Namespace="BMSModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
   <EntityContainer Name="BMSModelStoreContainer">
     <EntitySet Name="TSys_Users" EntityType="BMSModel.Store.TSys_Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TFixtures" EntityType="BMSModel.Store.TFixtures" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TVessels" EntityType="BMSModel.Store.TVessels" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TInvoices" EntityType="BMSModel.Store.TInvoices" store:Type="Tables" Schema="dbo" />
   </EntityContainer>
   <EntityType Name="TSys_Users">
     <Key>
@@ -11,5 +14,78 @@
     <Property Name="NAME" Type="nvarchar(max)" Nullable="false" />
     <Property Name="PWD" Type="nvarchar(max)" Nullable="false" />
     <Property Name="USERTYPE" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TFixtures">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VSL_ID" Type="int" Nullable="false" />
+    <Property Name="CP_DATE" Type="datetimeoffset" Nullable="false" />
+    <Property Name="CP_TYPE" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CP_DESC" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PAYER" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="HRORFRT" Type="decimal" Nullable="false" />
+    <Property Name="DAYSORMT" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OWR" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BRKRATE_OWR" Type="decimal" Nullable="false" />
+    <Property Name="BRKAMOUNT_OWR" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CHR" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BRKRATE_CHR" Type="decimal" Nullable="false" />
+    <Property Name="BRKAMOUNT_CHR" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ESTBRK" Type="decimal" Nullable="false" />
+    <Property Name="BROKER1" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BROKER2" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SIGNOPER" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CAP_RATE" Type="decimal" Nullable="false" />
+    <Property Name="CAP_AMOUNT" Type="decimal" Nullable="false" />
+    <Property Name="TFCB" Type="int" Nullable="false" />
+    <Property Name="FIXNO" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="STATUS" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="REMARK" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OPER" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OP_DT" Type="datetimeoffset" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TVessels">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAME" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SIZE" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DESC" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OPER" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OP_DT" Type="datetimeoffset" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TInvoices">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FIXNO" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="REFNO" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="INVOICE_DATE" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MESSES" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="VSL_ID" Type="int" Nullable="false" />
+    <Property Name="CP_DATE" Type="datetimeoffset" Nullable="false" />
+    <Property Name="CP_TYPE" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CP_DESC" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="HRORFRT" Type="decimal" Nullable="false" />
+    <Property Name="DAYSORMT" Type="decimal" Nullable="false" />
+    <Property Name="ATIN" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CWNO" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OWNER" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BRKRATE_OWR" Type="decimal" Nullable="false" />
+    <Property Name="BRKAMOUNT_OWR" Type="decimal" Nullable="false" />
+    <Property Name="CHR" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BRKRATE_CHR" Type="decimal" Nullable="false" />
+    <Property Name="BRKAMOUNT_CHR" Type="decimal" Nullable="false" />
+    <Property Name="PERIODS" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BANKACCOUNT" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="RECEIVABLEAMOUNT" Type="decimal" Nullable="false" />
+    <Property Name="STATUS" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="REMARK" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OPER" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OP_DT" Type="decimal" Nullable="false" />
   </EntityType>
 </Schema>

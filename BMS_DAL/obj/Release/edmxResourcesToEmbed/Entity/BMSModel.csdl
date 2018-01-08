@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="BMSModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
   <EntityContainer Name="BMSModelContainer" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="TUsers" EntityType="BMSModel.TUser" />
+    <EntitySet Name="TSys_Users" EntityType="BMSModel.TSys_User" />
   </EntityContainer>
-  <EntityType Name="TUser">
+  <EntityType Name="TSys_User">
     <Key>
       <PropertyRef Name="ID" />
     </Key>

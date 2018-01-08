@@ -11,5 +11,81 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="TFixtures">
+      <EntityTypeMapping TypeName="IsTypeOf(BMSModel.TFixture)">
+        <MappingFragment StoreEntitySet="TFixtures">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="VSL_ID" ColumnName="VSL_ID" />
+          <ScalarProperty Name="CP_DATE" ColumnName="CP_DATE" />
+          <ScalarProperty Name="CP_TYPE" ColumnName="CP_TYPE" />
+          <ScalarProperty Name="CP_DESC" ColumnName="CP_DESC" />
+          <ScalarProperty Name="PAYER" ColumnName="PAYER" />
+          <ScalarProperty Name="HRORFRT" ColumnName="HRORFRT" />
+          <ScalarProperty Name="DAYSORMT" ColumnName="DAYSORMT" />
+          <ScalarProperty Name="OWR" ColumnName="OWR" />
+          <ScalarProperty Name="BRKRATE_OWR" ColumnName="BRKRATE_OWR" />
+          <ScalarProperty Name="BRKAMOUNT_OWR" ColumnName="BRKAMOUNT_OWR" />
+          <ScalarProperty Name="CHR" ColumnName="CHR" />
+          <ScalarProperty Name="BRKRATE_CHR" ColumnName="BRKRATE_CHR" />
+          <ScalarProperty Name="BRKAMOUNT_CHR" ColumnName="BRKAMOUNT_CHR" />
+          <ScalarProperty Name="ESTBRK" ColumnName="ESTBRK" />
+          <ScalarProperty Name="BROKER1" ColumnName="BROKER1" />
+          <ScalarProperty Name="BROKER2" ColumnName="BROKER2" />
+          <ScalarProperty Name="SIGNOPER" ColumnName="SIGNOPER" />
+          <ScalarProperty Name="CAP_RATE" ColumnName="CAP_RATE" />
+          <ScalarProperty Name="CAP_AMOUNT" ColumnName="CAP_AMOUNT" />
+          <ScalarProperty Name="TFCB" ColumnName="TFCB" />
+          <ScalarProperty Name="FIXNO" ColumnName="FIXNO" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+          <ScalarProperty Name="OPER" ColumnName="OPER" />
+          <ScalarProperty Name="OP_DT" ColumnName="OP_DT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TVessels">
+      <EntityTypeMapping TypeName="IsTypeOf(BMSModel.TVessel)">
+        <MappingFragment StoreEntitySet="TVessels">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="SIZE" ColumnName="SIZE" />
+          <ScalarProperty Name="DESC" ColumnName="DESC" />
+          <ScalarProperty Name="OPER" ColumnName="OPER" />
+          <ScalarProperty Name="OP_DT" ColumnName="OP_DT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TInvoices">
+      <EntityTypeMapping TypeName="IsTypeOf(BMSModel.TInvoice)">
+        <MappingFragment StoreEntitySet="TInvoices">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FIXNO" ColumnName="FIXNO" />
+          <ScalarProperty Name="REFNO" ColumnName="REFNO" />
+          <ScalarProperty Name="INVOICE_DATE" ColumnName="INVOICE_DATE" />
+          <ScalarProperty Name="MESSES" ColumnName="MESSES" />
+          <ScalarProperty Name="VSL_ID" ColumnName="VSL_ID" />
+          <ScalarProperty Name="CP_DATE" ColumnName="CP_DATE" />
+          <ScalarProperty Name="CP_TYPE" ColumnName="CP_TYPE" />
+          <ScalarProperty Name="CP_DESC" ColumnName="CP_DESC" />
+          <ScalarProperty Name="HRORFRT" ColumnName="HRORFRT" />
+          <ScalarProperty Name="DAYSORMT" ColumnName="DAYSORMT" />
+          <ScalarProperty Name="ATIN" ColumnName="ATIN" />
+          <ScalarProperty Name="CWNO" ColumnName="CWNO" />
+          <ScalarProperty Name="OWNER" ColumnName="OWNER" />
+          <ScalarProperty Name="BRKRATE_OWR" ColumnName="BRKRATE_OWR" />
+          <ScalarProperty Name="BRKAMOUNT_OWR" ColumnName="BRKAMOUNT_OWR" />
+          <ScalarProperty Name="CHR" ColumnName="CHR" />
+          <ScalarProperty Name="BRKRATE_CHR" ColumnName="BRKRATE_CHR" />
+          <ScalarProperty Name="BRKAMOUNT_CHR" ColumnName="BRKAMOUNT_CHR" />
+          <ScalarProperty Name="PERIODS" ColumnName="PERIODS" />
+          <ScalarProperty Name="BANKACCOUNT" ColumnName="BANKACCOUNT" />
+          <ScalarProperty Name="RECEIVABLEAMOUNT" ColumnName="RECEIVABLEAMOUNT" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="REMARK" ColumnName="REMARK" />
+          <ScalarProperty Name="OPER" ColumnName="OPER" />
+          <ScalarProperty Name="OP_DT" ColumnName="OP_DT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

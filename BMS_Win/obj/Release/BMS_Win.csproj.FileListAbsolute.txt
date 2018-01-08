@@ -1,0 +1,15 @@
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_Win\obj\Release\BMS_Win.csprojResolveAssemblyReference.cache
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_Win\obj\Release\BMS_Win.Properties.Resources.resources
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_Win\obj\Release\BMS_Win.csproj.GenerateResource.Cache
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_Win\bin\Release\BMS_Win.exe.manifest
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_Win\bin\Release\BMS_Win.application
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_Win\bin\Release\BMS_Win.exe
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_Win\bin\Release\BMS_Win.pdb
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_Win\bin\Release\BMS_DAL.dll
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_Win\bin\Release\DemoLib.dll
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_Win\bin\Release\BMS_DAL.pdb
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_Win\bin\Release\DemoLib.pdb
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_Win\obj\Release\BMS_Win.exe.manifest
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_Win\obj\Release\BMS_Win.application
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_Win\obj\Release\BMS_Win.exe
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_Win\obj\Release\BMS_Win.pdb

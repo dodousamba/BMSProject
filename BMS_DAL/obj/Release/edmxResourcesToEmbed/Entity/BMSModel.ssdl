@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="BMSModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
   <EntityContainer Name="BMSModelStoreContainer">
-    <EntitySet Name="TUsers" EntityType="BMSModel.Store.TUsers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TSys_Users" EntityType="BMSModel.Store.TSys_Users" store:Type="Tables" Schema="dbo" />
   </EntityContainer>
-  <EntityType Name="TUsers">
+  <EntityType Name="TSys_Users">
     <Key>
       <PropertyRef Name="ID" />
     </Key>

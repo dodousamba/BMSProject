@@ -53,7 +53,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BMSDS.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DS\TransUpdate.cs">
+    <Compile Include="DS\UpdatewithTrans.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Entity\BMSModel.Context.cs">
@@ -74,7 +74,13 @@
     <Compile Include="Entity\TFixture.cs">
       <DependentUpon>BMSModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entity\TInvoice.cs">
+      <DependentUpon>BMSModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity\TSys_User.cs">
+      <DependentUpon>BMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TVessel.cs">
       <DependentUpon>BMSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -21,6 +21,8 @@ namespace DemoLib
         {
             base.OnLoad(e);
 
+            BMS_Component.UserInfo.UserName = "ADMIN";
+
             this.AttachEvent();
         }
 
@@ -29,7 +31,7 @@ namespace DemoLib
             this.navBarItem_OnProgress.LinkClicked += navBarItem_LinkClicked;
             this.navBarItem_Fixture.LinkClicked += navBarItem_LinkClicked;
             this.navBarItem_Invoice.LinkClicked += navBarItem_LinkClicked;
-            this.navBarItem_User.LinkClicked += navBarItem_LinkClicked;
+            this.navBarItem_Vessel.LinkClicked += navBarItem_LinkClicked;
 
             this.barButtonItem_Exit.ItemClick += barButtonItem_Exit_ItemClick;
 

@@ -3,6 +3,8 @@
   <EntityContainer Name="BMSModelContainer" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="TSys_Users" EntityType="BMSModel.TSys_User" />
     <EntitySet Name="TFixtures" EntityType="BMSModel.TFixture" />
+    <EntitySet Name="TVessels" EntityType="BMSModel.TVessel" />
+    <EntitySet Name="TInvoices" EntityType="BMSModel.TInvoice" />
   </EntityContainer>
   <EntityType Name="TSys_User">
     <Key>
@@ -18,5 +20,72 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="VSL_ID" Nullable="false" />
+    <Property Type="DateTimeOffset" Name="CP_DATE" Nullable="false" />
+    <Property Type="String" Name="CP_TYPE" Nullable="false" />
+    <Property Type="String" Name="CP_DESC" Nullable="false" />
+    <Property Type="String" Name="PAYER" Nullable="false" />
+    <Property Type="Decimal" Name="HRORFRT" Nullable="false" />
+    <Property Type="String" Name="DAYSORMT" Nullable="false" />
+    <Property Type="String" Name="OWR" Nullable="false" />
+    <Property Type="Decimal" Name="BRKRATE_OWR" Nullable="false" />
+    <Property Type="String" Name="BRKAMOUNT_OWR" Nullable="false" />
+    <Property Type="String" Name="CHR" Nullable="false" />
+    <Property Type="Decimal" Name="BRKRATE_CHR" Nullable="false" />
+    <Property Type="String" Name="BRKAMOUNT_CHR" Nullable="false" />
+    <Property Type="Decimal" Name="ESTBRK" Nullable="false" />
+    <Property Type="String" Name="BROKER1" Nullable="false" />
+    <Property Type="String" Name="BROKER2" Nullable="false" />
+    <Property Type="String" Name="SIGNOPER" Nullable="false" />
+    <Property Type="Decimal" Name="CAP_RATE" Nullable="false" />
+    <Property Type="Decimal" Name="CAP_AMOUNT" Nullable="false" />
+    <Property Type="Int32" Name="TFCB" Nullable="false" />
+    <Property Type="String" Name="FIXNO" Nullable="false" />
+    <Property Type="String" Name="STATUS" Nullable="false" />
+    <Property Type="String" Name="REMARK" Nullable="false" />
+    <Property Type="String" Name="OPER" Nullable="false" />
+    <Property Type="DateTimeOffset" Name="OP_DT" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TVessel">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="NAME" Nullable="false" />
+    <Property Type="String" Name="SIZE" Nullable="false" />
+    <Property Type="String" Name="DESC" Nullable="false" />
+    <Property Type="String" Name="OPER" Nullable="false" />
+    <Property Type="DateTimeOffset" Name="OP_DT" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TInvoice">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="FIXNO" Nullable="false" />
+    <Property Type="String" Name="REFNO" Nullable="false" />
+    <Property Type="String" Name="INVOICE_DATE" Nullable="false" />
+    <Property Type="String" Name="MESSES" Nullable="false" />
+    <Property Type="Int32" Name="VSL_ID" Nullable="false" />
+    <Property Type="DateTimeOffset" Name="CP_DATE" Nullable="false" />
+    <Property Type="String" Name="CP_TYPE" Nullable="false" />
+    <Property Type="String" Name="CP_DESC" Nullable="false" />
+    <Property Type="Decimal" Name="HRORFRT" Nullable="false" />
+    <Property Type="Decimal" Name="DAYSORMT" Nullable="false" />
+    <Property Type="String" Name="ATIN" Nullable="false" />
+    <Property Type="String" Name="CWNO" Nullable="false" />
+    <Property Type="String" Name="OWNER" Nullable="false" />
+    <Property Type="Decimal" Name="BRKRATE_OWR" Nullable="false" />
+    <Property Type="Decimal" Name="BRKAMOUNT_OWR" Nullable="false" />
+    <Property Type="String" Name="CHR" Nullable="false" />
+    <Property Type="Decimal" Name="BRKRATE_CHR" Nullable="false" />
+    <Property Type="Decimal" Name="BRKAMOUNT_CHR" Nullable="false" />
+    <Property Type="String" Name="PERIODS" Nullable="false" />
+    <Property Type="String" Name="BANKACCOUNT" Nullable="false" />
+    <Property Type="Decimal" Name="RECEIVABLEAMOUNT" Nullable="false" />
+    <Property Type="String" Name="STATUS" Nullable="false" />
+    <Property Type="String" Name="REMARK" Nullable="false" />
+    <Property Type="String" Name="OPER" Nullable="false" />
+    <Property Type="Decimal" Name="OP_DT" Nullable="false" />
   </EntityType>
 </Schema>

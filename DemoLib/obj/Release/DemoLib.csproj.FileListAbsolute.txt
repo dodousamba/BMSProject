@@ -1,0 +1,12 @@
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\DemoLib\obj\Release\DemoLib.csprojResolveAssemblyReference.cache
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\DemoLib\obj\Release\DemoLib.DemoContainer.resources
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\DemoLib\obj\Release\DemoLib.FFixture.resources
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\DemoLib\obj\Release\DemoLib.FOnProgress.resources
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\DemoLib\obj\Release\DemoLib.FInvoice.resources
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\DemoLib\obj\Release\DemoLib.FUser.resources
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\DemoLib\obj\Release\DemoLib.csproj.GenerateResource.Cache
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\DemoLib\bin\Release\DemoLib.dll
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\DemoLib\bin\Release\DemoLib.pdb
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\DemoLib\obj\Release\DemoLib.dll
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\DemoLib\obj\Release\DemoLib.pdb
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\DemoLib\obj\Release\DemoLib.dll.licenses

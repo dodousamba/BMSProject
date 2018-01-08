@@ -15,5 +15,30 @@ namespace BMS_DAL.Entity
     public partial class TFixture
     {
         public int ID { get; set; }
+        public int VSL_ID { get; set; }
+        public System.DateTimeOffset CP_DATE { get; set; }
+        public string CP_TYPE { get; set; }
+        public string CP_DESC { get; set; }
+        public string PAYER { get; set; }
+        public decimal HRORFRT { get; set; }
+        public string DAYSORMT { get; set; }
+        public string OWR { get; set; }
+        public decimal BRKRATE_OWR { get; set; }
+        public string BRKAMOUNT_OWR { get; set; }
+        public string CHR { get; set; }
+        public decimal BRKRATE_CHR { get; set; }
+        public string BRKAMOUNT_CHR { get; set; }
+        public decimal ESTBRK { get; set; }
+        public string BROKER1 { get; set; }
+        public string BROKER2 { get; set; }
+        public string SIGNOPER { get; set; }
+        public decimal CAP_RATE { get; set; }
+        public decimal CAP_AMOUNT { get; set; }
+        public int TFCB { get; set; }
+        public string FIXNO { get; set; }
+        public string STATUS { get; set; }
+        public string REMARK { get; set; }
+        public string OPER { get; set; }
+        public System.DateTimeOffset OP_DT { get; set; }
     }
 }
