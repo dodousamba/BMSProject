@@ -173,32 +173,28 @@
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlTop.Size = new System.Drawing.Size(1419, 27);
+            this.barDockControlTop.Size = new System.Drawing.Size(1064, 22);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 821);
-            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1419, 30);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 656);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1064, 25);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 27);
-            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 794);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 22);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 634);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1419, 27);
-            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 794);
+            this.barDockControlRight.Location = new System.Drawing.Point(1064, 22);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 634);
             // 
             // barSubItem1
             // 
@@ -248,10 +244,9 @@
             // 
             this.groupControl1.Controls.Add(this.navBarControl1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupControl1.Location = new System.Drawing.Point(0, 27);
-            this.groupControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupControl1.Location = new System.Drawing.Point(0, 22);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(267, 794);
+            this.groupControl1.Size = new System.Drawing.Size(200, 634);
             this.groupControl1.TabIndex = 7;
             this.groupControl1.Text = "MENU";
             // 
@@ -269,11 +264,10 @@
             this.navBarItem_Fixture,
             this.navBarItem_Invoice,
             this.navBarItem_Vessel});
-            this.navBarControl1.Location = new System.Drawing.Point(2, 26);
-            this.navBarControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.navBarControl1.Location = new System.Drawing.Point(2, 22);
             this.navBarControl1.Name = "navBarControl1";
-            this.navBarControl1.OptionsNavPane.ExpandedWidth = 263;
-            this.navBarControl1.Size = new System.Drawing.Size(263, 766);
+            this.navBarControl1.OptionsNavPane.ExpandedWidth = 196;
+            this.navBarControl1.Size = new System.Drawing.Size(196, 610);
             this.navBarControl1.TabIndex = 3;
             this.navBarControl1.Text = "navBarControl";
             // 
@@ -335,16 +329,15 @@
             // 
             // DemoContainer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1419, 851);
+            this.ClientSize = new System.Drawing.Size(1064, 681);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DemoContainer";
             this.Text = "DemoContainer";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

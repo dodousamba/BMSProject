@@ -16,5 +16,17 @@ namespace BMS_Service
 
         [OperationContract]
         int UpdateVessel(BMS_DAL.DS.BMSDS.TVesselsDataTable dt);
+
+        [OperationContract]
+        BMS_DAL.DS.BMSDS.TFixturesDataTable GetFixture();
+
+        [OperationContract]
+        int UpdateFixture(BMS_DAL.DS.BMSDS.TFixturesDataTable dt);
+
+        [OperationContract]
+        BMS_DAL.DS.BMSDS.TInvoicesDataTable GetInvoice();
+
+        [OperationContract]
+        int UpdateInvoice(BMS_DAL.DS.BMSDS.TInvoicesDataTable dt);
     }
 }

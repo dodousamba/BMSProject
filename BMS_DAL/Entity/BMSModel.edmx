@@ -31,13 +31,13 @@
     <Property Name="CP_DESC" Type="nvarchar(max)" Nullable="false" />
     <Property Name="PAYER" Type="nvarchar(max)" Nullable="false" />
     <Property Name="HRORFRT" Type="decimal" Nullable="false" />
-    <Property Name="DAYSORMT" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DAYSORMT" Type="decimal" Nullable="false" />
     <Property Name="OWR" Type="nvarchar(max)" Nullable="false" />
     <Property Name="BRKRATE_OWR" Type="decimal" Nullable="false" />
-    <Property Name="BRKAMOUNT_OWR" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BRKAMOUNT_OWR" Type="decimal" Nullable="false" />
     <Property Name="CHR" Type="nvarchar(max)" Nullable="false" />
     <Property Name="BRKRATE_CHR" Type="decimal" Nullable="false" />
-    <Property Name="BRKAMOUNT_CHR" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BRKAMOUNT_CHR" Type="decimal" Nullable="false" />
     <Property Name="ESTBRK" Type="decimal" Nullable="false" />
     <Property Name="BROKER1" Type="nvarchar(max)" Nullable="false" />
     <Property Name="BROKER2" Type="nvarchar(max)" Nullable="false" />
@@ -79,7 +79,7 @@
     <Property Name="DAYSORMT" Type="decimal" Nullable="false" />
     <Property Name="ATIN" Type="nvarchar(max)" Nullable="false" />
     <Property Name="CWNO" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="OWNER" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OWR" Type="nvarchar(max)" Nullable="false" />
     <Property Name="BRKRATE_OWR" Type="decimal" Nullable="false" />
     <Property Name="BRKAMOUNT_OWR" Type="decimal" Nullable="false" />
     <Property Name="CHR" Type="nvarchar(max)" Nullable="false" />
@@ -92,6 +92,7 @@
     <Property Name="REMARK" Type="nvarchar(max)" Nullable="false" />
     <Property Name="OPER" Type="nvarchar(max)" Nullable="false" />
     <Property Name="OP_DT" Type="decimal" Nullable="false" />
+    <Property Name="RECEIVABLEDATE" Type="datetimeoffset" Nullable="false" />
   </EntityType>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -123,13 +124,13 @@
           <Property Type="String" Name="CP_DESC" Nullable="false" />
           <Property Type="String" Name="PAYER" Nullable="false" />
           <Property Type="Decimal" Name="HRORFRT" Nullable="false" />
-          <Property Type="String" Name="DAYSORMT" Nullable="false" />
+          <Property Type="Decimal" Name="DAYSORMT" Nullable="false" />
           <Property Type="String" Name="OWR" Nullable="false" />
           <Property Type="Decimal" Name="BRKRATE_OWR" Nullable="false" />
-          <Property Type="String" Name="BRKAMOUNT_OWR" Nullable="false" />
+          <Property Type="Decimal" Name="BRKAMOUNT_OWR" Nullable="false" />
           <Property Type="String" Name="CHR" Nullable="false" />
           <Property Type="Decimal" Name="BRKRATE_CHR" Nullable="false" />
-          <Property Type="String" Name="BRKAMOUNT_CHR" Nullable="false" />
+          <Property Type="Decimal" Name="BRKAMOUNT_CHR" Nullable="false" />
           <Property Type="Decimal" Name="ESTBRK" Nullable="false" />
           <Property Type="String" Name="BROKER1" Nullable="false" />
           <Property Type="String" Name="BROKER2" Nullable="false" />
@@ -171,7 +172,7 @@
           <Property Type="Decimal" Name="DAYSORMT" Nullable="false" />
           <Property Type="String" Name="ATIN" Nullable="false" />
           <Property Type="String" Name="CWNO" Nullable="false" />
-          <Property Type="String" Name="OWNER" Nullable="false" />
+          <Property Type="String" Name="OWR" Nullable="false" />
           <Property Type="Decimal" Name="BRKRATE_OWR" Nullable="false" />
           <Property Type="Decimal" Name="BRKAMOUNT_OWR" Nullable="false" />
           <Property Type="String" Name="CHR" Nullable="false" />
@@ -184,6 +185,7 @@
           <Property Type="String" Name="REMARK" Nullable="false" />
           <Property Type="String" Name="OPER" Nullable="false" />
           <Property Type="Decimal" Name="OP_DT" Nullable="false" />
+          <Property Type="DateTimeOffset" Name="RECEIVABLEDATE" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -261,7 +263,7 @@
           <ScalarProperty Name="DAYSORMT" ColumnName="DAYSORMT" />
           <ScalarProperty Name="ATIN" ColumnName="ATIN" />
           <ScalarProperty Name="CWNO" ColumnName="CWNO" />
-          <ScalarProperty Name="OWNER" ColumnName="OWNER" />
+          <ScalarProperty Name="OWR" ColumnName="OWR" />
           <ScalarProperty Name="BRKRATE_OWR" ColumnName="BRKRATE_OWR" />
           <ScalarProperty Name="BRKAMOUNT_OWR" ColumnName="BRKAMOUNT_OWR" />
           <ScalarProperty Name="CHR" ColumnName="CHR" />
@@ -274,6 +276,7 @@
           <ScalarProperty Name="REMARK" ColumnName="REMARK" />
           <ScalarProperty Name="OPER" ColumnName="OPER" />
           <ScalarProperty Name="OP_DT" ColumnName="OP_DT" />
+          <ScalarProperty Name="RECEIVABLEDATE" ColumnName="RECEIVABLEDATE" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

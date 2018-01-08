@@ -38,3 +38,7 @@ C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_Win\bin\Debu
 C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_Win\bin\Debug\BMS_Component.pdb
 C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_Win\bin\Debug\BMS_Service.dll
 C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_Win\bin\Debug\BMS_Service.pdb
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\BMS_Win\bin\Debug\BMS_Service.dll
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\BMS_Win\bin\Debug\BMS_Component.dll
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\BMS_Win\bin\Debug\BMS_Service.pdb
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\BMS_Win\bin\Debug\BMS_Component.pdb

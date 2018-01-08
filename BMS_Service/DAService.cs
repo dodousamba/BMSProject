@@ -34,5 +34,57 @@ namespace BMS_Service
             }
             return r;
         }
+
+
+        public BMS_DAL.DS.BMSDS.TFixturesDataTable GetFixture()
+        {
+            using (BMS_DAL.DS.BMSDSTableAdapters.TFixturesTableAdapter ta = new BMS_DAL.DS.BMSDSTableAdapters.TFixturesTableAdapter())
+            {
+                try
+                {
+                    return ta.GetData();
+                }
+                catch (Exception ex) { throw ex; }
+            }
+        }
+
+        public int UpdateFixture(BMS_DAL.DS.BMSDS.TFixturesDataTable dt)
+        {
+            int r = 0;
+            if (dt.GetChanges() != null)
+            {
+                using (BMS_DAL.DS.BMSDSTableAdapters.TFixturesTableAdapter ta = new BMS_DAL.DS.BMSDSTableAdapters.TFixturesTableAdapter())
+                {
+                    r = ta.UpdateWithTrans(dt);
+                }
+            }
+            return r;
+        }
+
+
+        public BMS_DAL.DS.BMSDS.TInvoicesDataTable GetInvoice()
+        {
+            using (BMS_DAL.DS.BMSDSTableAdapters.TInvoicesTableAdapter ta = new BMS_DAL.DS.BMSDSTableAdapters.TInvoicesTableAdapter())
+            {
+                try
+                {
+                    return ta.GetData();
+                }
+                catch (Exception ex) { throw ex; }
+            }
+        }
+
+        public int UpdateInvoice(BMS_DAL.DS.BMSDS.TInvoicesDataTable dt)
+        {
+            int r = 0;
+            if (dt.GetChanges() != null)
+            {
+                using (BMS_DAL.DS.BMSDSTableAdapters.TInvoicesTableAdapter ta = new BMS_DAL.DS.BMSDSTableAdapters.TInvoicesTableAdapter())
+                {
+                    r = ta.UpdateWithTrans(dt);
+                }
+            }
+            return r;
+        }
     }
 }

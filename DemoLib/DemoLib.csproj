@@ -86,6 +86,18 @@
     <Compile Include="VesselForm.Designer.cs">
       <DependentUpon>VesselForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FixtureItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FixtureItem.Designer.cs">
+      <DependentUpon>FixtureItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InvoiceItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InvoiceItem.Designer.cs">
+      <DependentUpon>InvoiceItem.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="DemoContainer.resx">
@@ -100,12 +112,18 @@
     <EmbeddedResource Include="InvoiceForm.resx">
       <DependentUpon>InvoiceForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="VesselForm.resx">
       <DependentUpon>VesselForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="VesselItem.resx">
       <DependentUpon>VesselItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FixtureItem.resx">
+      <DependentUpon>FixtureItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InvoiceItem.resx">
+      <DependentUpon>InvoiceItem.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

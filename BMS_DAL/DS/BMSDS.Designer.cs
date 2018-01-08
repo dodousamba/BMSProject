@@ -26,11 +26,11 @@ namespace BMS_DAL.DS {
         
         private TSys_UsersDataTable tableTSys_Users;
         
-        private TFixturesDataTable tableTFixtures;
-        
         private TInvoicesDataTable tableTInvoices;
         
         private TVesselsDataTable tableTVessels;
+        
+        private TFixturesDataTable tableTFixtures;
         
         private global::System.Data.DataRelation relationTFixtures_TInvoices;
         
@@ -65,14 +65,14 @@ namespace BMS_DAL.DS {
                 if ((ds.Tables["TSys_Users"] != null)) {
                     base.Tables.Add(new TSys_UsersDataTable(ds.Tables["TSys_Users"]));
                 }
-                if ((ds.Tables["TFixtures"] != null)) {
-                    base.Tables.Add(new TFixturesDataTable(ds.Tables["TFixtures"]));
-                }
                 if ((ds.Tables["TInvoices"] != null)) {
                     base.Tables.Add(new TInvoicesDataTable(ds.Tables["TInvoices"]));
                 }
                 if ((ds.Tables["TVessels"] != null)) {
                     base.Tables.Add(new TVesselsDataTable(ds.Tables["TVessels"]));
+                }
+                if ((ds.Tables["TFixtures"] != null)) {
+                    base.Tables.Add(new TFixturesDataTable(ds.Tables["TFixtures"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -106,16 +106,6 @@ namespace BMS_DAL.DS {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public TFixturesDataTable TFixtures {
-            get {
-                return this.tableTFixtures;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
         public TInvoicesDataTable TInvoices {
             get {
                 return this.tableTInvoices;
@@ -129,6 +119,16 @@ namespace BMS_DAL.DS {
         public TVesselsDataTable TVessels {
             get {
                 return this.tableTVessels;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public TFixturesDataTable TFixtures {
+            get {
+                return this.tableTFixtures;
             }
         }
         
@@ -202,14 +202,14 @@ namespace BMS_DAL.DS {
                 if ((ds.Tables["TSys_Users"] != null)) {
                     base.Tables.Add(new TSys_UsersDataTable(ds.Tables["TSys_Users"]));
                 }
-                if ((ds.Tables["TFixtures"] != null)) {
-                    base.Tables.Add(new TFixturesDataTable(ds.Tables["TFixtures"]));
-                }
                 if ((ds.Tables["TInvoices"] != null)) {
                     base.Tables.Add(new TInvoicesDataTable(ds.Tables["TInvoices"]));
                 }
                 if ((ds.Tables["TVessels"] != null)) {
                     base.Tables.Add(new TVesselsDataTable(ds.Tables["TVessels"]));
+                }
+                if ((ds.Tables["TFixtures"] != null)) {
+                    base.Tables.Add(new TFixturesDataTable(ds.Tables["TFixtures"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -250,12 +250,6 @@ namespace BMS_DAL.DS {
                     this.tableTSys_Users.InitVars();
                 }
             }
-            this.tableTFixtures = ((TFixturesDataTable)(base.Tables["TFixtures"]));
-            if ((initTable == true)) {
-                if ((this.tableTFixtures != null)) {
-                    this.tableTFixtures.InitVars();
-                }
-            }
             this.tableTInvoices = ((TInvoicesDataTable)(base.Tables["TInvoices"]));
             if ((initTable == true)) {
                 if ((this.tableTInvoices != null)) {
@@ -266,6 +260,12 @@ namespace BMS_DAL.DS {
             if ((initTable == true)) {
                 if ((this.tableTVessels != null)) {
                     this.tableTVessels.InitVars();
+                }
+            }
+            this.tableTFixtures = ((TFixturesDataTable)(base.Tables["TFixtures"]));
+            if ((initTable == true)) {
+                if ((this.tableTFixtures != null)) {
+                    this.tableTFixtures.InitVars();
                 }
             }
             this.relationTFixtures_TInvoices = this.Relations["TFixtures_TInvoices"];
@@ -281,12 +281,12 @@ namespace BMS_DAL.DS {
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableTSys_Users = new TSys_UsersDataTable();
             base.Tables.Add(this.tableTSys_Users);
-            this.tableTFixtures = new TFixturesDataTable();
-            base.Tables.Add(this.tableTFixtures);
             this.tableTInvoices = new TInvoicesDataTable();
             base.Tables.Add(this.tableTInvoices);
             this.tableTVessels = new TVesselsDataTable();
             base.Tables.Add(this.tableTVessels);
+            this.tableTFixtures = new TFixturesDataTable();
+            base.Tables.Add(this.tableTFixtures);
             this.relationTFixtures_TInvoices = new global::System.Data.DataRelation("TFixtures_TInvoices", new global::System.Data.DataColumn[] {
                         this.tableTFixtures.FIXNOColumn}, new global::System.Data.DataColumn[] {
                         this.tableTInvoices.FIXNOColumn}, false);
@@ -301,12 +301,6 @@ namespace BMS_DAL.DS {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeTFixtures() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeTInvoices() {
             return false;
         }
@@ -314,6 +308,12 @@ namespace BMS_DAL.DS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeTVessels() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeTFixtures() {
             return false;
         }
         
@@ -376,13 +376,13 @@ namespace BMS_DAL.DS {
         public delegate void TSys_UsersRowChangeEventHandler(object sender, TSys_UsersRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void TFixturesRowChangeEventHandler(object sender, TFixturesRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void TInvoicesRowChangeEventHandler(object sender, TInvoicesRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void TVesselsRowChangeEventHandler(object sender, TVesselsRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void TFixturesRowChangeEventHandler(object sender, TFixturesRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -686,683 +686,6 @@ namespace BMS_DAL.DS {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class TFixturesDataTable : global::System.Data.TypedTableBase<TFixturesRow> {
-            
-            private global::System.Data.DataColumn columnID;
-            
-            private global::System.Data.DataColumn columnVSL_ID;
-            
-            private global::System.Data.DataColumn columnCP_DATE;
-            
-            private global::System.Data.DataColumn columnCP_TYPE;
-            
-            private global::System.Data.DataColumn columnCP_DESC;
-            
-            private global::System.Data.DataColumn columnPAYER;
-            
-            private global::System.Data.DataColumn columnHRORFRT;
-            
-            private global::System.Data.DataColumn columnDAYSORMT;
-            
-            private global::System.Data.DataColumn columnOWR;
-            
-            private global::System.Data.DataColumn columnBRKRATE_OWR;
-            
-            private global::System.Data.DataColumn columnBRKAMOUNT_OWR;
-            
-            private global::System.Data.DataColumn columnCHR;
-            
-            private global::System.Data.DataColumn columnBRKRATE_CHR;
-            
-            private global::System.Data.DataColumn columnBRKAMOUNT_CHR;
-            
-            private global::System.Data.DataColumn columnESTBRK;
-            
-            private global::System.Data.DataColumn columnBROKER1;
-            
-            private global::System.Data.DataColumn columnBROKER2;
-            
-            private global::System.Data.DataColumn columnSIGNOPER;
-            
-            private global::System.Data.DataColumn columnCAP_RATE;
-            
-            private global::System.Data.DataColumn columnCAP_AMOUNT;
-            
-            private global::System.Data.DataColumn columnTFCB;
-            
-            private global::System.Data.DataColumn columnFIXNO;
-            
-            private global::System.Data.DataColumn columnSTATUS;
-            
-            private global::System.Data.DataColumn columnREMARK;
-            
-            private global::System.Data.DataColumn columnOPER;
-            
-            private global::System.Data.DataColumn columnOP_DT;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TFixturesDataTable() {
-                this.TableName = "TFixtures";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal TFixturesDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected TFixturesDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn IDColumn {
-                get {
-                    return this.columnID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn VSL_IDColumn {
-                get {
-                    return this.columnVSL_ID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CP_DATEColumn {
-                get {
-                    return this.columnCP_DATE;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CP_TYPEColumn {
-                get {
-                    return this.columnCP_TYPE;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CP_DESCColumn {
-                get {
-                    return this.columnCP_DESC;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn PAYERColumn {
-                get {
-                    return this.columnPAYER;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn HRORFRTColumn {
-                get {
-                    return this.columnHRORFRT;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DAYSORMTColumn {
-                get {
-                    return this.columnDAYSORMT;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn OWRColumn {
-                get {
-                    return this.columnOWR;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn BRKRATE_OWRColumn {
-                get {
-                    return this.columnBRKRATE_OWR;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn BRKAMOUNT_OWRColumn {
-                get {
-                    return this.columnBRKAMOUNT_OWR;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CHRColumn {
-                get {
-                    return this.columnCHR;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn BRKRATE_CHRColumn {
-                get {
-                    return this.columnBRKRATE_CHR;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn BRKAMOUNT_CHRColumn {
-                get {
-                    return this.columnBRKAMOUNT_CHR;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ESTBRKColumn {
-                get {
-                    return this.columnESTBRK;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn BROKER1Column {
-                get {
-                    return this.columnBROKER1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn BROKER2Column {
-                get {
-                    return this.columnBROKER2;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn SIGNOPERColumn {
-                get {
-                    return this.columnSIGNOPER;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CAP_RATEColumn {
-                get {
-                    return this.columnCAP_RATE;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CAP_AMOUNTColumn {
-                get {
-                    return this.columnCAP_AMOUNT;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn TFCBColumn {
-                get {
-                    return this.columnTFCB;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn FIXNOColumn {
-                get {
-                    return this.columnFIXNO;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn STATUSColumn {
-                get {
-                    return this.columnSTATUS;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn REMARKColumn {
-                get {
-                    return this.columnREMARK;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn OPERColumn {
-                get {
-                    return this.columnOPER;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn OP_DTColumn {
-                get {
-                    return this.columnOP_DT;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TFixturesRow this[int index] {
-                get {
-                    return ((TFixturesRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event TFixturesRowChangeEventHandler TFixturesRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event TFixturesRowChangeEventHandler TFixturesRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event TFixturesRowChangeEventHandler TFixturesRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event TFixturesRowChangeEventHandler TFixturesRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddTFixturesRow(TFixturesRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TFixturesRow AddTFixturesRow(
-                        int VSL_ID, 
-                        System.DateTimeOffset CP_DATE, 
-                        string CP_TYPE, 
-                        string CP_DESC, 
-                        string PAYER, 
-                        decimal HRORFRT, 
-                        string DAYSORMT, 
-                        string OWR, 
-                        decimal BRKRATE_OWR, 
-                        string BRKAMOUNT_OWR, 
-                        string CHR, 
-                        decimal BRKRATE_CHR, 
-                        string BRKAMOUNT_CHR, 
-                        decimal ESTBRK, 
-                        string BROKER1, 
-                        string BROKER2, 
-                        string SIGNOPER, 
-                        decimal CAP_RATE, 
-                        decimal CAP_AMOUNT, 
-                        int TFCB, 
-                        string FIXNO, 
-                        string STATUS, 
-                        string REMARK, 
-                        string OPER, 
-                        System.DateTimeOffset OP_DT) {
-                TFixturesRow rowTFixturesRow = ((TFixturesRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        null,
-                        VSL_ID,
-                        CP_DATE,
-                        CP_TYPE,
-                        CP_DESC,
-                        PAYER,
-                        HRORFRT,
-                        DAYSORMT,
-                        OWR,
-                        BRKRATE_OWR,
-                        BRKAMOUNT_OWR,
-                        CHR,
-                        BRKRATE_CHR,
-                        BRKAMOUNT_CHR,
-                        ESTBRK,
-                        BROKER1,
-                        BROKER2,
-                        SIGNOPER,
-                        CAP_RATE,
-                        CAP_AMOUNT,
-                        TFCB,
-                        FIXNO,
-                        STATUS,
-                        REMARK,
-                        OPER,
-                        OP_DT};
-                rowTFixturesRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowTFixturesRow);
-                return rowTFixturesRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TFixturesRow FindByID(int ID) {
-                return ((TFixturesRow)(this.Rows.Find(new object[] {
-                            ID})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                TFixturesDataTable cln = ((TFixturesDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new TFixturesDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal void InitVars() {
-                this.columnID = base.Columns["ID"];
-                this.columnVSL_ID = base.Columns["VSL_ID"];
-                this.columnCP_DATE = base.Columns["CP_DATE"];
-                this.columnCP_TYPE = base.Columns["CP_TYPE"];
-                this.columnCP_DESC = base.Columns["CP_DESC"];
-                this.columnPAYER = base.Columns["PAYER"];
-                this.columnHRORFRT = base.Columns["HRORFRT"];
-                this.columnDAYSORMT = base.Columns["DAYSORMT"];
-                this.columnOWR = base.Columns["OWR"];
-                this.columnBRKRATE_OWR = base.Columns["BRKRATE_OWR"];
-                this.columnBRKAMOUNT_OWR = base.Columns["BRKAMOUNT_OWR"];
-                this.columnCHR = base.Columns["CHR"];
-                this.columnBRKRATE_CHR = base.Columns["BRKRATE_CHR"];
-                this.columnBRKAMOUNT_CHR = base.Columns["BRKAMOUNT_CHR"];
-                this.columnESTBRK = base.Columns["ESTBRK"];
-                this.columnBROKER1 = base.Columns["BROKER1"];
-                this.columnBROKER2 = base.Columns["BROKER2"];
-                this.columnSIGNOPER = base.Columns["SIGNOPER"];
-                this.columnCAP_RATE = base.Columns["CAP_RATE"];
-                this.columnCAP_AMOUNT = base.Columns["CAP_AMOUNT"];
-                this.columnTFCB = base.Columns["TFCB"];
-                this.columnFIXNO = base.Columns["FIXNO"];
-                this.columnSTATUS = base.Columns["STATUS"];
-                this.columnREMARK = base.Columns["REMARK"];
-                this.columnOPER = base.Columns["OPER"];
-                this.columnOP_DT = base.Columns["OP_DT"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            private void InitClass() {
-                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID);
-                this.columnVSL_ID = new global::System.Data.DataColumn("VSL_ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnVSL_ID);
-                this.columnCP_DATE = new global::System.Data.DataColumn("CP_DATE", typeof(global::System.DateTimeOffset), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCP_DATE);
-                this.columnCP_TYPE = new global::System.Data.DataColumn("CP_TYPE", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCP_TYPE);
-                this.columnCP_DESC = new global::System.Data.DataColumn("CP_DESC", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCP_DESC);
-                this.columnPAYER = new global::System.Data.DataColumn("PAYER", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPAYER);
-                this.columnHRORFRT = new global::System.Data.DataColumn("HRORFRT", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHRORFRT);
-                this.columnDAYSORMT = new global::System.Data.DataColumn("DAYSORMT", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDAYSORMT);
-                this.columnOWR = new global::System.Data.DataColumn("OWR", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnOWR);
-                this.columnBRKRATE_OWR = new global::System.Data.DataColumn("BRKRATE_OWR", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBRKRATE_OWR);
-                this.columnBRKAMOUNT_OWR = new global::System.Data.DataColumn("BRKAMOUNT_OWR", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBRKAMOUNT_OWR);
-                this.columnCHR = new global::System.Data.DataColumn("CHR", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCHR);
-                this.columnBRKRATE_CHR = new global::System.Data.DataColumn("BRKRATE_CHR", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBRKRATE_CHR);
-                this.columnBRKAMOUNT_CHR = new global::System.Data.DataColumn("BRKAMOUNT_CHR", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBRKAMOUNT_CHR);
-                this.columnESTBRK = new global::System.Data.DataColumn("ESTBRK", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnESTBRK);
-                this.columnBROKER1 = new global::System.Data.DataColumn("BROKER1", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBROKER1);
-                this.columnBROKER2 = new global::System.Data.DataColumn("BROKER2", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBROKER2);
-                this.columnSIGNOPER = new global::System.Data.DataColumn("SIGNOPER", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSIGNOPER);
-                this.columnCAP_RATE = new global::System.Data.DataColumn("CAP_RATE", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCAP_RATE);
-                this.columnCAP_AMOUNT = new global::System.Data.DataColumn("CAP_AMOUNT", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCAP_AMOUNT);
-                this.columnTFCB = new global::System.Data.DataColumn("TFCB", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTFCB);
-                this.columnFIXNO = new global::System.Data.DataColumn("FIXNO", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFIXNO);
-                this.columnSTATUS = new global::System.Data.DataColumn("STATUS", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSTATUS);
-                this.columnREMARK = new global::System.Data.DataColumn("REMARK", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnREMARK);
-                this.columnOPER = new global::System.Data.DataColumn("OPER", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnOPER);
-                this.columnOP_DT = new global::System.Data.DataColumn("OP_DT", typeof(global::System.DateTimeOffset), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnOP_DT);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnID}, true));
-                this.columnID.AutoIncrement = true;
-                this.columnID.AutoIncrementSeed = -1;
-                this.columnID.AutoIncrementStep = -1;
-                this.columnID.AllowDBNull = false;
-                this.columnID.ReadOnly = true;
-                this.columnID.Unique = true;
-                this.columnVSL_ID.AllowDBNull = false;
-                this.columnCP_DATE.AllowDBNull = false;
-                this.columnCP_TYPE.AllowDBNull = false;
-                this.columnCP_TYPE.MaxLength = 2147483647;
-                this.columnCP_DESC.AllowDBNull = false;
-                this.columnCP_DESC.MaxLength = 2147483647;
-                this.columnPAYER.AllowDBNull = false;
-                this.columnPAYER.MaxLength = 2147483647;
-                this.columnHRORFRT.AllowDBNull = false;
-                this.columnDAYSORMT.AllowDBNull = false;
-                this.columnDAYSORMT.MaxLength = 2147483647;
-                this.columnOWR.AllowDBNull = false;
-                this.columnOWR.MaxLength = 2147483647;
-                this.columnBRKRATE_OWR.AllowDBNull = false;
-                this.columnBRKAMOUNT_OWR.AllowDBNull = false;
-                this.columnBRKAMOUNT_OWR.MaxLength = 2147483647;
-                this.columnCHR.AllowDBNull = false;
-                this.columnCHR.MaxLength = 2147483647;
-                this.columnBRKRATE_CHR.AllowDBNull = false;
-                this.columnBRKAMOUNT_CHR.AllowDBNull = false;
-                this.columnBRKAMOUNT_CHR.MaxLength = 2147483647;
-                this.columnESTBRK.AllowDBNull = false;
-                this.columnBROKER1.AllowDBNull = false;
-                this.columnBROKER1.MaxLength = 2147483647;
-                this.columnBROKER2.AllowDBNull = false;
-                this.columnBROKER2.MaxLength = 2147483647;
-                this.columnSIGNOPER.AllowDBNull = false;
-                this.columnSIGNOPER.MaxLength = 2147483647;
-                this.columnCAP_RATE.AllowDBNull = false;
-                this.columnCAP_AMOUNT.AllowDBNull = false;
-                this.columnTFCB.AllowDBNull = false;
-                this.columnFIXNO.AllowDBNull = false;
-                this.columnFIXNO.MaxLength = 2147483647;
-                this.columnSTATUS.AllowDBNull = false;
-                this.columnSTATUS.MaxLength = 2147483647;
-                this.columnREMARK.AllowDBNull = false;
-                this.columnREMARK.MaxLength = 2147483647;
-                this.columnOPER.AllowDBNull = false;
-                this.columnOPER.MaxLength = 2147483647;
-                this.columnOP_DT.AllowDBNull = false;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TFixturesRow NewTFixturesRow() {
-                return ((TFixturesRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new TFixturesRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(TFixturesRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.TFixturesRowChanged != null)) {
-                    this.TFixturesRowChanged(this, new TFixturesRowChangeEvent(((TFixturesRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.TFixturesRowChanging != null)) {
-                    this.TFixturesRowChanging(this, new TFixturesRowChangeEvent(((TFixturesRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.TFixturesRowDeleted != null)) {
-                    this.TFixturesRowDeleted(this, new TFixturesRowChangeEvent(((TFixturesRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.TFixturesRowDeleting != null)) {
-                    this.TFixturesRowDeleting(this, new TFixturesRowChangeEvent(((TFixturesRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveTFixturesRow(TFixturesRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                BMSDS ds = new BMSDS();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "TFixturesDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class TInvoicesDataTable : global::System.Data.TypedTableBase<TInvoicesRow> {
             
             private global::System.Data.DataColumn columnID;
@@ -1391,8 +714,6 @@ namespace BMS_DAL.DS {
             
             private global::System.Data.DataColumn columnCWNO;
             
-            private global::System.Data.DataColumn columnOWNER;
-            
             private global::System.Data.DataColumn columnBRKRATE_OWR;
             
             private global::System.Data.DataColumn columnBRKAMOUNT_OWR;
@@ -1416,6 +737,10 @@ namespace BMS_DAL.DS {
             private global::System.Data.DataColumn columnOPER;
             
             private global::System.Data.DataColumn columnOP_DT;
+            
+            private global::System.Data.DataColumn columnOWR;
+            
+            private global::System.Data.DataColumn columnRECEIVABLEDATE;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -1556,14 +881,6 @@ namespace BMS_DAL.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn OWNERColumn {
-                get {
-                    return this.columnOWNER;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn BRKRATE_OWRColumn {
                 get {
                     return this.columnBRKRATE_OWR;
@@ -1660,6 +977,22 @@ namespace BMS_DAL.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn OWRColumn {
+                get {
+                    return this.columnOWR;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn RECEIVABLEDATEColumn {
+                get {
+                    return this.columnRECEIVABLEDATE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1708,7 +1041,6 @@ namespace BMS_DAL.DS {
                         decimal DAYSORMT, 
                         string ATIN, 
                         string CWNO, 
-                        string OWNER, 
                         decimal BRKRATE_OWR, 
                         decimal BRKAMOUNT_OWR, 
                         string CHR, 
@@ -1720,7 +1052,9 @@ namespace BMS_DAL.DS {
                         string STATUS, 
                         string REMARK, 
                         string OPER, 
-                        decimal OP_DT) {
+                        decimal OP_DT, 
+                        string OWR, 
+                        System.DateTimeOffset RECEIVABLEDATE) {
                 TInvoicesRow rowTInvoicesRow = ((TInvoicesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1736,7 +1070,6 @@ namespace BMS_DAL.DS {
                         DAYSORMT,
                         ATIN,
                         CWNO,
-                        OWNER,
                         BRKRATE_OWR,
                         BRKAMOUNT_OWR,
                         CHR,
@@ -1748,7 +1081,9 @@ namespace BMS_DAL.DS {
                         STATUS,
                         REMARK,
                         OPER,
-                        OP_DT};
+                        OP_DT,
+                        OWR,
+                        RECEIVABLEDATE};
                 if ((parentTFixturesRowByTFixtures_TInvoices != null)) {
                     columnValuesArray[1] = parentTFixturesRowByTFixtures_TInvoices[21];
                 }
@@ -1794,7 +1129,6 @@ namespace BMS_DAL.DS {
                 this.columnDAYSORMT = base.Columns["DAYSORMT"];
                 this.columnATIN = base.Columns["ATIN"];
                 this.columnCWNO = base.Columns["CWNO"];
-                this.columnOWNER = base.Columns["OWNER"];
                 this.columnBRKRATE_OWR = base.Columns["BRKRATE_OWR"];
                 this.columnBRKAMOUNT_OWR = base.Columns["BRKAMOUNT_OWR"];
                 this.columnCHR = base.Columns["CHR"];
@@ -1807,6 +1141,8 @@ namespace BMS_DAL.DS {
                 this.columnREMARK = base.Columns["REMARK"];
                 this.columnOPER = base.Columns["OPER"];
                 this.columnOP_DT = base.Columns["OP_DT"];
+                this.columnOWR = base.Columns["OWR"];
+                this.columnRECEIVABLEDATE = base.Columns["RECEIVABLEDATE"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1838,8 +1174,6 @@ namespace BMS_DAL.DS {
                 base.Columns.Add(this.columnATIN);
                 this.columnCWNO = new global::System.Data.DataColumn("CWNO", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCWNO);
-                this.columnOWNER = new global::System.Data.DataColumn("OWNER", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnOWNER);
                 this.columnBRKRATE_OWR = new global::System.Data.DataColumn("BRKRATE_OWR", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBRKRATE_OWR);
                 this.columnBRKAMOUNT_OWR = new global::System.Data.DataColumn("BRKAMOUNT_OWR", typeof(decimal), null, global::System.Data.MappingType.Element);
@@ -1864,6 +1198,10 @@ namespace BMS_DAL.DS {
                 base.Columns.Add(this.columnOPER);
                 this.columnOP_DT = new global::System.Data.DataColumn("OP_DT", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOP_DT);
+                this.columnOWR = new global::System.Data.DataColumn("OWR", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOWR);
+                this.columnRECEIVABLEDATE = new global::System.Data.DataColumn("RECEIVABLEDATE", typeof(global::System.DateTimeOffset), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRECEIVABLEDATE);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -1892,8 +1230,6 @@ namespace BMS_DAL.DS {
                 this.columnATIN.MaxLength = 2147483647;
                 this.columnCWNO.AllowDBNull = false;
                 this.columnCWNO.MaxLength = 2147483647;
-                this.columnOWNER.AllowDBNull = false;
-                this.columnOWNER.MaxLength = 2147483647;
                 this.columnBRKRATE_OWR.AllowDBNull = false;
                 this.columnBRKAMOUNT_OWR.AllowDBNull = false;
                 this.columnCHR.AllowDBNull = false;
@@ -1912,6 +1248,9 @@ namespace BMS_DAL.DS {
                 this.columnOPER.AllowDBNull = false;
                 this.columnOPER.MaxLength = 2147483647;
                 this.columnOP_DT.AllowDBNull = false;
+                this.columnOWR.AllowDBNull = false;
+                this.columnOWR.MaxLength = 2147483647;
+                this.columnRECEIVABLEDATE.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2380,6 +1719,680 @@ namespace BMS_DAL.DS {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class TFixturesDataTable : global::System.Data.TypedTableBase<TFixturesRow> {
+            
+            private global::System.Data.DataColumn columnID;
+            
+            private global::System.Data.DataColumn columnVSL_ID;
+            
+            private global::System.Data.DataColumn columnCP_DATE;
+            
+            private global::System.Data.DataColumn columnCP_TYPE;
+            
+            private global::System.Data.DataColumn columnCP_DESC;
+            
+            private global::System.Data.DataColumn columnPAYER;
+            
+            private global::System.Data.DataColumn columnHRORFRT;
+            
+            private global::System.Data.DataColumn columnDAYSORMT;
+            
+            private global::System.Data.DataColumn columnOWR;
+            
+            private global::System.Data.DataColumn columnBRKRATE_OWR;
+            
+            private global::System.Data.DataColumn columnBRKAMOUNT_OWR;
+            
+            private global::System.Data.DataColumn columnCHR;
+            
+            private global::System.Data.DataColumn columnBRKRATE_CHR;
+            
+            private global::System.Data.DataColumn columnBRKAMOUNT_CHR;
+            
+            private global::System.Data.DataColumn columnESTBRK;
+            
+            private global::System.Data.DataColumn columnBROKER1;
+            
+            private global::System.Data.DataColumn columnBROKER2;
+            
+            private global::System.Data.DataColumn columnSIGNOPER;
+            
+            private global::System.Data.DataColumn columnCAP_RATE;
+            
+            private global::System.Data.DataColumn columnCAP_AMOUNT;
+            
+            private global::System.Data.DataColumn columnTFCB;
+            
+            private global::System.Data.DataColumn columnFIXNO;
+            
+            private global::System.Data.DataColumn columnSTATUS;
+            
+            private global::System.Data.DataColumn columnREMARK;
+            
+            private global::System.Data.DataColumn columnOPER;
+            
+            private global::System.Data.DataColumn columnOP_DT;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TFixturesDataTable() {
+                this.TableName = "TFixtures";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal TFixturesDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected TFixturesDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IDColumn {
+                get {
+                    return this.columnID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn VSL_IDColumn {
+                get {
+                    return this.columnVSL_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CP_DATEColumn {
+                get {
+                    return this.columnCP_DATE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CP_TYPEColumn {
+                get {
+                    return this.columnCP_TYPE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CP_DESCColumn {
+                get {
+                    return this.columnCP_DESC;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PAYERColumn {
+                get {
+                    return this.columnPAYER;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn HRORFRTColumn {
+                get {
+                    return this.columnHRORFRT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DAYSORMTColumn {
+                get {
+                    return this.columnDAYSORMT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn OWRColumn {
+                get {
+                    return this.columnOWR;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn BRKRATE_OWRColumn {
+                get {
+                    return this.columnBRKRATE_OWR;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn BRKAMOUNT_OWRColumn {
+                get {
+                    return this.columnBRKAMOUNT_OWR;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CHRColumn {
+                get {
+                    return this.columnCHR;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn BRKRATE_CHRColumn {
+                get {
+                    return this.columnBRKRATE_CHR;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn BRKAMOUNT_CHRColumn {
+                get {
+                    return this.columnBRKAMOUNT_CHR;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ESTBRKColumn {
+                get {
+                    return this.columnESTBRK;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn BROKER1Column {
+                get {
+                    return this.columnBROKER1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn BROKER2Column {
+                get {
+                    return this.columnBROKER2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SIGNOPERColumn {
+                get {
+                    return this.columnSIGNOPER;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CAP_RATEColumn {
+                get {
+                    return this.columnCAP_RATE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CAP_AMOUNTColumn {
+                get {
+                    return this.columnCAP_AMOUNT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TFCBColumn {
+                get {
+                    return this.columnTFCB;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn FIXNOColumn {
+                get {
+                    return this.columnFIXNO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn STATUSColumn {
+                get {
+                    return this.columnSTATUS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn REMARKColumn {
+                get {
+                    return this.columnREMARK;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn OPERColumn {
+                get {
+                    return this.columnOPER;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn OP_DTColumn {
+                get {
+                    return this.columnOP_DT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TFixturesRow this[int index] {
+                get {
+                    return ((TFixturesRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event TFixturesRowChangeEventHandler TFixturesRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event TFixturesRowChangeEventHandler TFixturesRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event TFixturesRowChangeEventHandler TFixturesRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event TFixturesRowChangeEventHandler TFixturesRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddTFixturesRow(TFixturesRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TFixturesRow AddTFixturesRow(
+                        int VSL_ID, 
+                        System.DateTimeOffset CP_DATE, 
+                        string CP_TYPE, 
+                        string CP_DESC, 
+                        string PAYER, 
+                        decimal HRORFRT, 
+                        decimal DAYSORMT, 
+                        string OWR, 
+                        decimal BRKRATE_OWR, 
+                        decimal BRKAMOUNT_OWR, 
+                        string CHR, 
+                        decimal BRKRATE_CHR, 
+                        decimal BRKAMOUNT_CHR, 
+                        decimal ESTBRK, 
+                        string BROKER1, 
+                        string BROKER2, 
+                        string SIGNOPER, 
+                        decimal CAP_RATE, 
+                        decimal CAP_AMOUNT, 
+                        int TFCB, 
+                        string FIXNO, 
+                        string STATUS, 
+                        string REMARK, 
+                        string OPER, 
+                        System.DateTimeOffset OP_DT) {
+                TFixturesRow rowTFixturesRow = ((TFixturesRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        VSL_ID,
+                        CP_DATE,
+                        CP_TYPE,
+                        CP_DESC,
+                        PAYER,
+                        HRORFRT,
+                        DAYSORMT,
+                        OWR,
+                        BRKRATE_OWR,
+                        BRKAMOUNT_OWR,
+                        CHR,
+                        BRKRATE_CHR,
+                        BRKAMOUNT_CHR,
+                        ESTBRK,
+                        BROKER1,
+                        BROKER2,
+                        SIGNOPER,
+                        CAP_RATE,
+                        CAP_AMOUNT,
+                        TFCB,
+                        FIXNO,
+                        STATUS,
+                        REMARK,
+                        OPER,
+                        OP_DT};
+                rowTFixturesRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowTFixturesRow);
+                return rowTFixturesRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TFixturesRow FindByID(int ID) {
+                return ((TFixturesRow)(this.Rows.Find(new object[] {
+                            ID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                TFixturesDataTable cln = ((TFixturesDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new TFixturesDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnID = base.Columns["ID"];
+                this.columnVSL_ID = base.Columns["VSL_ID"];
+                this.columnCP_DATE = base.Columns["CP_DATE"];
+                this.columnCP_TYPE = base.Columns["CP_TYPE"];
+                this.columnCP_DESC = base.Columns["CP_DESC"];
+                this.columnPAYER = base.Columns["PAYER"];
+                this.columnHRORFRT = base.Columns["HRORFRT"];
+                this.columnDAYSORMT = base.Columns["DAYSORMT"];
+                this.columnOWR = base.Columns["OWR"];
+                this.columnBRKRATE_OWR = base.Columns["BRKRATE_OWR"];
+                this.columnBRKAMOUNT_OWR = base.Columns["BRKAMOUNT_OWR"];
+                this.columnCHR = base.Columns["CHR"];
+                this.columnBRKRATE_CHR = base.Columns["BRKRATE_CHR"];
+                this.columnBRKAMOUNT_CHR = base.Columns["BRKAMOUNT_CHR"];
+                this.columnESTBRK = base.Columns["ESTBRK"];
+                this.columnBROKER1 = base.Columns["BROKER1"];
+                this.columnBROKER2 = base.Columns["BROKER2"];
+                this.columnSIGNOPER = base.Columns["SIGNOPER"];
+                this.columnCAP_RATE = base.Columns["CAP_RATE"];
+                this.columnCAP_AMOUNT = base.Columns["CAP_AMOUNT"];
+                this.columnTFCB = base.Columns["TFCB"];
+                this.columnFIXNO = base.Columns["FIXNO"];
+                this.columnSTATUS = base.Columns["STATUS"];
+                this.columnREMARK = base.Columns["REMARK"];
+                this.columnOPER = base.Columns["OPER"];
+                this.columnOP_DT = base.Columns["OP_DT"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID);
+                this.columnVSL_ID = new global::System.Data.DataColumn("VSL_ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVSL_ID);
+                this.columnCP_DATE = new global::System.Data.DataColumn("CP_DATE", typeof(global::System.DateTimeOffset), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCP_DATE);
+                this.columnCP_TYPE = new global::System.Data.DataColumn("CP_TYPE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCP_TYPE);
+                this.columnCP_DESC = new global::System.Data.DataColumn("CP_DESC", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCP_DESC);
+                this.columnPAYER = new global::System.Data.DataColumn("PAYER", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPAYER);
+                this.columnHRORFRT = new global::System.Data.DataColumn("HRORFRT", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHRORFRT);
+                this.columnDAYSORMT = new global::System.Data.DataColumn("DAYSORMT", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDAYSORMT);
+                this.columnOWR = new global::System.Data.DataColumn("OWR", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOWR);
+                this.columnBRKRATE_OWR = new global::System.Data.DataColumn("BRKRATE_OWR", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBRKRATE_OWR);
+                this.columnBRKAMOUNT_OWR = new global::System.Data.DataColumn("BRKAMOUNT_OWR", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBRKAMOUNT_OWR);
+                this.columnCHR = new global::System.Data.DataColumn("CHR", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCHR);
+                this.columnBRKRATE_CHR = new global::System.Data.DataColumn("BRKRATE_CHR", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBRKRATE_CHR);
+                this.columnBRKAMOUNT_CHR = new global::System.Data.DataColumn("BRKAMOUNT_CHR", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBRKAMOUNT_CHR);
+                this.columnESTBRK = new global::System.Data.DataColumn("ESTBRK", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnESTBRK);
+                this.columnBROKER1 = new global::System.Data.DataColumn("BROKER1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBROKER1);
+                this.columnBROKER2 = new global::System.Data.DataColumn("BROKER2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBROKER2);
+                this.columnSIGNOPER = new global::System.Data.DataColumn("SIGNOPER", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSIGNOPER);
+                this.columnCAP_RATE = new global::System.Data.DataColumn("CAP_RATE", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCAP_RATE);
+                this.columnCAP_AMOUNT = new global::System.Data.DataColumn("CAP_AMOUNT", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCAP_AMOUNT);
+                this.columnTFCB = new global::System.Data.DataColumn("TFCB", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTFCB);
+                this.columnFIXNO = new global::System.Data.DataColumn("FIXNO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFIXNO);
+                this.columnSTATUS = new global::System.Data.DataColumn("STATUS", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSTATUS);
+                this.columnREMARK = new global::System.Data.DataColumn("REMARK", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnREMARK);
+                this.columnOPER = new global::System.Data.DataColumn("OPER", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOPER);
+                this.columnOP_DT = new global::System.Data.DataColumn("OP_DT", typeof(global::System.DateTimeOffset), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOP_DT);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnID}, true));
+                this.columnID.AutoIncrement = true;
+                this.columnID.AutoIncrementSeed = -1;
+                this.columnID.AutoIncrementStep = -1;
+                this.columnID.AllowDBNull = false;
+                this.columnID.ReadOnly = true;
+                this.columnID.Unique = true;
+                this.columnVSL_ID.AllowDBNull = false;
+                this.columnCP_DATE.AllowDBNull = false;
+                this.columnCP_TYPE.AllowDBNull = false;
+                this.columnCP_TYPE.MaxLength = 2147483647;
+                this.columnCP_DESC.AllowDBNull = false;
+                this.columnCP_DESC.MaxLength = 2147483647;
+                this.columnPAYER.AllowDBNull = false;
+                this.columnPAYER.MaxLength = 2147483647;
+                this.columnHRORFRT.AllowDBNull = false;
+                this.columnDAYSORMT.AllowDBNull = false;
+                this.columnOWR.AllowDBNull = false;
+                this.columnOWR.MaxLength = 2147483647;
+                this.columnBRKRATE_OWR.AllowDBNull = false;
+                this.columnBRKAMOUNT_OWR.AllowDBNull = false;
+                this.columnCHR.AllowDBNull = false;
+                this.columnCHR.MaxLength = 2147483647;
+                this.columnBRKRATE_CHR.AllowDBNull = false;
+                this.columnBRKAMOUNT_CHR.AllowDBNull = false;
+                this.columnESTBRK.AllowDBNull = false;
+                this.columnBROKER1.AllowDBNull = false;
+                this.columnBROKER1.MaxLength = 2147483647;
+                this.columnBROKER2.AllowDBNull = false;
+                this.columnBROKER2.MaxLength = 2147483647;
+                this.columnSIGNOPER.AllowDBNull = false;
+                this.columnSIGNOPER.MaxLength = 2147483647;
+                this.columnCAP_RATE.AllowDBNull = false;
+                this.columnCAP_AMOUNT.AllowDBNull = false;
+                this.columnTFCB.AllowDBNull = false;
+                this.columnFIXNO.AllowDBNull = false;
+                this.columnFIXNO.MaxLength = 2147483647;
+                this.columnSTATUS.AllowDBNull = false;
+                this.columnSTATUS.MaxLength = 2147483647;
+                this.columnREMARK.AllowDBNull = false;
+                this.columnREMARK.MaxLength = 2147483647;
+                this.columnOPER.AllowDBNull = false;
+                this.columnOPER.MaxLength = 2147483647;
+                this.columnOP_DT.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TFixturesRow NewTFixturesRow() {
+                return ((TFixturesRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new TFixturesRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(TFixturesRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.TFixturesRowChanged != null)) {
+                    this.TFixturesRowChanged(this, new TFixturesRowChangeEvent(((TFixturesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.TFixturesRowChanging != null)) {
+                    this.TFixturesRowChanging(this, new TFixturesRowChangeEvent(((TFixturesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.TFixturesRowDeleted != null)) {
+                    this.TFixturesRowDeleted(this, new TFixturesRowChangeEvent(((TFixturesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.TFixturesRowDeleting != null)) {
+                    this.TFixturesRowDeleting(this, new TFixturesRowChangeEvent(((TFixturesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveTFixturesRow(TFixturesRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                BMSDS ds = new BMSDS();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "TFixturesDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class TSys_UsersRow : global::System.Data.DataRow {
@@ -2434,318 +2447,6 @@ namespace BMS_DAL.DS {
                 }
                 set {
                     this[this.tableTSys_Users.USERTYPEColumn] = value;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class TFixturesRow : global::System.Data.DataRow {
-            
-            private TFixturesDataTable tableTFixtures;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal TFixturesRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableTFixtures = ((TFixturesDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int ID {
-                get {
-                    return ((int)(this[this.tableTFixtures.IDColumn]));
-                }
-                set {
-                    this[this.tableTFixtures.IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int VSL_ID {
-                get {
-                    return ((int)(this[this.tableTFixtures.VSL_IDColumn]));
-                }
-                set {
-                    this[this.tableTFixtures.VSL_IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTimeOffset CP_DATE {
-                get {
-                    return ((global::System.DateTimeOffset)(this[this.tableTFixtures.CP_DATEColumn]));
-                }
-                set {
-                    this[this.tableTFixtures.CP_DATEColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string CP_TYPE {
-                get {
-                    return ((string)(this[this.tableTFixtures.CP_TYPEColumn]));
-                }
-                set {
-                    this[this.tableTFixtures.CP_TYPEColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string CP_DESC {
-                get {
-                    return ((string)(this[this.tableTFixtures.CP_DESCColumn]));
-                }
-                set {
-                    this[this.tableTFixtures.CP_DESCColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string PAYER {
-                get {
-                    return ((string)(this[this.tableTFixtures.PAYERColumn]));
-                }
-                set {
-                    this[this.tableTFixtures.PAYERColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal HRORFRT {
-                get {
-                    return ((decimal)(this[this.tableTFixtures.HRORFRTColumn]));
-                }
-                set {
-                    this[this.tableTFixtures.HRORFRTColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string DAYSORMT {
-                get {
-                    return ((string)(this[this.tableTFixtures.DAYSORMTColumn]));
-                }
-                set {
-                    this[this.tableTFixtures.DAYSORMTColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string OWR {
-                get {
-                    return ((string)(this[this.tableTFixtures.OWRColumn]));
-                }
-                set {
-                    this[this.tableTFixtures.OWRColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal BRKRATE_OWR {
-                get {
-                    return ((decimal)(this[this.tableTFixtures.BRKRATE_OWRColumn]));
-                }
-                set {
-                    this[this.tableTFixtures.BRKRATE_OWRColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string BRKAMOUNT_OWR {
-                get {
-                    return ((string)(this[this.tableTFixtures.BRKAMOUNT_OWRColumn]));
-                }
-                set {
-                    this[this.tableTFixtures.BRKAMOUNT_OWRColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string CHR {
-                get {
-                    return ((string)(this[this.tableTFixtures.CHRColumn]));
-                }
-                set {
-                    this[this.tableTFixtures.CHRColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal BRKRATE_CHR {
-                get {
-                    return ((decimal)(this[this.tableTFixtures.BRKRATE_CHRColumn]));
-                }
-                set {
-                    this[this.tableTFixtures.BRKRATE_CHRColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string BRKAMOUNT_CHR {
-                get {
-                    return ((string)(this[this.tableTFixtures.BRKAMOUNT_CHRColumn]));
-                }
-                set {
-                    this[this.tableTFixtures.BRKAMOUNT_CHRColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal ESTBRK {
-                get {
-                    return ((decimal)(this[this.tableTFixtures.ESTBRKColumn]));
-                }
-                set {
-                    this[this.tableTFixtures.ESTBRKColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string BROKER1 {
-                get {
-                    return ((string)(this[this.tableTFixtures.BROKER1Column]));
-                }
-                set {
-                    this[this.tableTFixtures.BROKER1Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string BROKER2 {
-                get {
-                    return ((string)(this[this.tableTFixtures.BROKER2Column]));
-                }
-                set {
-                    this[this.tableTFixtures.BROKER2Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string SIGNOPER {
-                get {
-                    return ((string)(this[this.tableTFixtures.SIGNOPERColumn]));
-                }
-                set {
-                    this[this.tableTFixtures.SIGNOPERColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal CAP_RATE {
-                get {
-                    return ((decimal)(this[this.tableTFixtures.CAP_RATEColumn]));
-                }
-                set {
-                    this[this.tableTFixtures.CAP_RATEColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal CAP_AMOUNT {
-                get {
-                    return ((decimal)(this[this.tableTFixtures.CAP_AMOUNTColumn]));
-                }
-                set {
-                    this[this.tableTFixtures.CAP_AMOUNTColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int TFCB {
-                get {
-                    return ((int)(this[this.tableTFixtures.TFCBColumn]));
-                }
-                set {
-                    this[this.tableTFixtures.TFCBColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string FIXNO {
-                get {
-                    return ((string)(this[this.tableTFixtures.FIXNOColumn]));
-                }
-                set {
-                    this[this.tableTFixtures.FIXNOColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string STATUS {
-                get {
-                    return ((string)(this[this.tableTFixtures.STATUSColumn]));
-                }
-                set {
-                    this[this.tableTFixtures.STATUSColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string REMARK {
-                get {
-                    return ((string)(this[this.tableTFixtures.REMARKColumn]));
-                }
-                set {
-                    this[this.tableTFixtures.REMARKColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string OPER {
-                get {
-                    return ((string)(this[this.tableTFixtures.OPERColumn]));
-                }
-                set {
-                    this[this.tableTFixtures.OPERColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTimeOffset OP_DT {
-                get {
-                    return ((global::System.DateTimeOffset)(this[this.tableTFixtures.OP_DTColumn]));
-                }
-                set {
-                    this[this.tableTFixtures.OP_DTColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TInvoicesRow[] GetTInvoicesRows() {
-                if ((this.Table.ChildRelations["TFixtures_TInvoices"] == null)) {
-                    return new TInvoicesRow[0];
-                }
-                else {
-                    return ((TInvoicesRow[])(base.GetChildRows(this.Table.ChildRelations["TFixtures_TInvoices"])));
                 }
             }
         }
@@ -2909,17 +2610,6 @@ namespace BMS_DAL.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string OWNER {
-                get {
-                    return ((string)(this[this.tableTInvoices.OWNERColumn]));
-                }
-                set {
-                    this[this.tableTInvoices.OWNERColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public decimal BRKRATE_OWR {
                 get {
                     return ((decimal)(this[this.tableTInvoices.BRKRATE_OWRColumn]));
@@ -3052,6 +2742,28 @@ namespace BMS_DAL.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string OWR {
+                get {
+                    return ((string)(this[this.tableTInvoices.OWRColumn]));
+                }
+                set {
+                    this[this.tableTInvoices.OWRColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTimeOffset RECEIVABLEDATE {
+                get {
+                    return ((global::System.DateTimeOffset)(this[this.tableTInvoices.RECEIVABLEDATEColumn]));
+                }
+                set {
+                    this[this.tableTInvoices.RECEIVABLEDATEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public TFixturesRow TFixturesRow {
                 get {
                     return ((TFixturesRow)(this.GetParentRow(this.Table.ParentRelations["TFixtures_TInvoices"])));
@@ -3144,6 +2856,318 @@ namespace BMS_DAL.DS {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class TFixturesRow : global::System.Data.DataRow {
+            
+            private TFixturesDataTable tableTFixtures;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal TFixturesRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableTFixtures = ((TFixturesDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int ID {
+                get {
+                    return ((int)(this[this.tableTFixtures.IDColumn]));
+                }
+                set {
+                    this[this.tableTFixtures.IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int VSL_ID {
+                get {
+                    return ((int)(this[this.tableTFixtures.VSL_IDColumn]));
+                }
+                set {
+                    this[this.tableTFixtures.VSL_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTimeOffset CP_DATE {
+                get {
+                    return ((global::System.DateTimeOffset)(this[this.tableTFixtures.CP_DATEColumn]));
+                }
+                set {
+                    this[this.tableTFixtures.CP_DATEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CP_TYPE {
+                get {
+                    return ((string)(this[this.tableTFixtures.CP_TYPEColumn]));
+                }
+                set {
+                    this[this.tableTFixtures.CP_TYPEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CP_DESC {
+                get {
+                    return ((string)(this[this.tableTFixtures.CP_DESCColumn]));
+                }
+                set {
+                    this[this.tableTFixtures.CP_DESCColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string PAYER {
+                get {
+                    return ((string)(this[this.tableTFixtures.PAYERColumn]));
+                }
+                set {
+                    this[this.tableTFixtures.PAYERColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal HRORFRT {
+                get {
+                    return ((decimal)(this[this.tableTFixtures.HRORFRTColumn]));
+                }
+                set {
+                    this[this.tableTFixtures.HRORFRTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal DAYSORMT {
+                get {
+                    return ((decimal)(this[this.tableTFixtures.DAYSORMTColumn]));
+                }
+                set {
+                    this[this.tableTFixtures.DAYSORMTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string OWR {
+                get {
+                    return ((string)(this[this.tableTFixtures.OWRColumn]));
+                }
+                set {
+                    this[this.tableTFixtures.OWRColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal BRKRATE_OWR {
+                get {
+                    return ((decimal)(this[this.tableTFixtures.BRKRATE_OWRColumn]));
+                }
+                set {
+                    this[this.tableTFixtures.BRKRATE_OWRColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal BRKAMOUNT_OWR {
+                get {
+                    return ((decimal)(this[this.tableTFixtures.BRKAMOUNT_OWRColumn]));
+                }
+                set {
+                    this[this.tableTFixtures.BRKAMOUNT_OWRColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CHR {
+                get {
+                    return ((string)(this[this.tableTFixtures.CHRColumn]));
+                }
+                set {
+                    this[this.tableTFixtures.CHRColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal BRKRATE_CHR {
+                get {
+                    return ((decimal)(this[this.tableTFixtures.BRKRATE_CHRColumn]));
+                }
+                set {
+                    this[this.tableTFixtures.BRKRATE_CHRColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal BRKAMOUNT_CHR {
+                get {
+                    return ((decimal)(this[this.tableTFixtures.BRKAMOUNT_CHRColumn]));
+                }
+                set {
+                    this[this.tableTFixtures.BRKAMOUNT_CHRColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal ESTBRK {
+                get {
+                    return ((decimal)(this[this.tableTFixtures.ESTBRKColumn]));
+                }
+                set {
+                    this[this.tableTFixtures.ESTBRKColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string BROKER1 {
+                get {
+                    return ((string)(this[this.tableTFixtures.BROKER1Column]));
+                }
+                set {
+                    this[this.tableTFixtures.BROKER1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string BROKER2 {
+                get {
+                    return ((string)(this[this.tableTFixtures.BROKER2Column]));
+                }
+                set {
+                    this[this.tableTFixtures.BROKER2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string SIGNOPER {
+                get {
+                    return ((string)(this[this.tableTFixtures.SIGNOPERColumn]));
+                }
+                set {
+                    this[this.tableTFixtures.SIGNOPERColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal CAP_RATE {
+                get {
+                    return ((decimal)(this[this.tableTFixtures.CAP_RATEColumn]));
+                }
+                set {
+                    this[this.tableTFixtures.CAP_RATEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal CAP_AMOUNT {
+                get {
+                    return ((decimal)(this[this.tableTFixtures.CAP_AMOUNTColumn]));
+                }
+                set {
+                    this[this.tableTFixtures.CAP_AMOUNTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int TFCB {
+                get {
+                    return ((int)(this[this.tableTFixtures.TFCBColumn]));
+                }
+                set {
+                    this[this.tableTFixtures.TFCBColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string FIXNO {
+                get {
+                    return ((string)(this[this.tableTFixtures.FIXNOColumn]));
+                }
+                set {
+                    this[this.tableTFixtures.FIXNOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string STATUS {
+                get {
+                    return ((string)(this[this.tableTFixtures.STATUSColumn]));
+                }
+                set {
+                    this[this.tableTFixtures.STATUSColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string REMARK {
+                get {
+                    return ((string)(this[this.tableTFixtures.REMARKColumn]));
+                }
+                set {
+                    this[this.tableTFixtures.REMARKColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string OPER {
+                get {
+                    return ((string)(this[this.tableTFixtures.OPERColumn]));
+                }
+                set {
+                    this[this.tableTFixtures.OPERColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTimeOffset OP_DT {
+                get {
+                    return ((global::System.DateTimeOffset)(this[this.tableTFixtures.OP_DTColumn]));
+                }
+                set {
+                    this[this.tableTFixtures.OP_DTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TInvoicesRow[] GetTInvoicesRows() {
+                if ((this.Table.ChildRelations["TFixtures_TInvoices"] == null)) {
+                    return new TInvoicesRow[0];
+                }
+                else {
+                    return ((TInvoicesRow[])(base.GetChildRows(this.Table.ChildRelations["TFixtures_TInvoices"])));
+                }
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -3163,40 +3187,6 @@ namespace BMS_DAL.DS {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public TSys_UsersRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class TFixturesRowChangeEvent : global::System.EventArgs {
-            
-            private TFixturesRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TFixturesRowChangeEvent(TFixturesRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TFixturesRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -3265,6 +3255,40 @@ namespace BMS_DAL.DS {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public TVesselsRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class TFixturesRowChangeEvent : global::System.EventArgs {
+            
+            private TFixturesRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TFixturesRowChangeEvent(TFixturesRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TFixturesRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -3545,709 +3569,6 @@ namespace BMS_DAL.DS.BMSDSTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class TFixturesTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public TFixturesTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "TFixtures";
-            tableMapping.ColumnMappings.Add("ID", "ID");
-            tableMapping.ColumnMappings.Add("VSL_ID", "VSL_ID");
-            tableMapping.ColumnMappings.Add("CP_DATE", "CP_DATE");
-            tableMapping.ColumnMappings.Add("CP_TYPE", "CP_TYPE");
-            tableMapping.ColumnMappings.Add("CP_DESC", "CP_DESC");
-            tableMapping.ColumnMappings.Add("PAYER", "PAYER");
-            tableMapping.ColumnMappings.Add("HRORFRT", "HRORFRT");
-            tableMapping.ColumnMappings.Add("DAYSORMT", "DAYSORMT");
-            tableMapping.ColumnMappings.Add("OWR", "OWR");
-            tableMapping.ColumnMappings.Add("BRKRATE_OWR", "BRKRATE_OWR");
-            tableMapping.ColumnMappings.Add("BRKAMOUNT_OWR", "BRKAMOUNT_OWR");
-            tableMapping.ColumnMappings.Add("CHR", "CHR");
-            tableMapping.ColumnMappings.Add("BRKRATE_CHR", "BRKRATE_CHR");
-            tableMapping.ColumnMappings.Add("BRKAMOUNT_CHR", "BRKAMOUNT_CHR");
-            tableMapping.ColumnMappings.Add("ESTBRK", "ESTBRK");
-            tableMapping.ColumnMappings.Add("BROKER1", "BROKER1");
-            tableMapping.ColumnMappings.Add("BROKER2", "BROKER2");
-            tableMapping.ColumnMappings.Add("SIGNOPER", "SIGNOPER");
-            tableMapping.ColumnMappings.Add("CAP_RATE", "CAP_RATE");
-            tableMapping.ColumnMappings.Add("CAP_AMOUNT", "CAP_AMOUNT");
-            tableMapping.ColumnMappings.Add("TFCB", "TFCB");
-            tableMapping.ColumnMappings.Add("FIXNO", "FIXNO");
-            tableMapping.ColumnMappings.Add("STATUS", "STATUS");
-            tableMapping.ColumnMappings.Add("REMARK", "REMARK");
-            tableMapping.ColumnMappings.Add("OPER", "OPER");
-            tableMapping.ColumnMappings.Add("OP_DT", "OP_DT");
-            this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [TFixtures] WHERE (([ID] = @Original_ID) AND ([VSL_ID] = @Original_VSL_ID) AND ([CP_DATE] = @Original_CP_DATE) AND ([HRORFRT] = @Original_HRORFRT) AND ([BRKRATE_OWR] = @Original_BRKRATE_OWR) AND ([BRKRATE_CHR] = @Original_BRKRATE_CHR) AND ([ESTBRK] = @Original_ESTBRK) AND ([CAP_RATE] = @Original_CAP_RATE) AND ([CAP_AMOUNT] = @Original_CAP_AMOUNT) AND ([TFCB] = @Original_TFCB) AND ([OP_DT] = @Original_OP_DT))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_VSL_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VSL_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CP_DATE", global::System.Data.SqlDbType.DateTimeOffset, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CP_DATE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HRORFRT", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "HRORFRT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BRKRATE_OWR", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "BRKRATE_OWR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BRKRATE_CHR", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "BRKRATE_CHR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ESTBRK", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ESTBRK", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CAP_RATE", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "CAP_RATE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CAP_AMOUNT", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "CAP_AMOUNT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TFCB", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TFCB", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OP_DT", global::System.Data.SqlDbType.DateTimeOffset, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OP_DT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [TFixtures] ([VSL_ID], [CP_DATE], [CP_TYPE], [CP_DESC], [PAYER], [HRORFRT], [DAYSORMT], [OWR], [BRKRATE_OWR], [BRKAMOUNT_OWR], [CHR], [BRKRATE_CHR], [BRKAMOUNT_CHR], [ESTBRK], [BROKER1], [BROKER2], [SIGNOPER], [CAP_RATE], [CAP_AMOUNT], [TFCB], [FIXNO], [STATUS], [REMARK], [OPER], [OP_DT]) VALUES (@VSL_ID, @CP_DATE, @CP_TYPE, @CP_DESC, @PAYER, @HRORFRT, @DAYSORMT, @OWR, @BRKRATE_OWR, @BRKAMOUNT_OWR, @CHR, @BRKRATE_CHR, @BRKAMOUNT_CHR, @ESTBRK, @BROKER1, @BROKER2, @SIGNOPER, @CAP_RATE, @CAP_AMOUNT, @TFCB, @FIXNO, @STATUS, @REMARK, @OPER, @OP_DT);
-SELECT ID, VSL_ID, CP_DATE, CP_TYPE, CP_DESC, PAYER, HRORFRT, DAYSORMT, OWR, BRKRATE_OWR, BRKAMOUNT_OWR, CHR, BRKRATE_CHR, BRKAMOUNT_CHR, ESTBRK, BROKER1, BROKER2, SIGNOPER, CAP_RATE, CAP_AMOUNT, TFCB, FIXNO, STATUS, REMARK, OPER, OP_DT FROM TFixtures WHERE (ID = SCOPE_IDENTITY())";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@VSL_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VSL_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CP_DATE", global::System.Data.SqlDbType.DateTimeOffset, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CP_DATE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CP_TYPE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CP_TYPE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CP_DESC", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CP_DESC", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PAYER", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PAYER", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HRORFRT", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "HRORFRT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DAYSORMT", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DAYSORMT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OWR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OWR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BRKRATE_OWR", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "BRKRATE_OWR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BRKAMOUNT_OWR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BRKAMOUNT_OWR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CHR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CHR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BRKRATE_CHR", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "BRKRATE_CHR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BRKAMOUNT_CHR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BRKAMOUNT_CHR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ESTBRK", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ESTBRK", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BROKER1", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BROKER1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BROKER2", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BROKER2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SIGNOPER", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SIGNOPER", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CAP_RATE", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "CAP_RATE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CAP_AMOUNT", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "CAP_AMOUNT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TFCB", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TFCB", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FIXNO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FIXNO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@STATUS", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "STATUS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@REMARK", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "REMARK", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OPER", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OPER", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OP_DT", global::System.Data.SqlDbType.DateTimeOffset, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OP_DT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [TFixtures] SET [VSL_ID] = @VSL_ID, [CP_DATE] = @CP_DATE, [CP_TYPE] = @CP_TYPE, [CP_DESC] = @CP_DESC, [PAYER] = @PAYER, [HRORFRT] = @HRORFRT, [DAYSORMT] = @DAYSORMT, [OWR] = @OWR, [BRKRATE_OWR] = @BRKRATE_OWR, [BRKAMOUNT_OWR] = @BRKAMOUNT_OWR, [CHR] = @CHR, [BRKRATE_CHR] = @BRKRATE_CHR, [BRKAMOUNT_CHR] = @BRKAMOUNT_CHR, [ESTBRK] = @ESTBRK, [BROKER1] = @BROKER1, [BROKER2] = @BROKER2, [SIGNOPER] = @SIGNOPER, [CAP_RATE] = @CAP_RATE, [CAP_AMOUNT] = @CAP_AMOUNT, [TFCB] = @TFCB, [FIXNO] = @FIXNO, [STATUS] = @STATUS, [REMARK] = @REMARK, [OPER] = @OPER, [OP_DT] = @OP_DT WHERE (([ID] = @Original_ID) AND ([VSL_ID] = @Original_VSL_ID) AND ([CP_DATE] = @Original_CP_DATE) AND ([HRORFRT] = @Original_HRORFRT) AND ([BRKRATE_OWR] = @Original_BRKRATE_OWR) AND ([BRKRATE_CHR] = @Original_BRKRATE_CHR) AND ([ESTBRK] = @Original_ESTBRK) AND ([CAP_RATE] = @Original_CAP_RATE) AND ([CAP_AMOUNT] = @Original_CAP_AMOUNT) AND ([TFCB] = @Original_TFCB) AND ([OP_DT] = @Original_OP_DT));
-SELECT ID, VSL_ID, CP_DATE, CP_TYPE, CP_DESC, PAYER, HRORFRT, DAYSORMT, OWR, BRKRATE_OWR, BRKAMOUNT_OWR, CHR, BRKRATE_CHR, BRKAMOUNT_CHR, ESTBRK, BROKER1, BROKER2, SIGNOPER, CAP_RATE, CAP_AMOUNT, TFCB, FIXNO, STATUS, REMARK, OPER, OP_DT FROM TFixtures WHERE (ID = @ID)";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@VSL_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VSL_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CP_DATE", global::System.Data.SqlDbType.DateTimeOffset, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CP_DATE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CP_TYPE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CP_TYPE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CP_DESC", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CP_DESC", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PAYER", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PAYER", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HRORFRT", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "HRORFRT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DAYSORMT", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DAYSORMT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OWR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OWR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BRKRATE_OWR", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "BRKRATE_OWR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BRKAMOUNT_OWR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BRKAMOUNT_OWR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CHR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CHR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BRKRATE_CHR", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "BRKRATE_CHR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BRKAMOUNT_CHR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BRKAMOUNT_CHR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ESTBRK", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ESTBRK", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BROKER1", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BROKER1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BROKER2", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BROKER2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SIGNOPER", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SIGNOPER", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CAP_RATE", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "CAP_RATE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CAP_AMOUNT", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "CAP_AMOUNT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TFCB", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TFCB", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FIXNO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FIXNO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@STATUS", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "STATUS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@REMARK", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "REMARK", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OPER", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OPER", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OP_DT", global::System.Data.SqlDbType.DateTimeOffset, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OP_DT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_VSL_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VSL_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CP_DATE", global::System.Data.SqlDbType.DateTimeOffset, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CP_DATE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HRORFRT", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "HRORFRT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BRKRATE_OWR", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "BRKRATE_OWR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BRKRATE_CHR", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "BRKRATE_CHR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ESTBRK", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ESTBRK", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CAP_RATE", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "CAP_RATE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CAP_AMOUNT", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "CAP_AMOUNT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TFCB", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TFCB", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OP_DT", global::System.Data.SqlDbType.DateTimeOffset, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OP_DT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::BMS_DAL.Properties.Settings.Default.bds248164437_dbConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT  ID, VSL_ID, CP_DATE, CP_TYPE, CP_DESC, PAYER, HRORFRT, DAYSORMT, OWR, BRKRATE_OWR, BRKAMOUNT_OWR, 
-                   CHR, BRKRATE_CHR, BRKAMOUNT_CHR, ESTBRK, BROKER1, BROKER2, SIGNOPER, CAP_RATE, CAP_AMOUNT, TFCB, 
-                   FIXNO, STATUS, REMARK, OPER, OP_DT
-FROM      TFixtures";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(BMSDS.TFixturesDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual BMSDS.TFixturesDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            BMSDS.TFixturesDataTable dataTable = new BMSDS.TFixturesDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BMSDS.TFixturesDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BMSDS dataSet) {
-            return this.Adapter.Update(dataSet, "TFixtures");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID, int Original_VSL_ID, System.DateTimeOffset Original_CP_DATE, decimal Original_HRORFRT, decimal Original_BRKRATE_OWR, decimal Original_BRKRATE_CHR, decimal Original_ESTBRK, decimal Original_CAP_RATE, decimal Original_CAP_AMOUNT, int Original_TFCB, System.DateTimeOffset Original_OP_DT) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_VSL_ID));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTimeOffset)(Original_CP_DATE));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((decimal)(Original_HRORFRT));
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((decimal)(Original_BRKRATE_OWR));
-            this.Adapter.DeleteCommand.Parameters[5].Value = ((decimal)(Original_BRKRATE_CHR));
-            this.Adapter.DeleteCommand.Parameters[6].Value = ((decimal)(Original_ESTBRK));
-            this.Adapter.DeleteCommand.Parameters[7].Value = ((decimal)(Original_CAP_RATE));
-            this.Adapter.DeleteCommand.Parameters[8].Value = ((decimal)(Original_CAP_AMOUNT));
-            this.Adapter.DeleteCommand.Parameters[9].Value = ((int)(Original_TFCB));
-            this.Adapter.DeleteCommand.Parameters[10].Value = ((System.DateTimeOffset)(Original_OP_DT));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(
-                    int VSL_ID, 
-                    System.DateTimeOffset CP_DATE, 
-                    string CP_TYPE, 
-                    string CP_DESC, 
-                    string PAYER, 
-                    decimal HRORFRT, 
-                    string DAYSORMT, 
-                    string OWR, 
-                    decimal BRKRATE_OWR, 
-                    string BRKAMOUNT_OWR, 
-                    string CHR, 
-                    decimal BRKRATE_CHR, 
-                    string BRKAMOUNT_CHR, 
-                    decimal ESTBRK, 
-                    string BROKER1, 
-                    string BROKER2, 
-                    string SIGNOPER, 
-                    decimal CAP_RATE, 
-                    decimal CAP_AMOUNT, 
-                    int TFCB, 
-                    string FIXNO, 
-                    string STATUS, 
-                    string REMARK, 
-                    string OPER, 
-                    System.DateTimeOffset OP_DT) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(VSL_ID));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTimeOffset)(CP_DATE));
-            if ((CP_TYPE == null)) {
-                throw new global::System.ArgumentNullException("CP_TYPE");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(CP_TYPE));
-            }
-            if ((CP_DESC == null)) {
-                throw new global::System.ArgumentNullException("CP_DESC");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(CP_DESC));
-            }
-            if ((PAYER == null)) {
-                throw new global::System.ArgumentNullException("PAYER");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(PAYER));
-            }
-            this.Adapter.InsertCommand.Parameters[5].Value = ((decimal)(HRORFRT));
-            if ((DAYSORMT == null)) {
-                throw new global::System.ArgumentNullException("DAYSORMT");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(DAYSORMT));
-            }
-            if ((OWR == null)) {
-                throw new global::System.ArgumentNullException("OWR");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(OWR));
-            }
-            this.Adapter.InsertCommand.Parameters[8].Value = ((decimal)(BRKRATE_OWR));
-            if ((BRKAMOUNT_OWR == null)) {
-                throw new global::System.ArgumentNullException("BRKAMOUNT_OWR");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(BRKAMOUNT_OWR));
-            }
-            if ((CHR == null)) {
-                throw new global::System.ArgumentNullException("CHR");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(CHR));
-            }
-            this.Adapter.InsertCommand.Parameters[11].Value = ((decimal)(BRKRATE_CHR));
-            if ((BRKAMOUNT_CHR == null)) {
-                throw new global::System.ArgumentNullException("BRKAMOUNT_CHR");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(BRKAMOUNT_CHR));
-            }
-            this.Adapter.InsertCommand.Parameters[13].Value = ((decimal)(ESTBRK));
-            if ((BROKER1 == null)) {
-                throw new global::System.ArgumentNullException("BROKER1");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[14].Value = ((string)(BROKER1));
-            }
-            if ((BROKER2 == null)) {
-                throw new global::System.ArgumentNullException("BROKER2");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[15].Value = ((string)(BROKER2));
-            }
-            if ((SIGNOPER == null)) {
-                throw new global::System.ArgumentNullException("SIGNOPER");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[16].Value = ((string)(SIGNOPER));
-            }
-            this.Adapter.InsertCommand.Parameters[17].Value = ((decimal)(CAP_RATE));
-            this.Adapter.InsertCommand.Parameters[18].Value = ((decimal)(CAP_AMOUNT));
-            this.Adapter.InsertCommand.Parameters[19].Value = ((int)(TFCB));
-            if ((FIXNO == null)) {
-                throw new global::System.ArgumentNullException("FIXNO");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[20].Value = ((string)(FIXNO));
-            }
-            if ((STATUS == null)) {
-                throw new global::System.ArgumentNullException("STATUS");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[21].Value = ((string)(STATUS));
-            }
-            if ((REMARK == null)) {
-                throw new global::System.ArgumentNullException("REMARK");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[22].Value = ((string)(REMARK));
-            }
-            if ((OPER == null)) {
-                throw new global::System.ArgumentNullException("OPER");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[23].Value = ((string)(OPER));
-            }
-            this.Adapter.InsertCommand.Parameters[24].Value = ((System.DateTimeOffset)(OP_DT));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    int VSL_ID, 
-                    System.DateTimeOffset CP_DATE, 
-                    string CP_TYPE, 
-                    string CP_DESC, 
-                    string PAYER, 
-                    decimal HRORFRT, 
-                    string DAYSORMT, 
-                    string OWR, 
-                    decimal BRKRATE_OWR, 
-                    string BRKAMOUNT_OWR, 
-                    string CHR, 
-                    decimal BRKRATE_CHR, 
-                    string BRKAMOUNT_CHR, 
-                    decimal ESTBRK, 
-                    string BROKER1, 
-                    string BROKER2, 
-                    string SIGNOPER, 
-                    decimal CAP_RATE, 
-                    decimal CAP_AMOUNT, 
-                    int TFCB, 
-                    string FIXNO, 
-                    string STATUS, 
-                    string REMARK, 
-                    string OPER, 
-                    System.DateTimeOffset OP_DT, 
-                    int Original_ID, 
-                    int Original_VSL_ID, 
-                    System.DateTimeOffset Original_CP_DATE, 
-                    decimal Original_HRORFRT, 
-                    decimal Original_BRKRATE_OWR, 
-                    decimal Original_BRKRATE_CHR, 
-                    decimal Original_ESTBRK, 
-                    decimal Original_CAP_RATE, 
-                    decimal Original_CAP_AMOUNT, 
-                    int Original_TFCB, 
-                    System.DateTimeOffset Original_OP_DT, 
-                    int ID) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(VSL_ID));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTimeOffset)(CP_DATE));
-            if ((CP_TYPE == null)) {
-                throw new global::System.ArgumentNullException("CP_TYPE");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(CP_TYPE));
-            }
-            if ((CP_DESC == null)) {
-                throw new global::System.ArgumentNullException("CP_DESC");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(CP_DESC));
-            }
-            if ((PAYER == null)) {
-                throw new global::System.ArgumentNullException("PAYER");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(PAYER));
-            }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((decimal)(HRORFRT));
-            if ((DAYSORMT == null)) {
-                throw new global::System.ArgumentNullException("DAYSORMT");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(DAYSORMT));
-            }
-            if ((OWR == null)) {
-                throw new global::System.ArgumentNullException("OWR");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(OWR));
-            }
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((decimal)(BRKRATE_OWR));
-            if ((BRKAMOUNT_OWR == null)) {
-                throw new global::System.ArgumentNullException("BRKAMOUNT_OWR");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(BRKAMOUNT_OWR));
-            }
-            if ((CHR == null)) {
-                throw new global::System.ArgumentNullException("CHR");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(CHR));
-            }
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((decimal)(BRKRATE_CHR));
-            if ((BRKAMOUNT_CHR == null)) {
-                throw new global::System.ArgumentNullException("BRKAMOUNT_CHR");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(BRKAMOUNT_CHR));
-            }
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((decimal)(ESTBRK));
-            if ((BROKER1 == null)) {
-                throw new global::System.ArgumentNullException("BROKER1");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(BROKER1));
-            }
-            if ((BROKER2 == null)) {
-                throw new global::System.ArgumentNullException("BROKER2");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(BROKER2));
-            }
-            if ((SIGNOPER == null)) {
-                throw new global::System.ArgumentNullException("SIGNOPER");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(SIGNOPER));
-            }
-            this.Adapter.UpdateCommand.Parameters[17].Value = ((decimal)(CAP_RATE));
-            this.Adapter.UpdateCommand.Parameters[18].Value = ((decimal)(CAP_AMOUNT));
-            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(TFCB));
-            if ((FIXNO == null)) {
-                throw new global::System.ArgumentNullException("FIXNO");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(FIXNO));
-            }
-            if ((STATUS == null)) {
-                throw new global::System.ArgumentNullException("STATUS");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(STATUS));
-            }
-            if ((REMARK == null)) {
-                throw new global::System.ArgumentNullException("REMARK");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(REMARK));
-            }
-            if ((OPER == null)) {
-                throw new global::System.ArgumentNullException("OPER");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(OPER));
-            }
-            this.Adapter.UpdateCommand.Parameters[24].Value = ((System.DateTimeOffset)(OP_DT));
-            this.Adapter.UpdateCommand.Parameters[25].Value = ((int)(Original_ID));
-            this.Adapter.UpdateCommand.Parameters[26].Value = ((int)(Original_VSL_ID));
-            this.Adapter.UpdateCommand.Parameters[27].Value = ((System.DateTimeOffset)(Original_CP_DATE));
-            this.Adapter.UpdateCommand.Parameters[28].Value = ((decimal)(Original_HRORFRT));
-            this.Adapter.UpdateCommand.Parameters[29].Value = ((decimal)(Original_BRKRATE_OWR));
-            this.Adapter.UpdateCommand.Parameters[30].Value = ((decimal)(Original_BRKRATE_CHR));
-            this.Adapter.UpdateCommand.Parameters[31].Value = ((decimal)(Original_ESTBRK));
-            this.Adapter.UpdateCommand.Parameters[32].Value = ((decimal)(Original_CAP_RATE));
-            this.Adapter.UpdateCommand.Parameters[33].Value = ((decimal)(Original_CAP_AMOUNT));
-            this.Adapter.UpdateCommand.Parameters[34].Value = ((int)(Original_TFCB));
-            this.Adapter.UpdateCommand.Parameters[35].Value = ((System.DateTimeOffset)(Original_OP_DT));
-            this.Adapter.UpdateCommand.Parameters[36].Value = ((int)(ID));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    int VSL_ID, 
-                    System.DateTimeOffset CP_DATE, 
-                    string CP_TYPE, 
-                    string CP_DESC, 
-                    string PAYER, 
-                    decimal HRORFRT, 
-                    string DAYSORMT, 
-                    string OWR, 
-                    decimal BRKRATE_OWR, 
-                    string BRKAMOUNT_OWR, 
-                    string CHR, 
-                    decimal BRKRATE_CHR, 
-                    string BRKAMOUNT_CHR, 
-                    decimal ESTBRK, 
-                    string BROKER1, 
-                    string BROKER2, 
-                    string SIGNOPER, 
-                    decimal CAP_RATE, 
-                    decimal CAP_AMOUNT, 
-                    int TFCB, 
-                    string FIXNO, 
-                    string STATUS, 
-                    string REMARK, 
-                    string OPER, 
-                    System.DateTimeOffset OP_DT, 
-                    int Original_ID, 
-                    int Original_VSL_ID, 
-                    System.DateTimeOffset Original_CP_DATE, 
-                    decimal Original_HRORFRT, 
-                    decimal Original_BRKRATE_OWR, 
-                    decimal Original_BRKRATE_CHR, 
-                    decimal Original_ESTBRK, 
-                    decimal Original_CAP_RATE, 
-                    decimal Original_CAP_AMOUNT, 
-                    int Original_TFCB, 
-                    System.DateTimeOffset Original_OP_DT) {
-            return this.Update(VSL_ID, CP_DATE, CP_TYPE, CP_DESC, PAYER, HRORFRT, DAYSORMT, OWR, BRKRATE_OWR, BRKAMOUNT_OWR, CHR, BRKRATE_CHR, BRKAMOUNT_CHR, ESTBRK, BROKER1, BROKER2, SIGNOPER, CAP_RATE, CAP_AMOUNT, TFCB, FIXNO, STATUS, REMARK, OPER, OP_DT, Original_ID, Original_VSL_ID, Original_CP_DATE, Original_HRORFRT, Original_BRKRATE_OWR, Original_BRKRATE_CHR, Original_ESTBRK, Original_CAP_RATE, Original_CAP_AMOUNT, Original_TFCB, Original_OP_DT, Original_ID);
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
     public partial class TInvoicesTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
@@ -4373,7 +3694,6 @@ FROM      TFixtures";
             tableMapping.ColumnMappings.Add("DAYSORMT", "DAYSORMT");
             tableMapping.ColumnMappings.Add("ATIN", "ATIN");
             tableMapping.ColumnMappings.Add("CWNO", "CWNO");
-            tableMapping.ColumnMappings.Add("OWNER", "OWNER");
             tableMapping.ColumnMappings.Add("BRKRATE_OWR", "BRKRATE_OWR");
             tableMapping.ColumnMappings.Add("BRKAMOUNT_OWR", "BRKAMOUNT_OWR");
             tableMapping.ColumnMappings.Add("CHR", "CHR");
@@ -4386,10 +3706,12 @@ FROM      TFixtures";
             tableMapping.ColumnMappings.Add("REMARK", "REMARK");
             tableMapping.ColumnMappings.Add("OPER", "OPER");
             tableMapping.ColumnMappings.Add("OP_DT", "OP_DT");
+            tableMapping.ColumnMappings.Add("OWR", "OWR");
+            tableMapping.ColumnMappings.Add("RECEIVABLEDATE", "RECEIVABLEDATE");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [TInvoices] WHERE (([ID] = @Original_ID) AND ([VSL_ID] = @Original_VSL_ID) AND ([CP_DATE] = @Original_CP_DATE) AND ([HRORFRT] = @Original_HRORFRT) AND ([DAYSORMT] = @Original_DAYSORMT) AND ([BRKRATE_OWR] = @Original_BRKRATE_OWR) AND ([BRKAMOUNT_OWR] = @Original_BRKAMOUNT_OWR) AND ([BRKRATE_CHR] = @Original_BRKRATE_CHR) AND ([BRKAMOUNT_CHR] = @Original_BRKAMOUNT_CHR) AND ([RECEIVABLEAMOUNT] = @Original_RECEIVABLEAMOUNT) AND ([OP_DT] = @Original_OP_DT))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [TInvoices] WHERE (([ID] = @Original_ID) AND ([VSL_ID] = @Original_VSL_ID) AND ([CP_DATE] = @Original_CP_DATE) AND ([HRORFRT] = @Original_HRORFRT) AND ([DAYSORMT] = @Original_DAYSORMT) AND ([BRKRATE_OWR] = @Original_BRKRATE_OWR) AND ([BRKAMOUNT_OWR] = @Original_BRKAMOUNT_OWR) AND ([BRKRATE_CHR] = @Original_BRKRATE_CHR) AND ([BRKAMOUNT_CHR] = @Original_BRKAMOUNT_CHR) AND ([RECEIVABLEAMOUNT] = @Original_RECEIVABLEAMOUNT) AND ([OP_DT] = @Original_OP_DT) AND ([RECEIVABLEDATE] = @Original_RECEIVABLEDATE))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_VSL_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VSL_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -4402,10 +3724,11 @@ FROM      TFixtures";
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BRKAMOUNT_CHR", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "BRKAMOUNT_CHR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RECEIVABLEAMOUNT", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "RECEIVABLEAMOUNT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OP_DT", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "OP_DT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RECEIVABLEDATE", global::System.Data.SqlDbType.DateTimeOffset, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RECEIVABLEDATE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [TInvoices] ([FIXNO], [REFNO], [INVOICE_DATE], [MESSES], [VSL_ID], [CP_DATE], [CP_TYPE], [CP_DESC], [HRORFRT], [DAYSORMT], [ATIN], [CWNO], [OWNER], [BRKRATE_OWR], [BRKAMOUNT_OWR], [CHR], [BRKRATE_CHR], [BRKAMOUNT_CHR], [PERIODS], [BANKACCOUNT], [RECEIVABLEAMOUNT], [STATUS], [REMARK], [OPER], [OP_DT]) VALUES (@FIXNO, @REFNO, @INVOICE_DATE, @MESSES, @VSL_ID, @CP_DATE, @CP_TYPE, @CP_DESC, @HRORFRT, @DAYSORMT, @ATIN, @CWNO, @OWNER, @BRKRATE_OWR, @BRKAMOUNT_OWR, @CHR, @BRKRATE_CHR, @BRKAMOUNT_CHR, @PERIODS, @BANKACCOUNT, @RECEIVABLEAMOUNT, @STATUS, @REMARK, @OPER, @OP_DT);
-SELECT ID, FIXNO, REFNO, INVOICE_DATE, MESSES, VSL_ID, CP_DATE, CP_TYPE, CP_DESC, HRORFRT, DAYSORMT, ATIN, CWNO, OWNER, BRKRATE_OWR, BRKAMOUNT_OWR, CHR, BRKRATE_CHR, BRKAMOUNT_CHR, PERIODS, BANKACCOUNT, RECEIVABLEAMOUNT, STATUS, REMARK, OPER, OP_DT FROM TInvoices WHERE (ID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [TInvoices] ([FIXNO], [REFNO], [INVOICE_DATE], [MESSES], [VSL_ID], [CP_DATE], [CP_TYPE], [CP_DESC], [HRORFRT], [DAYSORMT], [ATIN], [CWNO], [BRKRATE_OWR], [BRKAMOUNT_OWR], [CHR], [BRKRATE_CHR], [BRKAMOUNT_CHR], [PERIODS], [BANKACCOUNT], [RECEIVABLEAMOUNT], [STATUS], [REMARK], [OPER], [OP_DT], [OWR], [RECEIVABLEDATE]) VALUES (@FIXNO, @REFNO, @INVOICE_DATE, @MESSES, @VSL_ID, @CP_DATE, @CP_TYPE, @CP_DESC, @HRORFRT, @DAYSORMT, @ATIN, @CWNO, @BRKRATE_OWR, @BRKAMOUNT_OWR, @CHR, @BRKRATE_CHR, @BRKAMOUNT_CHR, @PERIODS, @BANKACCOUNT, @RECEIVABLEAMOUNT, @STATUS, @REMARK, @OPER, @OP_DT, @OWR, @RECEIVABLEDATE);
+SELECT ID, FIXNO, REFNO, INVOICE_DATE, MESSES, VSL_ID, CP_DATE, CP_TYPE, CP_DESC, HRORFRT, DAYSORMT, ATIN, CWNO, BRKRATE_OWR, BRKAMOUNT_OWR, CHR, BRKRATE_CHR, BRKAMOUNT_CHR, PERIODS, BANKACCOUNT, RECEIVABLEAMOUNT, STATUS, REMARK, OPER, OP_DT, OWR, RECEIVABLEDATE FROM TInvoices WHERE (ID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FIXNO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FIXNO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@REFNO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "REFNO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4419,7 +3742,6 @@ SELECT ID, FIXNO, REFNO, INVOICE_DATE, MESSES, VSL_ID, CP_DATE, CP_TYPE, CP_DESC
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DAYSORMT", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "DAYSORMT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ATIN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ATIN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CWNO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CWNO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OWNER", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OWNER", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BRKRATE_OWR", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "BRKRATE_OWR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BRKAMOUNT_OWR", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "BRKAMOUNT_OWR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CHR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CHR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4432,10 +3754,12 @@ SELECT ID, FIXNO, REFNO, INVOICE_DATE, MESSES, VSL_ID, CP_DATE, CP_TYPE, CP_DESC
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@REMARK", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "REMARK", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OPER", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OPER", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OP_DT", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "OP_DT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OWR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OWR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RECEIVABLEDATE", global::System.Data.SqlDbType.DateTimeOffset, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RECEIVABLEDATE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [TInvoices] SET [FIXNO] = @FIXNO, [REFNO] = @REFNO, [INVOICE_DATE] = @INVOICE_DATE, [MESSES] = @MESSES, [VSL_ID] = @VSL_ID, [CP_DATE] = @CP_DATE, [CP_TYPE] = @CP_TYPE, [CP_DESC] = @CP_DESC, [HRORFRT] = @HRORFRT, [DAYSORMT] = @DAYSORMT, [ATIN] = @ATIN, [CWNO] = @CWNO, [OWNER] = @OWNER, [BRKRATE_OWR] = @BRKRATE_OWR, [BRKAMOUNT_OWR] = @BRKAMOUNT_OWR, [CHR] = @CHR, [BRKRATE_CHR] = @BRKRATE_CHR, [BRKAMOUNT_CHR] = @BRKAMOUNT_CHR, [PERIODS] = @PERIODS, [BANKACCOUNT] = @BANKACCOUNT, [RECEIVABLEAMOUNT] = @RECEIVABLEAMOUNT, [STATUS] = @STATUS, [REMARK] = @REMARK, [OPER] = @OPER, [OP_DT] = @OP_DT WHERE (([ID] = @Original_ID) AND ([VSL_ID] = @Original_VSL_ID) AND ([CP_DATE] = @Original_CP_DATE) AND ([HRORFRT] = @Original_HRORFRT) AND ([DAYSORMT] = @Original_DAYSORMT) AND ([BRKRATE_OWR] = @Original_BRKRATE_OWR) AND ([BRKAMOUNT_OWR] = @Original_BRKAMOUNT_OWR) AND ([BRKRATE_CHR] = @Original_BRKRATE_CHR) AND ([BRKAMOUNT_CHR] = @Original_BRKAMOUNT_CHR) AND ([RECEIVABLEAMOUNT] = @Original_RECEIVABLEAMOUNT) AND ([OP_DT] = @Original_OP_DT));
-SELECT ID, FIXNO, REFNO, INVOICE_DATE, MESSES, VSL_ID, CP_DATE, CP_TYPE, CP_DESC, HRORFRT, DAYSORMT, ATIN, CWNO, OWNER, BRKRATE_OWR, BRKAMOUNT_OWR, CHR, BRKRATE_CHR, BRKAMOUNT_CHR, PERIODS, BANKACCOUNT, RECEIVABLEAMOUNT, STATUS, REMARK, OPER, OP_DT FROM TInvoices WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [TInvoices] SET [FIXNO] = @FIXNO, [REFNO] = @REFNO, [INVOICE_DATE] = @INVOICE_DATE, [MESSES] = @MESSES, [VSL_ID] = @VSL_ID, [CP_DATE] = @CP_DATE, [CP_TYPE] = @CP_TYPE, [CP_DESC] = @CP_DESC, [HRORFRT] = @HRORFRT, [DAYSORMT] = @DAYSORMT, [ATIN] = @ATIN, [CWNO] = @CWNO, [BRKRATE_OWR] = @BRKRATE_OWR, [BRKAMOUNT_OWR] = @BRKAMOUNT_OWR, [CHR] = @CHR, [BRKRATE_CHR] = @BRKRATE_CHR, [BRKAMOUNT_CHR] = @BRKAMOUNT_CHR, [PERIODS] = @PERIODS, [BANKACCOUNT] = @BANKACCOUNT, [RECEIVABLEAMOUNT] = @RECEIVABLEAMOUNT, [STATUS] = @STATUS, [REMARK] = @REMARK, [OPER] = @OPER, [OP_DT] = @OP_DT, [OWR] = @OWR, [RECEIVABLEDATE] = @RECEIVABLEDATE WHERE (([ID] = @Original_ID) AND ([VSL_ID] = @Original_VSL_ID) AND ([CP_DATE] = @Original_CP_DATE) AND ([HRORFRT] = @Original_HRORFRT) AND ([DAYSORMT] = @Original_DAYSORMT) AND ([BRKRATE_OWR] = @Original_BRKRATE_OWR) AND ([BRKAMOUNT_OWR] = @Original_BRKAMOUNT_OWR) AND ([BRKRATE_CHR] = @Original_BRKRATE_CHR) AND ([BRKAMOUNT_CHR] = @Original_BRKAMOUNT_CHR) AND ([RECEIVABLEAMOUNT] = @Original_RECEIVABLEAMOUNT) AND ([OP_DT] = @Original_OP_DT) AND ([RECEIVABLEDATE] = @Original_RECEIVABLEDATE));
+SELECT ID, FIXNO, REFNO, INVOICE_DATE, MESSES, VSL_ID, CP_DATE, CP_TYPE, CP_DESC, HRORFRT, DAYSORMT, ATIN, CWNO, BRKRATE_OWR, BRKAMOUNT_OWR, CHR, BRKRATE_CHR, BRKAMOUNT_CHR, PERIODS, BANKACCOUNT, RECEIVABLEAMOUNT, STATUS, REMARK, OPER, OP_DT, OWR, RECEIVABLEDATE FROM TInvoices WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FIXNO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FIXNO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@REFNO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "REFNO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4449,7 +3773,6 @@ SELECT ID, FIXNO, REFNO, INVOICE_DATE, MESSES, VSL_ID, CP_DATE, CP_TYPE, CP_DESC
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DAYSORMT", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "DAYSORMT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ATIN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ATIN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CWNO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CWNO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OWNER", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OWNER", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BRKRATE_OWR", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "BRKRATE_OWR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BRKAMOUNT_OWR", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "BRKAMOUNT_OWR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CHR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CHR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4462,6 +3785,8 @@ SELECT ID, FIXNO, REFNO, INVOICE_DATE, MESSES, VSL_ID, CP_DATE, CP_TYPE, CP_DESC
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@REMARK", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "REMARK", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OPER", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OPER", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OP_DT", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "OP_DT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OWR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OWR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RECEIVABLEDATE", global::System.Data.SqlDbType.DateTimeOffset, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RECEIVABLEDATE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_VSL_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VSL_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CP_DATE", global::System.Data.SqlDbType.DateTimeOffset, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CP_DATE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -4473,6 +3798,7 @@ SELECT ID, FIXNO, REFNO, INVOICE_DATE, MESSES, VSL_ID, CP_DATE, CP_TYPE, CP_DESC
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BRKAMOUNT_CHR", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "BRKAMOUNT_CHR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RECEIVABLEAMOUNT", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "RECEIVABLEAMOUNT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OP_DT", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "OP_DT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RECEIVABLEDATE", global::System.Data.SqlDbType.DateTimeOffset, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RECEIVABLEDATE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -4489,9 +3815,9 @@ SELECT ID, FIXNO, REFNO, INVOICE_DATE, MESSES, VSL_ID, CP_DATE, CP_TYPE, CP_DESC
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT  ID, FIXNO, REFNO, INVOICE_DATE, MESSES, VSL_ID, CP_DATE, CP_TYPE, CP_DESC, HRORFRT, DAYSORMT, ATIN, CWNO, 
-                   OWNER, BRKRATE_OWR, BRKAMOUNT_OWR, CHR, BRKRATE_CHR, BRKAMOUNT_CHR, PERIODS, BANKACCOUNT, 
-                   RECEIVABLEAMOUNT, STATUS, REMARK, OPER, OP_DT
+            this._commandCollection[0].CommandText = @"SELECT   ID, FIXNO, REFNO, INVOICE_DATE, MESSES, VSL_ID, CP_DATE, CP_TYPE, CP_DESC, HRORFRT, DAYSORMT, ATIN, 
+                CWNO, BRKRATE_OWR, BRKAMOUNT_OWR, CHR, BRKRATE_CHR, BRKAMOUNT_CHR, PERIODS, BANKACCOUNT, 
+                RECEIVABLEAMOUNT, STATUS, REMARK, OPER, OP_DT, OWR, RECEIVABLEDATE
 FROM      TInvoices";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
@@ -4553,7 +3879,7 @@ FROM      TInvoices";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID, int Original_VSL_ID, System.DateTimeOffset Original_CP_DATE, decimal Original_HRORFRT, decimal Original_DAYSORMT, decimal Original_BRKRATE_OWR, decimal Original_BRKAMOUNT_OWR, decimal Original_BRKRATE_CHR, decimal Original_BRKAMOUNT_CHR, decimal Original_RECEIVABLEAMOUNT, decimal Original_OP_DT) {
+        public virtual int Delete(int Original_ID, int Original_VSL_ID, System.DateTimeOffset Original_CP_DATE, decimal Original_HRORFRT, decimal Original_DAYSORMT, decimal Original_BRKRATE_OWR, decimal Original_BRKAMOUNT_OWR, decimal Original_BRKRATE_CHR, decimal Original_BRKAMOUNT_CHR, decimal Original_RECEIVABLEAMOUNT, decimal Original_OP_DT, System.DateTimeOffset Original_RECEIVABLEDATE) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_VSL_ID));
             this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTimeOffset)(Original_CP_DATE));
@@ -4565,6 +3891,7 @@ FROM      TInvoices";
             this.Adapter.DeleteCommand.Parameters[8].Value = ((decimal)(Original_BRKAMOUNT_CHR));
             this.Adapter.DeleteCommand.Parameters[9].Value = ((decimal)(Original_RECEIVABLEAMOUNT));
             this.Adapter.DeleteCommand.Parameters[10].Value = ((decimal)(Original_OP_DT));
+            this.Adapter.DeleteCommand.Parameters[11].Value = ((System.DateTimeOffset)(Original_RECEIVABLEDATE));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4598,7 +3925,6 @@ FROM      TInvoices";
                     decimal DAYSORMT, 
                     string ATIN, 
                     string CWNO, 
-                    string OWNER, 
                     decimal BRKRATE_OWR, 
                     decimal BRKAMOUNT_OWR, 
                     string CHR, 
@@ -4610,7 +3936,9 @@ FROM      TInvoices";
                     string STATUS, 
                     string REMARK, 
                     string OPER, 
-                    decimal OP_DT) {
+                    decimal OP_DT, 
+                    string OWR, 
+                    System.DateTimeOffset RECEIVABLEDATE) {
             if ((FIXNO == null)) {
                 throw new global::System.ArgumentNullException("FIXNO");
             }
@@ -4663,54 +3991,55 @@ FROM      TInvoices";
             else {
                 this.Adapter.InsertCommand.Parameters[11].Value = ((string)(CWNO));
             }
-            if ((OWNER == null)) {
-                throw new global::System.ArgumentNullException("OWNER");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(OWNER));
-            }
-            this.Adapter.InsertCommand.Parameters[13].Value = ((decimal)(BRKRATE_OWR));
-            this.Adapter.InsertCommand.Parameters[14].Value = ((decimal)(BRKAMOUNT_OWR));
+            this.Adapter.InsertCommand.Parameters[12].Value = ((decimal)(BRKRATE_OWR));
+            this.Adapter.InsertCommand.Parameters[13].Value = ((decimal)(BRKAMOUNT_OWR));
             if ((CHR == null)) {
                 throw new global::System.ArgumentNullException("CHR");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[15].Value = ((string)(CHR));
+                this.Adapter.InsertCommand.Parameters[14].Value = ((string)(CHR));
             }
-            this.Adapter.InsertCommand.Parameters[16].Value = ((decimal)(BRKRATE_CHR));
-            this.Adapter.InsertCommand.Parameters[17].Value = ((decimal)(BRKAMOUNT_CHR));
+            this.Adapter.InsertCommand.Parameters[15].Value = ((decimal)(BRKRATE_CHR));
+            this.Adapter.InsertCommand.Parameters[16].Value = ((decimal)(BRKAMOUNT_CHR));
             if ((PERIODS == null)) {
                 throw new global::System.ArgumentNullException("PERIODS");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[18].Value = ((string)(PERIODS));
+                this.Adapter.InsertCommand.Parameters[17].Value = ((string)(PERIODS));
             }
             if ((BANKACCOUNT == null)) {
                 throw new global::System.ArgumentNullException("BANKACCOUNT");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[19].Value = ((string)(BANKACCOUNT));
+                this.Adapter.InsertCommand.Parameters[18].Value = ((string)(BANKACCOUNT));
             }
-            this.Adapter.InsertCommand.Parameters[20].Value = ((decimal)(RECEIVABLEAMOUNT));
+            this.Adapter.InsertCommand.Parameters[19].Value = ((decimal)(RECEIVABLEAMOUNT));
             if ((STATUS == null)) {
                 throw new global::System.ArgumentNullException("STATUS");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[21].Value = ((string)(STATUS));
+                this.Adapter.InsertCommand.Parameters[20].Value = ((string)(STATUS));
             }
             if ((REMARK == null)) {
                 throw new global::System.ArgumentNullException("REMARK");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[22].Value = ((string)(REMARK));
+                this.Adapter.InsertCommand.Parameters[21].Value = ((string)(REMARK));
             }
             if ((OPER == null)) {
                 throw new global::System.ArgumentNullException("OPER");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[23].Value = ((string)(OPER));
+                this.Adapter.InsertCommand.Parameters[22].Value = ((string)(OPER));
             }
-            this.Adapter.InsertCommand.Parameters[24].Value = ((decimal)(OP_DT));
+            this.Adapter.InsertCommand.Parameters[23].Value = ((decimal)(OP_DT));
+            if ((OWR == null)) {
+                throw new global::System.ArgumentNullException("OWR");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[24].Value = ((string)(OWR));
+            }
+            this.Adapter.InsertCommand.Parameters[25].Value = ((System.DateTimeOffset)(RECEIVABLEDATE));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4744,7 +4073,6 @@ FROM      TInvoices";
                     decimal DAYSORMT, 
                     string ATIN, 
                     string CWNO, 
-                    string OWNER, 
                     decimal BRKRATE_OWR, 
                     decimal BRKAMOUNT_OWR, 
                     string CHR, 
@@ -4757,6 +4085,8 @@ FROM      TInvoices";
                     string REMARK, 
                     string OPER, 
                     decimal OP_DT, 
+                    string OWR, 
+                    System.DateTimeOffset RECEIVABLEDATE, 
                     int Original_ID, 
                     int Original_VSL_ID, 
                     System.DateTimeOffset Original_CP_DATE, 
@@ -4768,6 +4098,7 @@ FROM      TInvoices";
                     decimal Original_BRKAMOUNT_CHR, 
                     decimal Original_RECEIVABLEAMOUNT, 
                     decimal Original_OP_DT, 
+                    System.DateTimeOffset Original_RECEIVABLEDATE, 
                     int ID) {
             if ((FIXNO == null)) {
                 throw new global::System.ArgumentNullException("FIXNO");
@@ -4821,66 +4152,68 @@ FROM      TInvoices";
             else {
                 this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(CWNO));
             }
-            if ((OWNER == null)) {
-                throw new global::System.ArgumentNullException("OWNER");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(OWNER));
-            }
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((decimal)(BRKRATE_OWR));
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((decimal)(BRKAMOUNT_OWR));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((decimal)(BRKRATE_OWR));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((decimal)(BRKAMOUNT_OWR));
             if ((CHR == null)) {
                 throw new global::System.ArgumentNullException("CHR");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(CHR));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(CHR));
             }
-            this.Adapter.UpdateCommand.Parameters[16].Value = ((decimal)(BRKRATE_CHR));
-            this.Adapter.UpdateCommand.Parameters[17].Value = ((decimal)(BRKAMOUNT_CHR));
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((decimal)(BRKRATE_CHR));
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((decimal)(BRKAMOUNT_CHR));
             if ((PERIODS == null)) {
                 throw new global::System.ArgumentNullException("PERIODS");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(PERIODS));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(PERIODS));
             }
             if ((BANKACCOUNT == null)) {
                 throw new global::System.ArgumentNullException("BANKACCOUNT");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(BANKACCOUNT));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(BANKACCOUNT));
             }
-            this.Adapter.UpdateCommand.Parameters[20].Value = ((decimal)(RECEIVABLEAMOUNT));
+            this.Adapter.UpdateCommand.Parameters[19].Value = ((decimal)(RECEIVABLEAMOUNT));
             if ((STATUS == null)) {
                 throw new global::System.ArgumentNullException("STATUS");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(STATUS));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(STATUS));
             }
             if ((REMARK == null)) {
                 throw new global::System.ArgumentNullException("REMARK");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(REMARK));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(REMARK));
             }
             if ((OPER == null)) {
                 throw new global::System.ArgumentNullException("OPER");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(OPER));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(OPER));
             }
-            this.Adapter.UpdateCommand.Parameters[24].Value = ((decimal)(OP_DT));
-            this.Adapter.UpdateCommand.Parameters[25].Value = ((int)(Original_ID));
-            this.Adapter.UpdateCommand.Parameters[26].Value = ((int)(Original_VSL_ID));
-            this.Adapter.UpdateCommand.Parameters[27].Value = ((System.DateTimeOffset)(Original_CP_DATE));
-            this.Adapter.UpdateCommand.Parameters[28].Value = ((decimal)(Original_HRORFRT));
-            this.Adapter.UpdateCommand.Parameters[29].Value = ((decimal)(Original_DAYSORMT));
-            this.Adapter.UpdateCommand.Parameters[30].Value = ((decimal)(Original_BRKRATE_OWR));
-            this.Adapter.UpdateCommand.Parameters[31].Value = ((decimal)(Original_BRKAMOUNT_OWR));
-            this.Adapter.UpdateCommand.Parameters[32].Value = ((decimal)(Original_BRKRATE_CHR));
-            this.Adapter.UpdateCommand.Parameters[33].Value = ((decimal)(Original_BRKAMOUNT_CHR));
-            this.Adapter.UpdateCommand.Parameters[34].Value = ((decimal)(Original_RECEIVABLEAMOUNT));
-            this.Adapter.UpdateCommand.Parameters[35].Value = ((decimal)(Original_OP_DT));
-            this.Adapter.UpdateCommand.Parameters[36].Value = ((int)(ID));
+            this.Adapter.UpdateCommand.Parameters[23].Value = ((decimal)(OP_DT));
+            if ((OWR == null)) {
+                throw new global::System.ArgumentNullException("OWR");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(OWR));
+            }
+            this.Adapter.UpdateCommand.Parameters[25].Value = ((System.DateTimeOffset)(RECEIVABLEDATE));
+            this.Adapter.UpdateCommand.Parameters[26].Value = ((int)(Original_ID));
+            this.Adapter.UpdateCommand.Parameters[27].Value = ((int)(Original_VSL_ID));
+            this.Adapter.UpdateCommand.Parameters[28].Value = ((System.DateTimeOffset)(Original_CP_DATE));
+            this.Adapter.UpdateCommand.Parameters[29].Value = ((decimal)(Original_HRORFRT));
+            this.Adapter.UpdateCommand.Parameters[30].Value = ((decimal)(Original_DAYSORMT));
+            this.Adapter.UpdateCommand.Parameters[31].Value = ((decimal)(Original_BRKRATE_OWR));
+            this.Adapter.UpdateCommand.Parameters[32].Value = ((decimal)(Original_BRKAMOUNT_OWR));
+            this.Adapter.UpdateCommand.Parameters[33].Value = ((decimal)(Original_BRKRATE_CHR));
+            this.Adapter.UpdateCommand.Parameters[34].Value = ((decimal)(Original_BRKAMOUNT_CHR));
+            this.Adapter.UpdateCommand.Parameters[35].Value = ((decimal)(Original_RECEIVABLEAMOUNT));
+            this.Adapter.UpdateCommand.Parameters[36].Value = ((decimal)(Original_OP_DT));
+            this.Adapter.UpdateCommand.Parameters[37].Value = ((System.DateTimeOffset)(Original_RECEIVABLEDATE));
+            this.Adapter.UpdateCommand.Parameters[38].Value = ((int)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4914,7 +4247,6 @@ FROM      TInvoices";
                     decimal DAYSORMT, 
                     string ATIN, 
                     string CWNO, 
-                    string OWNER, 
                     decimal BRKRATE_OWR, 
                     decimal BRKAMOUNT_OWR, 
                     string CHR, 
@@ -4927,6 +4259,8 @@ FROM      TInvoices";
                     string REMARK, 
                     string OPER, 
                     decimal OP_DT, 
+                    string OWR, 
+                    System.DateTimeOffset RECEIVABLEDATE, 
                     int Original_ID, 
                     int Original_VSL_ID, 
                     System.DateTimeOffset Original_CP_DATE, 
@@ -4937,8 +4271,9 @@ FROM      TInvoices";
                     decimal Original_BRKRATE_CHR, 
                     decimal Original_BRKAMOUNT_CHR, 
                     decimal Original_RECEIVABLEAMOUNT, 
-                    decimal Original_OP_DT) {
-            return this.Update(FIXNO, REFNO, INVOICE_DATE, MESSES, VSL_ID, CP_DATE, CP_TYPE, CP_DESC, HRORFRT, DAYSORMT, ATIN, CWNO, OWNER, BRKRATE_OWR, BRKAMOUNT_OWR, CHR, BRKRATE_CHR, BRKAMOUNT_CHR, PERIODS, BANKACCOUNT, RECEIVABLEAMOUNT, STATUS, REMARK, OPER, OP_DT, Original_ID, Original_VSL_ID, Original_CP_DATE, Original_HRORFRT, Original_DAYSORMT, Original_BRKRATE_OWR, Original_BRKAMOUNT_OWR, Original_BRKRATE_CHR, Original_BRKAMOUNT_CHR, Original_RECEIVABLEAMOUNT, Original_OP_DT, Original_ID);
+                    decimal Original_OP_DT, 
+                    System.DateTimeOffset Original_RECEIVABLEDATE) {
+            return this.Update(FIXNO, REFNO, INVOICE_DATE, MESSES, VSL_ID, CP_DATE, CP_TYPE, CP_DESC, HRORFRT, DAYSORMT, ATIN, CWNO, BRKRATE_OWR, BRKAMOUNT_OWR, CHR, BRKRATE_CHR, BRKAMOUNT_CHR, PERIODS, BANKACCOUNT, RECEIVABLEAMOUNT, STATUS, REMARK, OPER, OP_DT, OWR, RECEIVABLEDATE, Original_ID, Original_VSL_ID, Original_CP_DATE, Original_HRORFRT, Original_DAYSORMT, Original_BRKRATE_OWR, Original_BRKAMOUNT_OWR, Original_BRKRATE_CHR, Original_BRKAMOUNT_CHR, Original_RECEIVABLEAMOUNT, Original_OP_DT, Original_RECEIVABLEDATE, Original_ID);
         }
     }
     
@@ -5302,6 +4637,697 @@ FROM      TInvoices";
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class TFixturesTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public TFixturesTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "TFixtures";
+            tableMapping.ColumnMappings.Add("ID", "ID");
+            tableMapping.ColumnMappings.Add("VSL_ID", "VSL_ID");
+            tableMapping.ColumnMappings.Add("CP_DATE", "CP_DATE");
+            tableMapping.ColumnMappings.Add("CP_TYPE", "CP_TYPE");
+            tableMapping.ColumnMappings.Add("CP_DESC", "CP_DESC");
+            tableMapping.ColumnMappings.Add("PAYER", "PAYER");
+            tableMapping.ColumnMappings.Add("HRORFRT", "HRORFRT");
+            tableMapping.ColumnMappings.Add("DAYSORMT", "DAYSORMT");
+            tableMapping.ColumnMappings.Add("OWR", "OWR");
+            tableMapping.ColumnMappings.Add("BRKRATE_OWR", "BRKRATE_OWR");
+            tableMapping.ColumnMappings.Add("BRKAMOUNT_OWR", "BRKAMOUNT_OWR");
+            tableMapping.ColumnMappings.Add("CHR", "CHR");
+            tableMapping.ColumnMappings.Add("BRKRATE_CHR", "BRKRATE_CHR");
+            tableMapping.ColumnMappings.Add("BRKAMOUNT_CHR", "BRKAMOUNT_CHR");
+            tableMapping.ColumnMappings.Add("ESTBRK", "ESTBRK");
+            tableMapping.ColumnMappings.Add("BROKER1", "BROKER1");
+            tableMapping.ColumnMappings.Add("BROKER2", "BROKER2");
+            tableMapping.ColumnMappings.Add("SIGNOPER", "SIGNOPER");
+            tableMapping.ColumnMappings.Add("CAP_RATE", "CAP_RATE");
+            tableMapping.ColumnMappings.Add("CAP_AMOUNT", "CAP_AMOUNT");
+            tableMapping.ColumnMappings.Add("TFCB", "TFCB");
+            tableMapping.ColumnMappings.Add("FIXNO", "FIXNO");
+            tableMapping.ColumnMappings.Add("STATUS", "STATUS");
+            tableMapping.ColumnMappings.Add("REMARK", "REMARK");
+            tableMapping.ColumnMappings.Add("OPER", "OPER");
+            tableMapping.ColumnMappings.Add("OP_DT", "OP_DT");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [TFixtures] WHERE (([ID] = @Original_ID) AND ([VSL_ID] = @Original_VSL_ID) AND ([CP_DATE] = @Original_CP_DATE) AND ([HRORFRT] = @Original_HRORFRT) AND ([DAYSORMT] = @Original_DAYSORMT) AND ([BRKRATE_OWR] = @Original_BRKRATE_OWR) AND ([BRKAMOUNT_OWR] = @Original_BRKAMOUNT_OWR) AND ([BRKRATE_CHR] = @Original_BRKRATE_CHR) AND ([BRKAMOUNT_CHR] = @Original_BRKAMOUNT_CHR) AND ([ESTBRK] = @Original_ESTBRK) AND ([CAP_RATE] = @Original_CAP_RATE) AND ([CAP_AMOUNT] = @Original_CAP_AMOUNT) AND ([TFCB] = @Original_TFCB) AND ([OP_DT] = @Original_OP_DT))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_VSL_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VSL_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CP_DATE", global::System.Data.SqlDbType.DateTimeOffset, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CP_DATE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HRORFRT", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "HRORFRT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DAYSORMT", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "DAYSORMT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BRKRATE_OWR", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "BRKRATE_OWR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BRKAMOUNT_OWR", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "BRKAMOUNT_OWR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BRKRATE_CHR", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "BRKRATE_CHR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BRKAMOUNT_CHR", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "BRKAMOUNT_CHR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ESTBRK", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ESTBRK", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CAP_RATE", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "CAP_RATE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CAP_AMOUNT", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "CAP_AMOUNT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TFCB", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TFCB", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OP_DT", global::System.Data.SqlDbType.DateTimeOffset, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OP_DT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [TFixtures] ([VSL_ID], [CP_DATE], [CP_TYPE], [CP_DESC], [PAYER], [HRORFRT], [DAYSORMT], [OWR], [BRKRATE_OWR], [BRKAMOUNT_OWR], [CHR], [BRKRATE_CHR], [BRKAMOUNT_CHR], [ESTBRK], [BROKER1], [BROKER2], [SIGNOPER], [CAP_RATE], [CAP_AMOUNT], [TFCB], [FIXNO], [STATUS], [REMARK], [OPER], [OP_DT]) VALUES (@VSL_ID, @CP_DATE, @CP_TYPE, @CP_DESC, @PAYER, @HRORFRT, @DAYSORMT, @OWR, @BRKRATE_OWR, @BRKAMOUNT_OWR, @CHR, @BRKRATE_CHR, @BRKAMOUNT_CHR, @ESTBRK, @BROKER1, @BROKER2, @SIGNOPER, @CAP_RATE, @CAP_AMOUNT, @TFCB, @FIXNO, @STATUS, @REMARK, @OPER, @OP_DT);
+SELECT ID, VSL_ID, CP_DATE, CP_TYPE, CP_DESC, PAYER, HRORFRT, DAYSORMT, OWR, BRKRATE_OWR, BRKAMOUNT_OWR, CHR, BRKRATE_CHR, BRKAMOUNT_CHR, ESTBRK, BROKER1, BROKER2, SIGNOPER, CAP_RATE, CAP_AMOUNT, TFCB, FIXNO, STATUS, REMARK, OPER, OP_DT FROM TFixtures WHERE (ID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@VSL_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VSL_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CP_DATE", global::System.Data.SqlDbType.DateTimeOffset, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CP_DATE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CP_TYPE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CP_TYPE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CP_DESC", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CP_DESC", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PAYER", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PAYER", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HRORFRT", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "HRORFRT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DAYSORMT", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "DAYSORMT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OWR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OWR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BRKRATE_OWR", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "BRKRATE_OWR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BRKAMOUNT_OWR", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "BRKAMOUNT_OWR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CHR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CHR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BRKRATE_CHR", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "BRKRATE_CHR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BRKAMOUNT_CHR", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "BRKAMOUNT_CHR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ESTBRK", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ESTBRK", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BROKER1", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BROKER1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BROKER2", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BROKER2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SIGNOPER", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SIGNOPER", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CAP_RATE", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "CAP_RATE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CAP_AMOUNT", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "CAP_AMOUNT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TFCB", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TFCB", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FIXNO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FIXNO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@STATUS", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "STATUS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@REMARK", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "REMARK", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OPER", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OPER", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OP_DT", global::System.Data.SqlDbType.DateTimeOffset, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OP_DT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [TFixtures] SET [VSL_ID] = @VSL_ID, [CP_DATE] = @CP_DATE, [CP_TYPE] = @CP_TYPE, [CP_DESC] = @CP_DESC, [PAYER] = @PAYER, [HRORFRT] = @HRORFRT, [DAYSORMT] = @DAYSORMT, [OWR] = @OWR, [BRKRATE_OWR] = @BRKRATE_OWR, [BRKAMOUNT_OWR] = @BRKAMOUNT_OWR, [CHR] = @CHR, [BRKRATE_CHR] = @BRKRATE_CHR, [BRKAMOUNT_CHR] = @BRKAMOUNT_CHR, [ESTBRK] = @ESTBRK, [BROKER1] = @BROKER1, [BROKER2] = @BROKER2, [SIGNOPER] = @SIGNOPER, [CAP_RATE] = @CAP_RATE, [CAP_AMOUNT] = @CAP_AMOUNT, [TFCB] = @TFCB, [FIXNO] = @FIXNO, [STATUS] = @STATUS, [REMARK] = @REMARK, [OPER] = @OPER, [OP_DT] = @OP_DT WHERE (([ID] = @Original_ID) AND ([VSL_ID] = @Original_VSL_ID) AND ([CP_DATE] = @Original_CP_DATE) AND ([HRORFRT] = @Original_HRORFRT) AND ([DAYSORMT] = @Original_DAYSORMT) AND ([BRKRATE_OWR] = @Original_BRKRATE_OWR) AND ([BRKAMOUNT_OWR] = @Original_BRKAMOUNT_OWR) AND ([BRKRATE_CHR] = @Original_BRKRATE_CHR) AND ([BRKAMOUNT_CHR] = @Original_BRKAMOUNT_CHR) AND ([ESTBRK] = @Original_ESTBRK) AND ([CAP_RATE] = @Original_CAP_RATE) AND ([CAP_AMOUNT] = @Original_CAP_AMOUNT) AND ([TFCB] = @Original_TFCB) AND ([OP_DT] = @Original_OP_DT));
+SELECT ID, VSL_ID, CP_DATE, CP_TYPE, CP_DESC, PAYER, HRORFRT, DAYSORMT, OWR, BRKRATE_OWR, BRKAMOUNT_OWR, CHR, BRKRATE_CHR, BRKAMOUNT_CHR, ESTBRK, BROKER1, BROKER2, SIGNOPER, CAP_RATE, CAP_AMOUNT, TFCB, FIXNO, STATUS, REMARK, OPER, OP_DT FROM TFixtures WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@VSL_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VSL_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CP_DATE", global::System.Data.SqlDbType.DateTimeOffset, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CP_DATE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CP_TYPE", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CP_TYPE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CP_DESC", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CP_DESC", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PAYER", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PAYER", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HRORFRT", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "HRORFRT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DAYSORMT", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "DAYSORMT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OWR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OWR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BRKRATE_OWR", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "BRKRATE_OWR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BRKAMOUNT_OWR", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "BRKAMOUNT_OWR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CHR", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CHR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BRKRATE_CHR", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "BRKRATE_CHR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BRKAMOUNT_CHR", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "BRKAMOUNT_CHR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ESTBRK", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ESTBRK", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BROKER1", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BROKER1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@BROKER2", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "BROKER2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SIGNOPER", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SIGNOPER", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CAP_RATE", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "CAP_RATE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CAP_AMOUNT", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "CAP_AMOUNT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TFCB", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TFCB", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FIXNO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FIXNO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@STATUS", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "STATUS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@REMARK", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "REMARK", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OPER", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OPER", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OP_DT", global::System.Data.SqlDbType.DateTimeOffset, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OP_DT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_VSL_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VSL_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CP_DATE", global::System.Data.SqlDbType.DateTimeOffset, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CP_DATE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HRORFRT", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "HRORFRT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DAYSORMT", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "DAYSORMT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BRKRATE_OWR", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "BRKRATE_OWR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BRKAMOUNT_OWR", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "BRKAMOUNT_OWR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BRKRATE_CHR", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "BRKRATE_CHR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_BRKAMOUNT_CHR", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "BRKAMOUNT_CHR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ESTBRK", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "ESTBRK", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CAP_RATE", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "CAP_RATE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CAP_AMOUNT", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "CAP_AMOUNT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TFCB", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TFCB", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OP_DT", global::System.Data.SqlDbType.DateTimeOffset, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OP_DT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::BMS_DAL.Properties.Settings.Default.bds248164437_dbConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"SELECT   ID, VSL_ID, CP_DATE, CP_TYPE, CP_DESC, PAYER, HRORFRT, DAYSORMT, OWR, BRKRATE_OWR, 
+                BRKAMOUNT_OWR, CHR, BRKRATE_CHR, BRKAMOUNT_CHR, ESTBRK, BROKER1, BROKER2, SIGNOPER, CAP_RATE, 
+                CAP_AMOUNT, TFCB, FIXNO, STATUS, REMARK, OPER, OP_DT
+FROM      TFixtures";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(BMSDS.TFixturesDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual BMSDS.TFixturesDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            BMSDS.TFixturesDataTable dataTable = new BMSDS.TFixturesDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(BMSDS.TFixturesDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(BMSDS dataSet) {
+            return this.Adapter.Update(dataSet, "TFixtures");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_ID, int Original_VSL_ID, System.DateTimeOffset Original_CP_DATE, decimal Original_HRORFRT, decimal Original_DAYSORMT, decimal Original_BRKRATE_OWR, decimal Original_BRKAMOUNT_OWR, decimal Original_BRKRATE_CHR, decimal Original_BRKAMOUNT_CHR, decimal Original_ESTBRK, decimal Original_CAP_RATE, decimal Original_CAP_AMOUNT, int Original_TFCB, System.DateTimeOffset Original_OP_DT) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_VSL_ID));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTimeOffset)(Original_CP_DATE));
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((decimal)(Original_HRORFRT));
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((decimal)(Original_DAYSORMT));
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((decimal)(Original_BRKRATE_OWR));
+            this.Adapter.DeleteCommand.Parameters[6].Value = ((decimal)(Original_BRKAMOUNT_OWR));
+            this.Adapter.DeleteCommand.Parameters[7].Value = ((decimal)(Original_BRKRATE_CHR));
+            this.Adapter.DeleteCommand.Parameters[8].Value = ((decimal)(Original_BRKAMOUNT_CHR));
+            this.Adapter.DeleteCommand.Parameters[9].Value = ((decimal)(Original_ESTBRK));
+            this.Adapter.DeleteCommand.Parameters[10].Value = ((decimal)(Original_CAP_RATE));
+            this.Adapter.DeleteCommand.Parameters[11].Value = ((decimal)(Original_CAP_AMOUNT));
+            this.Adapter.DeleteCommand.Parameters[12].Value = ((int)(Original_TFCB));
+            this.Adapter.DeleteCommand.Parameters[13].Value = ((System.DateTimeOffset)(Original_OP_DT));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(
+                    int VSL_ID, 
+                    System.DateTimeOffset CP_DATE, 
+                    string CP_TYPE, 
+                    string CP_DESC, 
+                    string PAYER, 
+                    decimal HRORFRT, 
+                    decimal DAYSORMT, 
+                    string OWR, 
+                    decimal BRKRATE_OWR, 
+                    decimal BRKAMOUNT_OWR, 
+                    string CHR, 
+                    decimal BRKRATE_CHR, 
+                    decimal BRKAMOUNT_CHR, 
+                    decimal ESTBRK, 
+                    string BROKER1, 
+                    string BROKER2, 
+                    string SIGNOPER, 
+                    decimal CAP_RATE, 
+                    decimal CAP_AMOUNT, 
+                    int TFCB, 
+                    string FIXNO, 
+                    string STATUS, 
+                    string REMARK, 
+                    string OPER, 
+                    System.DateTimeOffset OP_DT) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(VSL_ID));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTimeOffset)(CP_DATE));
+            if ((CP_TYPE == null)) {
+                throw new global::System.ArgumentNullException("CP_TYPE");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(CP_TYPE));
+            }
+            if ((CP_DESC == null)) {
+                throw new global::System.ArgumentNullException("CP_DESC");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(CP_DESC));
+            }
+            if ((PAYER == null)) {
+                throw new global::System.ArgumentNullException("PAYER");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(PAYER));
+            }
+            this.Adapter.InsertCommand.Parameters[5].Value = ((decimal)(HRORFRT));
+            this.Adapter.InsertCommand.Parameters[6].Value = ((decimal)(DAYSORMT));
+            if ((OWR == null)) {
+                throw new global::System.ArgumentNullException("OWR");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(OWR));
+            }
+            this.Adapter.InsertCommand.Parameters[8].Value = ((decimal)(BRKRATE_OWR));
+            this.Adapter.InsertCommand.Parameters[9].Value = ((decimal)(BRKAMOUNT_OWR));
+            if ((CHR == null)) {
+                throw new global::System.ArgumentNullException("CHR");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(CHR));
+            }
+            this.Adapter.InsertCommand.Parameters[11].Value = ((decimal)(BRKRATE_CHR));
+            this.Adapter.InsertCommand.Parameters[12].Value = ((decimal)(BRKAMOUNT_CHR));
+            this.Adapter.InsertCommand.Parameters[13].Value = ((decimal)(ESTBRK));
+            if ((BROKER1 == null)) {
+                throw new global::System.ArgumentNullException("BROKER1");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[14].Value = ((string)(BROKER1));
+            }
+            if ((BROKER2 == null)) {
+                throw new global::System.ArgumentNullException("BROKER2");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[15].Value = ((string)(BROKER2));
+            }
+            if ((SIGNOPER == null)) {
+                throw new global::System.ArgumentNullException("SIGNOPER");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[16].Value = ((string)(SIGNOPER));
+            }
+            this.Adapter.InsertCommand.Parameters[17].Value = ((decimal)(CAP_RATE));
+            this.Adapter.InsertCommand.Parameters[18].Value = ((decimal)(CAP_AMOUNT));
+            this.Adapter.InsertCommand.Parameters[19].Value = ((int)(TFCB));
+            if ((FIXNO == null)) {
+                throw new global::System.ArgumentNullException("FIXNO");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[20].Value = ((string)(FIXNO));
+            }
+            if ((STATUS == null)) {
+                throw new global::System.ArgumentNullException("STATUS");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[21].Value = ((string)(STATUS));
+            }
+            if ((REMARK == null)) {
+                throw new global::System.ArgumentNullException("REMARK");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[22].Value = ((string)(REMARK));
+            }
+            if ((OPER == null)) {
+                throw new global::System.ArgumentNullException("OPER");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[23].Value = ((string)(OPER));
+            }
+            this.Adapter.InsertCommand.Parameters[24].Value = ((System.DateTimeOffset)(OP_DT));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    int VSL_ID, 
+                    System.DateTimeOffset CP_DATE, 
+                    string CP_TYPE, 
+                    string CP_DESC, 
+                    string PAYER, 
+                    decimal HRORFRT, 
+                    decimal DAYSORMT, 
+                    string OWR, 
+                    decimal BRKRATE_OWR, 
+                    decimal BRKAMOUNT_OWR, 
+                    string CHR, 
+                    decimal BRKRATE_CHR, 
+                    decimal BRKAMOUNT_CHR, 
+                    decimal ESTBRK, 
+                    string BROKER1, 
+                    string BROKER2, 
+                    string SIGNOPER, 
+                    decimal CAP_RATE, 
+                    decimal CAP_AMOUNT, 
+                    int TFCB, 
+                    string FIXNO, 
+                    string STATUS, 
+                    string REMARK, 
+                    string OPER, 
+                    System.DateTimeOffset OP_DT, 
+                    int Original_ID, 
+                    int Original_VSL_ID, 
+                    System.DateTimeOffset Original_CP_DATE, 
+                    decimal Original_HRORFRT, 
+                    decimal Original_DAYSORMT, 
+                    decimal Original_BRKRATE_OWR, 
+                    decimal Original_BRKAMOUNT_OWR, 
+                    decimal Original_BRKRATE_CHR, 
+                    decimal Original_BRKAMOUNT_CHR, 
+                    decimal Original_ESTBRK, 
+                    decimal Original_CAP_RATE, 
+                    decimal Original_CAP_AMOUNT, 
+                    int Original_TFCB, 
+                    System.DateTimeOffset Original_OP_DT, 
+                    int ID) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(VSL_ID));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTimeOffset)(CP_DATE));
+            if ((CP_TYPE == null)) {
+                throw new global::System.ArgumentNullException("CP_TYPE");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(CP_TYPE));
+            }
+            if ((CP_DESC == null)) {
+                throw new global::System.ArgumentNullException("CP_DESC");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(CP_DESC));
+            }
+            if ((PAYER == null)) {
+                throw new global::System.ArgumentNullException("PAYER");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(PAYER));
+            }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((decimal)(HRORFRT));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((decimal)(DAYSORMT));
+            if ((OWR == null)) {
+                throw new global::System.ArgumentNullException("OWR");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(OWR));
+            }
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((decimal)(BRKRATE_OWR));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((decimal)(BRKAMOUNT_OWR));
+            if ((CHR == null)) {
+                throw new global::System.ArgumentNullException("CHR");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(CHR));
+            }
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((decimal)(BRKRATE_CHR));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((decimal)(BRKAMOUNT_CHR));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((decimal)(ESTBRK));
+            if ((BROKER1 == null)) {
+                throw new global::System.ArgumentNullException("BROKER1");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(BROKER1));
+            }
+            if ((BROKER2 == null)) {
+                throw new global::System.ArgumentNullException("BROKER2");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(BROKER2));
+            }
+            if ((SIGNOPER == null)) {
+                throw new global::System.ArgumentNullException("SIGNOPER");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(SIGNOPER));
+            }
+            this.Adapter.UpdateCommand.Parameters[17].Value = ((decimal)(CAP_RATE));
+            this.Adapter.UpdateCommand.Parameters[18].Value = ((decimal)(CAP_AMOUNT));
+            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(TFCB));
+            if ((FIXNO == null)) {
+                throw new global::System.ArgumentNullException("FIXNO");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(FIXNO));
+            }
+            if ((STATUS == null)) {
+                throw new global::System.ArgumentNullException("STATUS");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(STATUS));
+            }
+            if ((REMARK == null)) {
+                throw new global::System.ArgumentNullException("REMARK");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(REMARK));
+            }
+            if ((OPER == null)) {
+                throw new global::System.ArgumentNullException("OPER");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(OPER));
+            }
+            this.Adapter.UpdateCommand.Parameters[24].Value = ((System.DateTimeOffset)(OP_DT));
+            this.Adapter.UpdateCommand.Parameters[25].Value = ((int)(Original_ID));
+            this.Adapter.UpdateCommand.Parameters[26].Value = ((int)(Original_VSL_ID));
+            this.Adapter.UpdateCommand.Parameters[27].Value = ((System.DateTimeOffset)(Original_CP_DATE));
+            this.Adapter.UpdateCommand.Parameters[28].Value = ((decimal)(Original_HRORFRT));
+            this.Adapter.UpdateCommand.Parameters[29].Value = ((decimal)(Original_DAYSORMT));
+            this.Adapter.UpdateCommand.Parameters[30].Value = ((decimal)(Original_BRKRATE_OWR));
+            this.Adapter.UpdateCommand.Parameters[31].Value = ((decimal)(Original_BRKAMOUNT_OWR));
+            this.Adapter.UpdateCommand.Parameters[32].Value = ((decimal)(Original_BRKRATE_CHR));
+            this.Adapter.UpdateCommand.Parameters[33].Value = ((decimal)(Original_BRKAMOUNT_CHR));
+            this.Adapter.UpdateCommand.Parameters[34].Value = ((decimal)(Original_ESTBRK));
+            this.Adapter.UpdateCommand.Parameters[35].Value = ((decimal)(Original_CAP_RATE));
+            this.Adapter.UpdateCommand.Parameters[36].Value = ((decimal)(Original_CAP_AMOUNT));
+            this.Adapter.UpdateCommand.Parameters[37].Value = ((int)(Original_TFCB));
+            this.Adapter.UpdateCommand.Parameters[38].Value = ((System.DateTimeOffset)(Original_OP_DT));
+            this.Adapter.UpdateCommand.Parameters[39].Value = ((int)(ID));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    int VSL_ID, 
+                    System.DateTimeOffset CP_DATE, 
+                    string CP_TYPE, 
+                    string CP_DESC, 
+                    string PAYER, 
+                    decimal HRORFRT, 
+                    decimal DAYSORMT, 
+                    string OWR, 
+                    decimal BRKRATE_OWR, 
+                    decimal BRKAMOUNT_OWR, 
+                    string CHR, 
+                    decimal BRKRATE_CHR, 
+                    decimal BRKAMOUNT_CHR, 
+                    decimal ESTBRK, 
+                    string BROKER1, 
+                    string BROKER2, 
+                    string SIGNOPER, 
+                    decimal CAP_RATE, 
+                    decimal CAP_AMOUNT, 
+                    int TFCB, 
+                    string FIXNO, 
+                    string STATUS, 
+                    string REMARK, 
+                    string OPER, 
+                    System.DateTimeOffset OP_DT, 
+                    int Original_ID, 
+                    int Original_VSL_ID, 
+                    System.DateTimeOffset Original_CP_DATE, 
+                    decimal Original_HRORFRT, 
+                    decimal Original_DAYSORMT, 
+                    decimal Original_BRKRATE_OWR, 
+                    decimal Original_BRKAMOUNT_OWR, 
+                    decimal Original_BRKRATE_CHR, 
+                    decimal Original_BRKAMOUNT_CHR, 
+                    decimal Original_ESTBRK, 
+                    decimal Original_CAP_RATE, 
+                    decimal Original_CAP_AMOUNT, 
+                    int Original_TFCB, 
+                    System.DateTimeOffset Original_OP_DT) {
+            return this.Update(VSL_ID, CP_DATE, CP_TYPE, CP_DESC, PAYER, HRORFRT, DAYSORMT, OWR, BRKRATE_OWR, BRKAMOUNT_OWR, CHR, BRKRATE_CHR, BRKAMOUNT_CHR, ESTBRK, BROKER1, BROKER2, SIGNOPER, CAP_RATE, CAP_AMOUNT, TFCB, FIXNO, STATUS, REMARK, OPER, OP_DT, Original_ID, Original_VSL_ID, Original_CP_DATE, Original_HRORFRT, Original_DAYSORMT, Original_BRKRATE_OWR, Original_BRKAMOUNT_OWR, Original_BRKRATE_CHR, Original_BRKAMOUNT_CHR, Original_ESTBRK, Original_CAP_RATE, Original_CAP_AMOUNT, Original_TFCB, Original_OP_DT, Original_ID);
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5315,11 +5341,11 @@ FROM      TInvoices";
         
         private TSys_UsersTableAdapter _tSys_UsersTableAdapter;
         
-        private TFixturesTableAdapter _tFixturesTableAdapter;
-        
         private TInvoicesTableAdapter _tInvoicesTableAdapter;
         
         private TVesselsTableAdapter _tVesselsTableAdapter;
+        
+        private TFixturesTableAdapter _tFixturesTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -5355,20 +5381,6 @@ FROM      TInvoices";
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public TFixturesTableAdapter TFixturesTableAdapter {
-            get {
-                return this._tFixturesTableAdapter;
-            }
-            set {
-                this._tFixturesTableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
         public TInvoicesTableAdapter TInvoicesTableAdapter {
             get {
                 return this._tInvoicesTableAdapter;
@@ -5389,6 +5401,20 @@ FROM      TInvoices";
             }
             set {
                 this._tVesselsTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public TFixturesTableAdapter TFixturesTableAdapter {
+            get {
+                return this._tFixturesTableAdapter;
+            }
+            set {
+                this._tFixturesTableAdapter = value;
             }
         }
         
@@ -5415,10 +5441,6 @@ FROM      TInvoices";
                             && (this._tSys_UsersTableAdapter.Connection != null))) {
                     return this._tSys_UsersTableAdapter.Connection;
                 }
-                if (((this._tFixturesTableAdapter != null) 
-                            && (this._tFixturesTableAdapter.Connection != null))) {
-                    return this._tFixturesTableAdapter.Connection;
-                }
                 if (((this._tInvoicesTableAdapter != null) 
                             && (this._tInvoicesTableAdapter.Connection != null))) {
                     return this._tInvoicesTableAdapter.Connection;
@@ -5426,6 +5448,10 @@ FROM      TInvoices";
                 if (((this._tVesselsTableAdapter != null) 
                             && (this._tVesselsTableAdapter.Connection != null))) {
                     return this._tVesselsTableAdapter.Connection;
+                }
+                if (((this._tFixturesTableAdapter != null) 
+                            && (this._tFixturesTableAdapter.Connection != null))) {
+                    return this._tFixturesTableAdapter.Connection;
                 }
                 return null;
             }
@@ -5443,13 +5469,13 @@ FROM      TInvoices";
                 if ((this._tSys_UsersTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._tFixturesTableAdapter != null)) {
-                    count = (count + 1);
-                }
                 if ((this._tInvoicesTableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._tVesselsTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._tFixturesTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -5626,16 +5652,16 @@ FROM      TInvoices";
                         && (this.MatchTableAdapterConnection(this._tSys_UsersTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("由 TableAdapterManager 管理的所有 TableAdapter 必须使用相同的连接字符串。");
             }
-            if (((this._tFixturesTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._tFixturesTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("由 TableAdapterManager 管理的所有 TableAdapter 必须使用相同的连接字符串。");
-            }
             if (((this._tInvoicesTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._tInvoicesTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("由 TableAdapterManager 管理的所有 TableAdapter 必须使用相同的连接字符串。");
             }
             if (((this._tVesselsTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._tVesselsTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("由 TableAdapterManager 管理的所有 TableAdapter 必须使用相同的连接字符串。");
+            }
+            if (((this._tFixturesTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._tFixturesTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("由 TableAdapterManager 管理的所有 TableAdapter 必须使用相同的连接字符串。");
             }
             global::System.Data.IDbConnection workConnection = this.Connection;
@@ -5678,15 +5704,6 @@ FROM      TInvoices";
                         adaptersWithAcceptChangesDuringUpdate.Add(this._tSys_UsersTableAdapter.Adapter);
                     }
                 }
-                if ((this._tFixturesTableAdapter != null)) {
-                    revertConnections.Add(this._tFixturesTableAdapter, this._tFixturesTableAdapter.Connection);
-                    this._tFixturesTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._tFixturesTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._tFixturesTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._tFixturesTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._tFixturesTableAdapter.Adapter);
-                    }
-                }
                 if ((this._tInvoicesTableAdapter != null)) {
                     revertConnections.Add(this._tInvoicesTableAdapter, this._tInvoicesTableAdapter.Connection);
                     this._tInvoicesTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
@@ -5703,6 +5720,15 @@ FROM      TInvoices";
                     if (this._tVesselsTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._tVesselsTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._tVesselsTableAdapter.Adapter);
+                    }
+                }
+                if ((this._tFixturesTableAdapter != null)) {
+                    revertConnections.Add(this._tFixturesTableAdapter, this._tFixturesTableAdapter.Connection);
+                    this._tFixturesTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._tFixturesTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._tFixturesTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._tFixturesTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._tFixturesTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -5767,10 +5793,6 @@ FROM      TInvoices";
                     this._tSys_UsersTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tSys_UsersTableAdapter]));
                     this._tSys_UsersTableAdapter.Transaction = null;
                 }
-                if ((this._tFixturesTableAdapter != null)) {
-                    this._tFixturesTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tFixturesTableAdapter]));
-                    this._tFixturesTableAdapter.Transaction = null;
-                }
                 if ((this._tInvoicesTableAdapter != null)) {
                     this._tInvoicesTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tInvoicesTableAdapter]));
                     this._tInvoicesTableAdapter.Transaction = null;
@@ -5778,6 +5800,10 @@ FROM      TInvoices";
                 if ((this._tVesselsTableAdapter != null)) {
                     this._tVesselsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tVesselsTableAdapter]));
                     this._tVesselsTableAdapter.Transaction = null;
+                }
+                if ((this._tFixturesTableAdapter != null)) {
+                    this._tFixturesTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tFixturesTableAdapter]));
+                    this._tFixturesTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

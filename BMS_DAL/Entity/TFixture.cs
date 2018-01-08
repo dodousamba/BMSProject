@@ -21,13 +21,13 @@ namespace BMS_DAL.Entity
         public string CP_DESC { get; set; }
         public string PAYER { get; set; }
         public decimal HRORFRT { get; set; }
-        public string DAYSORMT { get; set; }
+        public decimal DAYSORMT { get; set; }
         public string OWR { get; set; }
         public decimal BRKRATE_OWR { get; set; }
-        public string BRKAMOUNT_OWR { get; set; }
+        public decimal BRKAMOUNT_OWR { get; set; }
         public string CHR { get; set; }
         public decimal BRKRATE_CHR { get; set; }
-        public string BRKAMOUNT_CHR { get; set; }
+        public decimal BRKAMOUNT_CHR { get; set; }
         public decimal ESTBRK { get; set; }
         public string BROKER1 { get; set; }
         public string BROKER2 { get; set; }

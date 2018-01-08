@@ -27,7 +27,7 @@ namespace BMS_DAL.Entity
         public decimal DAYSORMT { get; set; }
         public string ATIN { get; set; }
         public string CWNO { get; set; }
-        public string OWNER { get; set; }
+        public string OWR { get; set; }
         public decimal BRKRATE_OWR { get; set; }
         public decimal BRKAMOUNT_OWR { get; set; }
         public string CHR { get; set; }
@@ -40,5 +40,6 @@ namespace BMS_DAL.Entity
         public string REMARK { get; set; }
         public string OPER { get; set; }
         public decimal OP_DT { get; set; }
+        public System.DateTimeOffset RECEIVABLEDATE { get; set; }
     }
 }

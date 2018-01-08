@@ -26,13 +26,13 @@
     <Property Name="CP_DESC" Type="nvarchar(max)" Nullable="false" />
     <Property Name="PAYER" Type="nvarchar(max)" Nullable="false" />
     <Property Name="HRORFRT" Type="decimal" Nullable="false" />
-    <Property Name="DAYSORMT" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DAYSORMT" Type="decimal" Nullable="false" />
     <Property Name="OWR" Type="nvarchar(max)" Nullable="false" />
     <Property Name="BRKRATE_OWR" Type="decimal" Nullable="false" />
-    <Property Name="BRKAMOUNT_OWR" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BRKAMOUNT_OWR" Type="decimal" Nullable="false" />
     <Property Name="CHR" Type="nvarchar(max)" Nullable="false" />
     <Property Name="BRKRATE_CHR" Type="decimal" Nullable="false" />
-    <Property Name="BRKAMOUNT_CHR" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BRKAMOUNT_CHR" Type="decimal" Nullable="false" />
     <Property Name="ESTBRK" Type="decimal" Nullable="false" />
     <Property Name="BROKER1" Type="nvarchar(max)" Nullable="false" />
     <Property Name="BROKER2" Type="nvarchar(max)" Nullable="false" />
@@ -74,7 +74,7 @@
     <Property Name="DAYSORMT" Type="decimal" Nullable="false" />
     <Property Name="ATIN" Type="nvarchar(max)" Nullable="false" />
     <Property Name="CWNO" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="OWNER" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OWR" Type="nvarchar(max)" Nullable="false" />
     <Property Name="BRKRATE_OWR" Type="decimal" Nullable="false" />
     <Property Name="BRKAMOUNT_OWR" Type="decimal" Nullable="false" />
     <Property Name="CHR" Type="nvarchar(max)" Nullable="false" />
@@ -87,5 +87,6 @@
     <Property Name="REMARK" Type="nvarchar(max)" Nullable="false" />
     <Property Name="OPER" Type="nvarchar(max)" Nullable="false" />
     <Property Name="OP_DT" Type="decimal" Nullable="false" />
+    <Property Name="RECEIVABLEDATE" Type="datetimeoffset" Nullable="false" />
   </EntityType>
 </Schema>

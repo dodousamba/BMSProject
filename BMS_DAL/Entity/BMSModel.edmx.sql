@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
--- Date Created: 01/06/2018 15:51:01
--- Generated from EDMX file: C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_DAL\Entity\BMSModel.edmx
+-- Date Created: 01/08/2018 17:19:36
+-- Generated from EDMX file: C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\BMS_DAL\Entity\BMSModel.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -57,13 +57,13 @@ CREATE TABLE [dbo].[TFixtures] (
     [CP_DESC] nvarchar(max)  NOT NULL,
     [PAYER] nvarchar(max)  NOT NULL,
     [HRORFRT] decimal(18,0)  NOT NULL,
-    [DAYSORMT] nvarchar(max)  NOT NULL,
+    [DAYSORMT] decimal(18,0)  NOT NULL,
     [OWR] nvarchar(max)  NOT NULL,
     [BRKRATE_OWR] decimal(18,0)  NOT NULL,
-    [BRKAMOUNT_OWR] nvarchar(max)  NOT NULL,
+    [BRKAMOUNT_OWR] decimal(18,0)  NOT NULL,
     [CHR] nvarchar(max)  NOT NULL,
     [BRKRATE_CHR] decimal(18,0)  NOT NULL,
-    [BRKAMOUNT_CHR] nvarchar(max)  NOT NULL,
+    [BRKAMOUNT_CHR] decimal(18,0)  NOT NULL,
     [ESTBRK] decimal(18,0)  NOT NULL,
     [BROKER1] nvarchar(max)  NOT NULL,
     [BROKER2] nvarchar(max)  NOT NULL,
@@ -105,7 +105,7 @@ CREATE TABLE [dbo].[TInvoices] (
     [DAYSORMT] decimal(18,0)  NOT NULL,
     [ATIN] nvarchar(max)  NOT NULL,
     [CWNO] nvarchar(max)  NOT NULL,
-    [OWNER] nvarchar(max)  NOT NULL,
+    [OWR] nvarchar(max)  NOT NULL,
     [BRKRATE_OWR] decimal(18,0)  NOT NULL,
     [BRKAMOUNT_OWR] decimal(18,0)  NOT NULL,
     [CHR] nvarchar(max)  NOT NULL,
@@ -117,7 +117,8 @@ CREATE TABLE [dbo].[TInvoices] (
     [STATUS] nvarchar(max)  NOT NULL,
     [REMARK] nvarchar(max)  NOT NULL,
     [OPER] nvarchar(max)  NOT NULL,
-    [OP_DT] decimal(18,0)  NOT NULL
+    [OP_DT] decimal(18,0)  NOT NULL,
+    [RECEIVABLEDATE] datetimeoffset  NOT NULL
 );
 GO
 

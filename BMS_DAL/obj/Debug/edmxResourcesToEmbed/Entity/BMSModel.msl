@@ -71,7 +71,7 @@
           <ScalarProperty Name="DAYSORMT" ColumnName="DAYSORMT" />
           <ScalarProperty Name="ATIN" ColumnName="ATIN" />
           <ScalarProperty Name="CWNO" ColumnName="CWNO" />
-          <ScalarProperty Name="OWNER" ColumnName="OWNER" />
+          <ScalarProperty Name="OWR" ColumnName="OWR" />
           <ScalarProperty Name="BRKRATE_OWR" ColumnName="BRKRATE_OWR" />
           <ScalarProperty Name="BRKAMOUNT_OWR" ColumnName="BRKAMOUNT_OWR" />
           <ScalarProperty Name="CHR" ColumnName="CHR" />
@@ -84,6 +84,7 @@
           <ScalarProperty Name="REMARK" ColumnName="REMARK" />
           <ScalarProperty Name="OPER" ColumnName="OPER" />
           <ScalarProperty Name="OP_DT" ColumnName="OP_DT" />
+          <ScalarProperty Name="RECEIVABLEDATE" ColumnName="RECEIVABLEDATE" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
