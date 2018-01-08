@@ -9,3 +9,14 @@ C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\DBPressureTest\b
 C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\DBPressureTest\obj\Debug\DBPressureTest.csprojResolveAssemblyReference.cache
 C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\DBPressureTest\obj\Debug\DBPressureTest.exe
 C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\DBPressureTest\obj\Debug\DBPressureTest.pdb
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\DBPressureTest\bin\Debug\DBPressureTest.exe.config
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\DBPressureTest\bin\Debug\DBPressureTest.exe
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\DBPressureTest\bin\Debug\DBPressureTest.pdb
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\DBPressureTest\bin\Debug\BMS_DAL.dll
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\DBPressureTest\bin\Debug\EntityFramework.dll
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\DBPressureTest\bin\Debug\BMS_DAL.pdb
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\DBPressureTest\bin\Debug\EntityFramework.xml
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\DBPressureTest\bin\Debug\zh-Hans\EntityFramework.resources.dll
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\DBPressureTest\obj\Debug\DBPressureTest.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\DBPressureTest\obj\Debug\DBPressureTest.exe
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\DBPressureTest\obj\Debug\DBPressureTest.pdb
