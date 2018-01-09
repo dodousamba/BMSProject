@@ -104,5 +104,7 @@
     <Property Type="String" Name="OPER" Nullable="false" />
     <Property Type="DateTimeOffset" Name="OP_DT" Nullable="false" />
     <Property Type="Int32" Name="INVOICE_ID" Nullable="false" />
+    <Property Type="Decimal" Name="DEBIT" Nullable="false" />
+    <Property Type="Decimal" Name="CREDIT" Nullable="false" />
   </EntityType>
 </Schema>

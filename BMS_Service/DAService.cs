@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using System.Data;
 
 namespace BMS_Service
 {
@@ -95,28 +96,63 @@ namespace BMS_Service
         {
             int r = 0;
 
+            var dschanges = ds.GetChanges();
+            using (BMS_DAL.DS.BMSDSTableAdapters.TFixturesTableAdapter ta = new BMS_DAL.DS.BMSDSTableAdapters.TFixturesTableAdapter())
+            {
+                r += ta.UpdateWithTrans((BMS_DAL.DS.BMSDS.TFixturesDataTable)dschanges.Tables["TFixtures"]);
+            }
+            using (BMS_DAL.DS.BMSDSTableAdapters.TInvoicesTableAdapter ta = new BMS_DAL.DS.BMSDSTableAdapters.TInvoicesTableAdapter())
+            {
+                r += ta.UpdateWithTrans((BMS_DAL.DS.BMSDS.TInvoicesDataTable)dschanges.Tables["TInvoices"]);
+            }
+            foreach (DataRow idrow in dschanges.Tables["TInvoiceDetails"].Rows)
+            {
+                if (idrow.RowState.Equals(DataRowState.Deleted))
+                {
+                    continue;
+                }
+                if ((int)idrow["ID"] < 0)
+                {
+                    idrow.SetAdded();
+                }
+                else
+                {
+                    idrow.SetModified();
+                }
+            }
+            using (BMS_DAL.DS.BMSDSTableAdapters.TInvoiceDetailsTableAdapter ta = new BMS_DAL.DS.BMSDSTableAdapters.TInvoiceDetailsTableAdapter())
+            {
+                r += ta.UpdateWithTrans((BMS_DAL.DS.BMSDS.TInvoiceDetailsDataTable)dschanges.Tables["TInvoiceDetails"]);
+            }
+
+            return r;
+        }
+        public int DeleteFixtureWithRelation(BMS_DAL.DS.BMSDS ds)
+        {
+            int r = 0;
+
             if (ds.TInvoiceDetails.GetChanges() != null)
             {
                 using (BMS_DAL.DS.BMSDSTableAdapters.TInvoiceDetailsTableAdapter ta = new BMS_DAL.DS.BMSDSTableAdapters.TInvoiceDetailsTableAdapter())
                 {
-                    r = ta.UpdateWithTrans(ds.TInvoiceDetails);
+                    r += ta.UpdateWithTrans(ds.TInvoiceDetails);
                 }
             }
             if (ds.TInvoices.GetChanges() != null)
             {
                 using (BMS_DAL.DS.BMSDSTableAdapters.TInvoicesTableAdapter ta = new BMS_DAL.DS.BMSDSTableAdapters.TInvoicesTableAdapter())
                 {
-                    r = ta.UpdateWithTrans(ds.TInvoices);
+                    r += ta.UpdateWithTrans(ds.TInvoices);
                 }
             }
             if (ds.TFixtures.GetChanges() != null)
             {
                 using (BMS_DAL.DS.BMSDSTableAdapters.TFixturesTableAdapter ta = new BMS_DAL.DS.BMSDSTableAdapters.TFixturesTableAdapter())
                 {
-                    r = ta.UpdateWithTrans(ds.TFixtures);
+                    r += ta.UpdateWithTrans(ds.TFixtures);
                 }
             }
-
+    
             return r;
         }
 

@@ -95,7 +95,7 @@ namespace DemoLib
                 item.Text = "Update Invoice";
                 item.FixDataRow = selecteddatarow;
                 item.DataRowItem = datarowitem;
-                item.InvoiceDetailDV = _ds.Relations["TInvoices_TInvoiceDetails"].ChildTable.DefaultView;
+                item.InvoiceDetailDV = _ds.TInvoiceDetails.DefaultView;
                 item.InvoiceDetailDV.RowFilter = string.Format("INVOICE_ID='{0}'", datarowitem.ID);
                 switch (item.ShowDialog())
                 {
@@ -124,7 +124,7 @@ namespace DemoLib
             if (MessageBox.Show(nString, "Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk).Equals(DialogResult.OK))
             {
                 datarowitem.Delete();
-                MessageBox.Show(string.Format("Delete {0} rows", this._daservice.UpdateFixtureWithRelation(this._ds)));
+                MessageBox.Show(string.Format("Delete {0} rows", this._daservice.DeleteFixtureWithRelation(this._ds)));
                 this._ds = _daservice.GetFixtureWithRelation();
                 this.BindData1();
                 this.BindData2();
@@ -176,12 +176,12 @@ namespace DemoLib
             item.Text = "Add Invoice";
             item.FixDataRow = selecteddatarow;
             item.DataRowItem = datarowitem;
-            item.InvoiceDetailDV = _ds.Relations["TInvoices_TInvoiceDetails"].ChildTable.DefaultView;
+            item.InvoiceDetailDV = _ds.TInvoiceDetails.DefaultView;
             item.InvoiceDetailDV.RowFilter = string.Format("INVOICE_ID='{0}'", datarowitem.ID);
+            this._ds.TInvoices.AddTInvoicesRow(datarowitem);
             switch (item.ShowDialog())
             {
                 case DialogResult.OK:
-                    this._ds.TInvoices.AddTInvoicesRow(datarowitem);
                     MessageBox.Show(string.Format("Add {0} rows", this._daservice.UpdateFixtureWithRelation(this._ds)));
                     this._ds = _daservice.GetFixtureWithRelation();
                     this.BindData1();
@@ -196,12 +196,12 @@ namespace DemoLib
 
         private void BindData1()
         {
-            this.bindingSource1.DataSource = _ds.Relations["TFixtures_TInvoices"].ParentTable;
+            this.bindingSource1.DataSource = _ds.TFixtures;
             this.gridControl1.DataSource = this.bindingSource1;
         }
         private void BindData2()
         {
-            this.bindingSource2.DataSource = _ds.Relations["TFixtures_TInvoices"].ChildTable;
+            this.bindingSource2.DataSource = _ds.TInvoices;
             this.bindingNavigator1.BindingSource = this.bindingSource2;
             this.gridControl2.DataSource = this.bindingSource2;
         }

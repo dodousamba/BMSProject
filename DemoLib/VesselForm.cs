@@ -122,10 +122,10 @@ namespace DemoLib
             VesselItem item = new VesselItem();
             item.Text = "Add Vessel";
             item.DataRowItem = datarowitem;
+            this._dt.AddTVesselsRow(datarowitem);
             switch (item.ShowDialog())
             {
                 case DialogResult.OK:
-                    this._dt.AddTVesselsRow(datarowitem);
                     MessageBox.Show(string.Format("Add {0} rows", this._daservice.UpdateVessel(this._dt)));
                     this._dt = _daservice.GetVessel();
                     this.BindData();

@@ -105,7 +105,7 @@ namespace DemoLib
             if (MessageBox.Show(nString, "Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk).Equals(DialogResult.OK))
             {
                 datarowitem.Delete();
-                MessageBox.Show(string.Format("Delete {0} rows", this._daservice.UpdateFixtureWithRelation(this._ds)));
+                MessageBox.Show(string.Format("Delete {0} rows", this._daservice.DeleteFixtureWithRelation(this._ds)));
                 this._ds = _daservice.GetFixtureWithRelation();
                 this.BindData();
             }
@@ -146,10 +146,10 @@ namespace DemoLib
             FixtureItem item = new FixtureItem();
             item.Text = "Add Fixture";
             item.DataRowItem = datarowitem;
+            this._ds.TFixtures.AddTFixturesRow(datarowitem);
             switch (item.ShowDialog())
             {
                 case DialogResult.OK:
-                    this._ds.TFixtures.AddTFixturesRow(datarowitem);
                     MessageBox.Show(string.Format("Add {0} rows", this._daservice.UpdateFixtureWithRelation(this._ds)));
                     this._ds = _daservice.GetFixtureWithRelation();
                     this.BindData();

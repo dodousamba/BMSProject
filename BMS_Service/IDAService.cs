@@ -30,6 +30,9 @@ namespace BMS_Service
         int UpdateFixtureWithRelation(BMS_DAL.DS.BMSDS ds);
 
         [OperationContract]
+        int DeleteFixtureWithRelation(BMS_DAL.DS.BMSDS ds);
+
+        [OperationContract]
         BMS_DAL.DS.BMSDS.TInvoicesDataTable GetInvoice();
 
         [OperationContract]

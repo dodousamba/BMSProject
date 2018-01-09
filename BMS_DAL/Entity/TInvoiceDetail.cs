@@ -23,5 +23,7 @@ namespace BMS_DAL.Entity
         public string OPER { get; set; }
         public System.DateTimeOffset OP_DT { get; set; }
         public int INVOICE_ID { get; set; }
+        public decimal DEBIT { get; set; }
+        public decimal CREDIT { get; set; }
     }
 }

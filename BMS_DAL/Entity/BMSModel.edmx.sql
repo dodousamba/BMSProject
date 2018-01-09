@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
--- Date Created: 01/08/2018 23:05:13
+-- Date Created: 01/09/2018 22:35:36
 -- Generated from EDMX file: C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_DAL\Entity\BMSModel.edmx
 -- --------------------------------------------------
 
@@ -136,7 +136,9 @@ CREATE TABLE [dbo].[TInvoiceDetails] (
     [C5] nvarchar(max)  NOT NULL,
     [OPER] nvarchar(max)  NOT NULL,
     [OP_DT] datetimeoffset  NOT NULL,
-    [INVOICE_ID] int  NOT NULL
+    [INVOICE_ID] int  NOT NULL,
+    [DEBIT] decimal(18,0)  NOT NULL,
+    [CREDIT] decimal(18,0)  NOT NULL
 );
 GO
 

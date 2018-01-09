@@ -101,6 +101,8 @@
           <ScalarProperty Name="OPER" ColumnName="OPER" />
           <ScalarProperty Name="OP_DT" ColumnName="OP_DT" />
           <ScalarProperty Name="INVOICE_ID" ColumnName="INVOICE_ID" />
+          <ScalarProperty Name="DEBIT" ColumnName="DEBIT" />
+          <ScalarProperty Name="CREDIT" ColumnName="CREDIT" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

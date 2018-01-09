@@ -109,6 +109,8 @@
     <Property Name="OPER" Type="nvarchar(max)" Nullable="false" />
     <Property Name="OP_DT" Type="datetimeoffset" Nullable="false" />
     <Property Name="INVOICE_ID" Type="int" Nullable="false" />
+    <Property Name="DEBIT" Type="decimal" Nullable="false" />
+    <Property Name="CREDIT" Type="decimal" Nullable="false" />
   </EntityType>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -218,6 +220,8 @@
           <Property Type="String" Name="OPER" Nullable="false" />
           <Property Type="DateTimeOffset" Name="OP_DT" Nullable="false" />
           <Property Type="Int32" Name="INVOICE_ID" Nullable="false" />
+          <Property Type="Decimal" Name="DEBIT" Nullable="false" />
+          <Property Type="Decimal" Name="CREDIT" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -325,6 +329,8 @@
           <ScalarProperty Name="OPER" ColumnName="OPER" />
           <ScalarProperty Name="OP_DT" ColumnName="OP_DT" />
           <ScalarProperty Name="INVOICE_ID" ColumnName="INVOICE_ID" />
+          <ScalarProperty Name="DEBIT" ColumnName="DEBIT" />
+          <ScalarProperty Name="CREDIT" ColumnName="CREDIT" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

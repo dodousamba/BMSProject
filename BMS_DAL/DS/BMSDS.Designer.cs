@@ -2489,6 +2489,10 @@ namespace BMS_DAL.DS {
             
             private global::System.Data.DataColumn columnINVOICE_ID;
             
+            private global::System.Data.DataColumn columnDEBIT;
+            
+            private global::System.Data.DataColumn columnCREDIT;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public TInvoiceDetailsDataTable() {
@@ -2596,6 +2600,22 @@ namespace BMS_DAL.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DEBITColumn {
+                get {
+                    return this.columnDEBIT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CREDITColumn {
+                get {
+                    return this.columnCREDIT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2631,7 +2651,7 @@ namespace BMS_DAL.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TInvoiceDetailsRow AddTInvoiceDetailsRow(string C1, string C2, string C3, string C4, string C5, string OPER, System.DateTimeOffset OP_DT, TInvoicesRow parentTInvoicesRowByTInvoices_TInvoiceDetails) {
+            public TInvoiceDetailsRow AddTInvoiceDetailsRow(string C1, string C2, string C3, string C4, string C5, string OPER, System.DateTimeOffset OP_DT, TInvoicesRow parentTInvoicesRowByTInvoices_TInvoiceDetails, decimal DEBIT, decimal CREDIT) {
                 TInvoiceDetailsRow rowTInvoiceDetailsRow = ((TInvoiceDetailsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -2642,7 +2662,9 @@ namespace BMS_DAL.DS {
                         C5,
                         OPER,
                         OP_DT,
-                        null};
+                        null,
+                        DEBIT,
+                        CREDIT};
                 if ((parentTInvoicesRowByTInvoices_TInvoiceDetails != null)) {
                     columnValuesArray[8] = parentTInvoicesRowByTInvoices_TInvoiceDetails[0];
                 }
@@ -2684,6 +2706,8 @@ namespace BMS_DAL.DS {
                 this.columnOPER = base.Columns["OPER"];
                 this.columnOP_DT = base.Columns["OP_DT"];
                 this.columnINVOICE_ID = base.Columns["INVOICE_ID"];
+                this.columnDEBIT = base.Columns["DEBIT"];
+                this.columnCREDIT = base.Columns["CREDIT"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2707,6 +2731,10 @@ namespace BMS_DAL.DS {
                 base.Columns.Add(this.columnOP_DT);
                 this.columnINVOICE_ID = new global::System.Data.DataColumn("INVOICE_ID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnINVOICE_ID);
+                this.columnDEBIT = new global::System.Data.DataColumn("DEBIT", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDEBIT);
+                this.columnCREDIT = new global::System.Data.DataColumn("CREDIT", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCREDIT);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -2729,6 +2757,8 @@ namespace BMS_DAL.DS {
                 this.columnOPER.MaxLength = 2147483647;
                 this.columnOP_DT.AllowDBNull = false;
                 this.columnINVOICE_ID.AllowDBNull = false;
+                this.columnDEBIT.AllowDBNull = false;
+                this.columnCREDIT.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3762,6 +3792,28 @@ namespace BMS_DAL.DS {
                 }
                 set {
                     this[this.tableTInvoiceDetails.INVOICE_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal DEBIT {
+                get {
+                    return ((decimal)(this[this.tableTInvoiceDetails.DEBITColumn]));
+                }
+                set {
+                    this[this.tableTInvoiceDetails.DEBITColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal CREDIT {
+                get {
+                    return ((decimal)(this[this.tableTInvoiceDetails.CREDITColumn]));
+                }
+                set {
+                    this[this.tableTInvoiceDetails.CREDITColumn] = value;
                 }
             }
             
@@ -6129,19 +6181,24 @@ FROM      TFixtures";
             tableMapping.ColumnMappings.Add("OPER", "OPER");
             tableMapping.ColumnMappings.Add("OP_DT", "OP_DT");
             tableMapping.ColumnMappings.Add("INVOICE_ID", "INVOICE_ID");
+            tableMapping.ColumnMappings.Add("DEBIT", "DEBIT");
+            tableMapping.ColumnMappings.Add("CREDIT", "CREDIT");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
             this._adapter.DeleteCommand.CommandText = "DELETE FROM [TInvoiceDetails] WHERE (([ID] = @Original_ID) AND ([OP_DT] = @Origin" +
-                "al_OP_DT) AND ([INVOICE_ID] = @Original_INVOICE_ID))";
+                "al_OP_DT) AND ([INVOICE_ID] = @Original_INVOICE_ID) AND ([DEBIT] = @Original_DEB" +
+                "IT) AND ([CREDIT] = @Original_CREDIT))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OP_DT", global::System.Data.SqlDbType.DateTimeOffset, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OP_DT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_INVOICE_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "INVOICE_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DEBIT", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "DEBIT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CREDIT", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "CREDIT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [TInvoiceDetails] ([C1], [C2], [C3], [C4], [C5], [OPER], [OP_DT], [INVOICE_ID]) VALUES (@C1, @C2, @C3, @C4, @C5, @OPER, @OP_DT, @INVOICE_ID);
-SELECT ID, C1, C2, C3, C4, C5, OPER, OP_DT, INVOICE_ID FROM TInvoiceDetails WHERE (ID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [TInvoiceDetails] ([C1], [C2], [C3], [C4], [C5], [OPER], [OP_DT], [INVOICE_ID], [DEBIT], [CREDIT]) VALUES (@C1, @C2, @C3, @C4, @C5, @OPER, @OP_DT, @INVOICE_ID, @DEBIT, @CREDIT);
+SELECT ID, C1, C2, C3, C4, C5, OPER, OP_DT, INVOICE_ID, DEBIT, CREDIT FROM TInvoiceDetails WHERE (ID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@C1", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "C1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@C2", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "C2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -6151,10 +6208,12 @@ SELECT ID, C1, C2, C3, C4, C5, OPER, OP_DT, INVOICE_ID FROM TInvoiceDetails WHER
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OPER", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OPER", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OP_DT", global::System.Data.SqlDbType.DateTimeOffset, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OP_DT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@INVOICE_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "INVOICE_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DEBIT", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "DEBIT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CREDIT", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "CREDIT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [TInvoiceDetails] SET [C1] = @C1, [C2] = @C2, [C3] = @C3, [C4] = @C4, [C5] = @C5, [OPER] = @OPER, [OP_DT] = @OP_DT, [INVOICE_ID] = @INVOICE_ID WHERE (([ID] = @Original_ID) AND ([OP_DT] = @Original_OP_DT) AND ([INVOICE_ID] = @Original_INVOICE_ID));
-SELECT ID, C1, C2, C3, C4, C5, OPER, OP_DT, INVOICE_ID FROM TInvoiceDetails WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [TInvoiceDetails] SET [C1] = @C1, [C2] = @C2, [C3] = @C3, [C4] = @C4, [C5] = @C5, [OPER] = @OPER, [OP_DT] = @OP_DT, [INVOICE_ID] = @INVOICE_ID, [DEBIT] = @DEBIT, [CREDIT] = @CREDIT WHERE (([ID] = @Original_ID) AND ([OP_DT] = @Original_OP_DT) AND ([INVOICE_ID] = @Original_INVOICE_ID) AND ([DEBIT] = @Original_DEBIT) AND ([CREDIT] = @Original_CREDIT));
+SELECT ID, C1, C2, C3, C4, C5, OPER, OP_DT, INVOICE_ID, DEBIT, CREDIT FROM TInvoiceDetails WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@C1", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "C1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@C2", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "C2", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -6164,9 +6223,13 @@ SELECT ID, C1, C2, C3, C4, C5, OPER, OP_DT, INVOICE_ID FROM TInvoiceDetails WHER
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OPER", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OPER", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OP_DT", global::System.Data.SqlDbType.DateTimeOffset, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OP_DT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@INVOICE_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "INVOICE_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DEBIT", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "DEBIT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CREDIT", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "CREDIT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OP_DT", global::System.Data.SqlDbType.DateTimeOffset, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OP_DT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_INVOICE_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "INVOICE_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DEBIT", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "DEBIT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CREDIT", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 0, "CREDIT", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -6183,8 +6246,8 @@ SELECT ID, C1, C2, C3, C4, C5, OPER, OP_DT, INVOICE_ID FROM TInvoiceDetails WHER
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT  ID, C1, C2, C3, C4, C5, OPER, OP_DT, INVOICE_ID\r\nFROM      TInvoiceDetail" +
-                "s";
+            this._commandCollection[0].CommandText = "SELECT  ID, C1, C2, C3, C4, C5, OPER, OP_DT, INVOICE_ID, DEBIT, CREDIT\r\nFROM     " +
+                " TInvoiceDetails";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -6245,10 +6308,12 @@ SELECT ID, C1, C2, C3, C4, C5, OPER, OP_DT, INVOICE_ID FROM TInvoiceDetails WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID, System.DateTimeOffset Original_OP_DT, int Original_INVOICE_ID) {
+        public virtual int Delete(int Original_ID, System.DateTimeOffset Original_OP_DT, int Original_INVOICE_ID, decimal Original_DEBIT, decimal Original_CREDIT) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((System.DateTimeOffset)(Original_OP_DT));
             this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_INVOICE_ID));
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((decimal)(Original_DEBIT));
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((decimal)(Original_CREDIT));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6269,7 +6334,7 @@ SELECT ID, C1, C2, C3, C4, C5, OPER, OP_DT, INVOICE_ID FROM TInvoiceDetails WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string C1, string C2, string C3, string C4, string C5, string OPER, System.DateTimeOffset OP_DT, int INVOICE_ID) {
+        public virtual int Insert(string C1, string C2, string C3, string C4, string C5, string OPER, System.DateTimeOffset OP_DT, int INVOICE_ID, decimal DEBIT, decimal CREDIT) {
             if ((C1 == null)) {
                 throw new global::System.ArgumentNullException("C1");
             }
@@ -6308,6 +6373,8 @@ SELECT ID, C1, C2, C3, C4, C5, OPER, OP_DT, INVOICE_ID FROM TInvoiceDetails WHER
             }
             this.Adapter.InsertCommand.Parameters[6].Value = ((System.DateTimeOffset)(OP_DT));
             this.Adapter.InsertCommand.Parameters[7].Value = ((int)(INVOICE_ID));
+            this.Adapter.InsertCommand.Parameters[8].Value = ((decimal)(DEBIT));
+            this.Adapter.InsertCommand.Parameters[9].Value = ((decimal)(CREDIT));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6328,7 +6395,23 @@ SELECT ID, C1, C2, C3, C4, C5, OPER, OP_DT, INVOICE_ID FROM TInvoiceDetails WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string C1, string C2, string C3, string C4, string C5, string OPER, System.DateTimeOffset OP_DT, int INVOICE_ID, int Original_ID, System.DateTimeOffset Original_OP_DT, int Original_INVOICE_ID, int ID) {
+        public virtual int Update(
+                    string C1, 
+                    string C2, 
+                    string C3, 
+                    string C4, 
+                    string C5, 
+                    string OPER, 
+                    System.DateTimeOffset OP_DT, 
+                    int INVOICE_ID, 
+                    decimal DEBIT, 
+                    decimal CREDIT, 
+                    int Original_ID, 
+                    System.DateTimeOffset Original_OP_DT, 
+                    int Original_INVOICE_ID, 
+                    decimal Original_DEBIT, 
+                    decimal Original_CREDIT, 
+                    int ID) {
             if ((C1 == null)) {
                 throw new global::System.ArgumentNullException("C1");
             }
@@ -6367,10 +6450,14 @@ SELECT ID, C1, C2, C3, C4, C5, OPER, OP_DT, INVOICE_ID FROM TInvoiceDetails WHER
             }
             this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTimeOffset)(OP_DT));
             this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(INVOICE_ID));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_ID));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTimeOffset)(Original_OP_DT));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_INVOICE_ID));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(ID));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((decimal)(DEBIT));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((decimal)(CREDIT));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_ID));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTimeOffset)(Original_OP_DT));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_INVOICE_ID));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((decimal)(Original_DEBIT));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((decimal)(Original_CREDIT));
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6391,8 +6478,8 @@ SELECT ID, C1, C2, C3, C4, C5, OPER, OP_DT, INVOICE_ID FROM TInvoiceDetails WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string C1, string C2, string C3, string C4, string C5, string OPER, System.DateTimeOffset OP_DT, int INVOICE_ID, int Original_ID, System.DateTimeOffset Original_OP_DT, int Original_INVOICE_ID) {
-            return this.Update(C1, C2, C3, C4, C5, OPER, OP_DT, INVOICE_ID, Original_ID, Original_OP_DT, Original_INVOICE_ID, Original_ID);
+        public virtual int Update(string C1, string C2, string C3, string C4, string C5, string OPER, System.DateTimeOffset OP_DT, int INVOICE_ID, decimal DEBIT, decimal CREDIT, int Original_ID, System.DateTimeOffset Original_OP_DT, int Original_INVOICE_ID, decimal Original_DEBIT, decimal Original_CREDIT) {
+            return this.Update(C1, C2, C3, C4, C5, OPER, OP_DT, INVOICE_ID, DEBIT, CREDIT, Original_ID, Original_OP_DT, Original_INVOICE_ID, Original_DEBIT, Original_CREDIT, Original_ID);
         }
     }
     

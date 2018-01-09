@@ -100,20 +100,37 @@ namespace DemoLib
 
         void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
-            var datarowitem = InvoiceDetailDV.AddNew();
+            var datarowitem = InvoiceDetailDV.Table.NewRow();
             datarowitem["INVOICE_ID"] = DataRowItem.ID;
-            datarowitem["C1"] = DateTime.Now.ToString("yyyyMMdd HH:mm");
+            datarowitem["C1"] = "FROM";
             datarowitem["C2"] = DateTime.Now.ToString("yyyyMMdd HH:mm");
-            datarowitem["C3"] = string.Empty;
-            datarowitem["C4"] = string.Empty;
+            datarowitem["C3"] = DateTime.Now.ToString("yyyyMMdd HH:mm");
+            datarowitem["C4"] = "GMT";
             datarowitem["C5"] = string.Empty;
             datarowitem["OPER"] = BMS_Component.UserInfo.UserName;
             datarowitem["OP_DT"] = DateTimeOffset.Now;
+            datarowitem["DEBIT"] = 0;
+            datarowitem["CREDIT"] = 0;
+            InvoiceDetailDV.Table.Rows.Add(datarowitem);
+
+            datarowitem = InvoiceDetailDV.Table.NewRow();
+            datarowitem["INVOICE_ID"] = DataRowItem.ID;
+            datarowitem["C1"] = "TO";
+            datarowitem["C2"] = DateTime.Now.ToString("yyyyMMdd HH:mm");
+            datarowitem["C3"] = DateTime.Now.ToString("yyyyMMdd HH:mm");
+            datarowitem["C4"] = "GMT";
+            datarowitem["C5"] = string.Empty;
+            datarowitem["OPER"] = BMS_Component.UserInfo.UserName;
+            datarowitem["OP_DT"] = DateTimeOffset.Now;
+            datarowitem["DEBIT"] = 0;
+            datarowitem["CREDIT"] = 0;
+            InvoiceDetailDV.Table.Rows.Add(datarowitem);
         }
 
         void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
-            InvoiceDetailDV.Delete(gridView1.GetFocusedDataSourceRowIndex());
+            var datarowitem = InvoiceDetailDV.Table.Rows.Find(this.gridView1.GetFocusedDataRow()["ID"]);
+            datarowitem.Delete();
         }
 
         private void BindInvoiceDetail()
