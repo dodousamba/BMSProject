@@ -40,7 +40,7 @@ namespace DemoLib
         {
             base.OnActivated(e);
 
-            this._ds = _daservice.GetFixtureRelation();
+            this._ds = _daservice.GetFixtureWithRelation();
             this.BindData();
         }
         protected override void OnClosed(EventArgs e)
@@ -82,8 +82,8 @@ namespace DemoLib
                 switch (item.ShowDialog())
                 {
                     case DialogResult.OK:
-                        MessageBox.Show(string.Format("Update {0} rows", this._daservice.UpdateFixtureRelation(this._ds)));
-                        this._ds = _daservice.GetFixtureRelation();
+                        MessageBox.Show(string.Format("Update {0} rows", this._daservice.UpdateFixtureWithRelation(this._ds)));
+                        this._ds = _daservice.GetFixtureWithRelation();
                         this.BindData();
                         break;
                     case DialogResult.Cancel:
@@ -105,8 +105,8 @@ namespace DemoLib
             if (MessageBox.Show(nString, "Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk).Equals(DialogResult.OK))
             {
                 datarowitem.Delete();
-                MessageBox.Show(string.Format("Delete {0} rows", this._daservice.UpdateFixtureRelation(this._ds)));
-                this._ds = _daservice.GetFixtureRelation();
+                MessageBox.Show(string.Format("Delete {0} rows", this._daservice.UpdateFixtureWithRelation(this._ds)));
+                this._ds = _daservice.GetFixtureWithRelation();
                 this.BindData();
             }
             else
@@ -150,8 +150,8 @@ namespace DemoLib
             {
                 case DialogResult.OK:
                     this._ds.TFixtures.AddTFixturesRow(datarowitem);
-                    MessageBox.Show(string.Format("Add {0} rows", this._daservice.UpdateFixtureRelation(this._ds)));
-                    this._ds = _daservice.GetFixtureRelation();
+                    MessageBox.Show(string.Format("Add {0} rows", this._daservice.UpdateFixtureWithRelation(this._ds)));
+                    this._ds = _daservice.GetFixtureWithRelation();
                     this.BindData();
                     break;
                 case DialogResult.Cancel:

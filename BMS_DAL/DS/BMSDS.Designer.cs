@@ -34,6 +34,10 @@ namespace BMS_DAL.DS {
         
         private TInvoiceDetailsDataTable tableTInvoiceDetails;
         
+        private global::System.Data.DataRelation relationTFixtures_TInvoices;
+        
+        private global::System.Data.DataRelation relationTInvoices_TInvoiceDetails;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -290,6 +294,8 @@ namespace BMS_DAL.DS {
                     this.tableTInvoiceDetails.InitVars();
                 }
             }
+            this.relationTFixtures_TInvoices = this.Relations["TFixtures_TInvoices"];
+            this.relationTInvoices_TInvoiceDetails = this.Relations["TInvoices_TInvoiceDetails"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -325,6 +331,14 @@ namespace BMS_DAL.DS {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.Cascade;
             fkc.DeleteRule = global::System.Data.Rule.Cascade;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            this.relationTFixtures_TInvoices = new global::System.Data.DataRelation("TFixtures_TInvoices", new global::System.Data.DataColumn[] {
+                        this.tableTFixtures.IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableTInvoices.FIX_IDColumn}, false);
+            this.Relations.Add(this.relationTFixtures_TInvoices);
+            this.relationTInvoices_TInvoiceDetails = new global::System.Data.DataRelation("TInvoices_TInvoiceDetails", new global::System.Data.DataColumn[] {
+                        this.tableTInvoices.IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableTInvoiceDetails.INVOICE_IDColumn}, false);
+            this.Relations.Add(this.relationTInvoices_TInvoiceDetails);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1108,7 +1122,7 @@ namespace BMS_DAL.DS {
                         System.DateTimeOffset RECEIVABLEDATE, 
                         System.DateTimeOffset OP_DT, 
                         System.DateTimeOffset INVOICE_DATE, 
-                        int FIX_ID) {
+                        TFixturesRow parentTFixturesRowByTFixtures_TInvoices) {
                 TInvoicesRow rowTInvoicesRow = ((TInvoicesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1138,7 +1152,10 @@ namespace BMS_DAL.DS {
                         RECEIVABLEDATE,
                         OP_DT,
                         INVOICE_DATE,
-                        FIX_ID};
+                        null};
+                if ((parentTFixturesRowByTFixtures_TInvoices != null)) {
+                    columnValuesArray[27] = parentTFixturesRowByTFixtures_TInvoices[0];
+                }
                 rowTInvoicesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTInvoicesRow);
                 return rowTInvoicesRow;
@@ -2614,7 +2631,7 @@ namespace BMS_DAL.DS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TInvoiceDetailsRow AddTInvoiceDetailsRow(string C1, string C2, string C3, string C4, string C5, string OPER, System.DateTimeOffset OP_DT, int INVOICE_ID) {
+            public TInvoiceDetailsRow AddTInvoiceDetailsRow(string C1, string C2, string C3, string C4, string C5, string OPER, System.DateTimeOffset OP_DT, TInvoicesRow parentTInvoicesRowByTInvoices_TInvoiceDetails) {
                 TInvoiceDetailsRow rowTInvoiceDetailsRow = ((TInvoiceDetailsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -2625,7 +2642,10 @@ namespace BMS_DAL.DS {
                         C5,
                         OPER,
                         OP_DT,
-                        INVOICE_ID};
+                        null};
+                if ((parentTInvoicesRowByTInvoices_TInvoiceDetails != null)) {
+                    columnValuesArray[8] = parentTInvoicesRowByTInvoices_TInvoiceDetails[0];
+                }
                 rowTInvoiceDetailsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTInvoiceDetailsRow);
                 return rowTInvoiceDetailsRow;
@@ -3215,6 +3235,28 @@ namespace BMS_DAL.DS {
                     this[this.tableTInvoices.FIX_IDColumn] = value;
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TFixturesRow TFixturesRow {
+                get {
+                    return ((TFixturesRow)(this.GetParentRow(this.Table.ParentRelations["TFixtures_TInvoices"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["TFixtures_TInvoices"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TInvoiceDetailsRow[] GetTInvoiceDetailsRows() {
+                if ((this.Table.ChildRelations["TInvoices_TInvoiceDetails"] == null)) {
+                    return new TInvoiceDetailsRow[0];
+                }
+                else {
+                    return ((TInvoiceDetailsRow[])(base.GetChildRows(this.Table.ChildRelations["TInvoices_TInvoiceDetails"])));
+                }
+            }
         }
         
         /// <summary>
@@ -3597,6 +3639,17 @@ namespace BMS_DAL.DS {
                     this[this.tableTFixtures.OP_DTColumn] = value;
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TInvoicesRow[] GetTInvoicesRows() {
+                if ((this.Table.ChildRelations["TFixtures_TInvoices"] == null)) {
+                    return new TInvoicesRow[0];
+                }
+                else {
+                    return ((TInvoicesRow[])(base.GetChildRows(this.Table.ChildRelations["TFixtures_TInvoices"])));
+                }
+            }
         }
         
         /// <summary>
@@ -3709,6 +3762,17 @@ namespace BMS_DAL.DS {
                 }
                 set {
                     this[this.tableTInvoiceDetails.INVOICE_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TInvoicesRow TInvoicesRow {
+                get {
+                    return ((TInvoicesRow)(this.GetParentRow(this.Table.ParentRelations["TInvoices_TInvoiceDetails"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["TInvoices_TInvoiceDetails"]);
                 }
             }
         }

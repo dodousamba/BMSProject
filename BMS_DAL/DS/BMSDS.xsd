@@ -4,7 +4,7 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="bds248164437_dbConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="bds248164437_dbConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BMS_DAL.Properties.Settings.GlobalReference.Default.bds248164437_dbConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="bds248164437_dbConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="bds248164437_dbConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BMS_DAL.Properties.Settings.GlobalReference.Default.bds248164437_dbConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TSys_UsersTableAdapter" GeneratorDataComponentClassName="TSys_UsersTableAdapter" Name="TSys_Users" UserDataComponentName="TSys_UsersTableAdapter">
@@ -475,7 +475,7 @@ SELECT ID, C1, C2, C3, C4, C5, OPER, OP_DT, INVOICE_ID FROM TInvoiceDetails WHER
   <xs:element name="BMSDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="BMSDS" msprop:Generator_UserDSName="BMSDS">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="TSys_Users" msprop:Generator_TableClassName="TSys_UsersDataTable" msprop:Generator_TableVarName="tableTSys_Users" msprop:Generator_TablePropName="TSys_Users" msprop:Generator_RowDeletingName="TSys_UsersRowDeleting" msprop:Generator_RowChangingName="TSys_UsersRowChanging" msprop:Generator_RowEvHandlerName="TSys_UsersRowChangeEventHandler" msprop:Generator_RowDeletedName="TSys_UsersRowDeleted" msprop:Generator_UserTableName="TSys_Users" msprop:Generator_RowChangedName="TSys_UsersRowChanged" msprop:Generator_RowEvArgName="TSys_UsersRowChangeEvent" msprop:Generator_RowClassName="TSys_UsersRow">
+        <xs:element name="TSys_Users" msprop:Generator_TableClassName="TSys_UsersDataTable" msprop:Generator_TableVarName="tableTSys_Users" msprop:Generator_RowChangedName="TSys_UsersRowChanged" msprop:Generator_TablePropName="TSys_Users" msprop:Generator_RowDeletingName="TSys_UsersRowDeleting" msprop:Generator_RowChangingName="TSys_UsersRowChanging" msprop:Generator_RowEvHandlerName="TSys_UsersRowChangeEventHandler" msprop:Generator_RowDeletedName="TSys_UsersRowDeleted" msprop:Generator_RowClassName="TSys_UsersRow" msprop:Generator_UserTableName="TSys_Users" msprop:Generator_RowEvArgName="TSys_UsersRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID">
@@ -509,7 +509,7 @@ SELECT ID, C1, C2, C3, C4, C5, OPER, OP_DT, INVOICE_ID FROM TInvoiceDetails WHER
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TInvoices" msprop:Generator_TableClassName="TInvoicesDataTable" msprop:Generator_TableVarName="tableTInvoices" msprop:Generator_RowChangedName="TInvoicesRowChanged" msprop:Generator_TablePropName="TInvoices" msprop:Generator_RowDeletingName="TInvoicesRowDeleting" msprop:Generator_RowChangingName="TInvoicesRowChanging" msprop:Generator_RowEvHandlerName="TInvoicesRowChangeEventHandler" msprop:Generator_RowDeletedName="TInvoicesRowDeleted" msprop:Generator_RowClassName="TInvoicesRow" msprop:Generator_UserTableName="TInvoices" msprop:Generator_RowEvArgName="TInvoicesRowChangeEvent">
+        <xs:element name="TInvoices" msprop:Generator_TableClassName="TInvoicesDataTable" msprop:Generator_TableVarName="tableTInvoices" msprop:Generator_TablePropName="TInvoices" msprop:Generator_RowDeletingName="TInvoicesRowDeleting" msprop:Generator_RowChangingName="TInvoicesRowChanging" msprop:Generator_RowEvHandlerName="TInvoicesRowChangeEventHandler" msprop:Generator_RowDeletedName="TInvoicesRowDeleted" msprop:Generator_UserTableName="TInvoices" msprop:Generator_RowChangedName="TInvoicesRowChanged" msprop:Generator_RowEvArgName="TInvoicesRowChangeEvent" msprop:Generator_RowClassName="TInvoicesRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -627,7 +627,7 @@ SELECT ID, C1, C2, C3, C4, C5, OPER, OP_DT, INVOICE_ID FROM TInvoiceDetails WHER
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TVessels" msprop:Generator_TableClassName="TVesselsDataTable" msprop:Generator_TableVarName="tableTVessels" msprop:Generator_TablePropName="TVessels" msprop:Generator_RowDeletingName="TVesselsRowDeleting" msprop:Generator_RowChangingName="TVesselsRowChanging" msprop:Generator_RowEvHandlerName="TVesselsRowChangeEventHandler" msprop:Generator_RowDeletedName="TVesselsRowDeleted" msprop:Generator_UserTableName="TVessels" msprop:Generator_RowChangedName="TVesselsRowChanged" msprop:Generator_RowEvArgName="TVesselsRowChangeEvent" msprop:Generator_RowClassName="TVesselsRow">
+        <xs:element name="TVessels" msprop:Generator_TableClassName="TVesselsDataTable" msprop:Generator_TableVarName="tableTVessels" msprop:Generator_RowChangedName="TVesselsRowChanged" msprop:Generator_TablePropName="TVessels" msprop:Generator_RowDeletingName="TVesselsRowDeleting" msprop:Generator_RowChangingName="TVesselsRowChanging" msprop:Generator_RowEvHandlerName="TVesselsRowChangeEventHandler" msprop:Generator_RowDeletedName="TVesselsRowDeleted" msprop:Generator_RowClassName="TVesselsRow" msprop:Generator_UserTableName="TVessels" msprop:Generator_RowEvArgName="TVesselsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -663,7 +663,7 @@ SELECT ID, C1, C2, C3, C4, C5, OPER, OP_DT, INVOICE_ID FROM TInvoiceDetails WHER
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TFixtures" msprop:Generator_TableClassName="TFixturesDataTable" msprop:Generator_TableVarName="tableTFixtures" msprop:Generator_RowChangedName="TFixturesRowChanged" msprop:Generator_TablePropName="TFixtures" msprop:Generator_RowDeletingName="TFixturesRowDeleting" msprop:Generator_RowChangingName="TFixturesRowChanging" msprop:Generator_RowEvHandlerName="TFixturesRowChangeEventHandler" msprop:Generator_RowDeletedName="TFixturesRowDeleted" msprop:Generator_RowClassName="TFixturesRow" msprop:Generator_UserTableName="TFixtures" msprop:Generator_RowEvArgName="TFixturesRowChangeEvent">
+        <xs:element name="TFixtures" msprop:Generator_TableClassName="TFixturesDataTable" msprop:Generator_TableVarName="tableTFixtures" msprop:Generator_TablePropName="TFixtures" msprop:Generator_RowDeletingName="TFixturesRowDeleting" msprop:Generator_RowChangingName="TFixturesRowChanging" msprop:Generator_RowEvHandlerName="TFixturesRowChangeEventHandler" msprop:Generator_RowDeletedName="TFixturesRowDeleted" msprop:Generator_UserTableName="TFixtures" msprop:Generator_RowChangedName="TFixturesRowChanged" msprop:Generator_RowEvArgName="TFixturesRowChangeEvent" msprop:Generator_RowClassName="TFixturesRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -767,7 +767,7 @@ SELECT ID, C1, C2, C3, C4, C5, OPER, OP_DT, INVOICE_ID FROM TInvoiceDetails WHER
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TInvoiceDetails" msprop:Generator_TableClassName="TInvoiceDetailsDataTable" msprop:Generator_TableVarName="tableTInvoiceDetails" msprop:Generator_RowChangedName="TInvoiceDetailsRowChanged" msprop:Generator_TablePropName="TInvoiceDetails" msprop:Generator_RowDeletingName="TInvoiceDetailsRowDeleting" msprop:Generator_RowChangingName="TInvoiceDetailsRowChanging" msprop:Generator_RowEvHandlerName="TInvoiceDetailsRowChangeEventHandler" msprop:Generator_RowDeletedName="TInvoiceDetailsRowDeleted" msprop:Generator_RowClassName="TInvoiceDetailsRow" msprop:Generator_UserTableName="TInvoiceDetails" msprop:Generator_RowEvArgName="TInvoiceDetailsRowChangeEvent">
+        <xs:element name="TInvoiceDetails" msprop:Generator_TableClassName="TInvoiceDetailsDataTable" msprop:Generator_TableVarName="tableTInvoiceDetails" msprop:Generator_TablePropName="TInvoiceDetails" msprop:Generator_RowDeletingName="TInvoiceDetailsRowDeleting" msprop:Generator_RowChangingName="TInvoiceDetailsRowChanging" msprop:Generator_RowEvHandlerName="TInvoiceDetailsRowChangeEventHandler" msprop:Generator_RowDeletedName="TInvoiceDetailsRowDeleted" msprop:Generator_UserTableName="TInvoiceDetails" msprop:Generator_RowChangedName="TInvoiceDetailsRowChanged" msprop:Generator_RowEvArgName="TInvoiceDetailsRowChangeEvent" msprop:Generator_RowClassName="TInvoiceDetailsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -836,11 +836,11 @@ SELECT ID, C1, C2, C3, C4, C5, OPER, OP_DT, INVOICE_ID FROM TInvoiceDetails WHER
       <xs:selector xpath=".//mstns:TInvoiceDetails" />
       <xs:field xpath="mstns:ID" />
     </xs:unique>
-    <xs:keyref name="TInvoices_TInvoiceDetails" refer="Constraint1" msdata:ConstraintOnly="true" msdata:AcceptRejectRule="Cascade">
+    <xs:keyref name="TInvoices_TInvoiceDetails" refer="Constraint1" msprop:rel_Generator_UserChildTable="TInvoiceDetails" msprop:rel_Generator_ChildPropName="GetTInvoiceDetailsRows" msprop:rel_Generator_UserRelationName="TInvoices_TInvoiceDetails" msprop:rel_Generator_ParentPropName="TInvoicesRow" msprop:rel_Generator_RelationVarName="relationTInvoices_TInvoiceDetails" msprop:rel_Generator_UserParentTable="TInvoices" msdata:AcceptRejectRule="Cascade">
       <xs:selector xpath=".//mstns:TInvoiceDetails" />
       <xs:field xpath="mstns:INVOICE_ID" />
     </xs:keyref>
-    <xs:keyref name="TFixtures_TInvoices" refer="TFixtures_Constraint1" msdata:ConstraintOnly="true" msdata:AcceptRejectRule="Cascade">
+    <xs:keyref name="TFixtures_TInvoices" refer="TFixtures_Constraint1" msprop:rel_Generator_UserChildTable="TInvoices" msprop:rel_Generator_ChildPropName="GetTInvoicesRows" msprop:rel_Generator_UserRelationName="TFixtures_TInvoices" msprop:rel_Generator_RelationVarName="relationTFixtures_TInvoices" msprop:rel_Generator_UserParentTable="TFixtures" msprop:rel_Generator_ParentPropName="TFixturesRow" msdata:AcceptRejectRule="Cascade">
       <xs:selector xpath=".//mstns:TInvoices" />
       <xs:field xpath="mstns:FIX_ID" />
     </xs:keyref>

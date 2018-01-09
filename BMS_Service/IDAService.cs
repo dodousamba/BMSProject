@@ -24,10 +24,10 @@ namespace BMS_Service
         int UpdateFixture(BMS_DAL.DS.BMSDS.TFixturesDataTable dt);
 
         [OperationContract]
-        BMS_DAL.DS.BMSDS GetFixtureRelation();
+        BMS_DAL.DS.BMSDS GetFixtureWithRelation();
 
         [OperationContract]
-        int UpdateFixtureRelation(BMS_DAL.DS.BMSDS ds);
+        int UpdateFixtureWithRelation(BMS_DAL.DS.BMSDS ds);
 
         [OperationContract]
         BMS_DAL.DS.BMSDS.TInvoicesDataTable GetInvoice();

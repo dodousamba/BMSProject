@@ -61,14 +61,14 @@ namespace BMS_Service
             return r;
         }
 
-        public BMS_DAL.DS.BMSDS GetFixtureRelation()
+        public BMS_DAL.DS.BMSDS GetFixtureWithRelation()
         {
             BMS_DAL.DS.BMSDS ds = new BMS_DAL.DS.BMSDS();
             using (BMS_DAL.DS.BMSDSTableAdapters.TFixturesTableAdapter ta = new BMS_DAL.DS.BMSDSTableAdapters.TFixturesTableAdapter())
             {
                 try
                 {
-                    ds.Merge(ta.GetData());
+                    ds.TFixtures.Merge(ta.GetData());
                 }
                 catch (Exception ex) { throw ex; }
             }
@@ -76,7 +76,7 @@ namespace BMS_Service
             {
                 try
                 {
-                    ds.Merge(ta.GetData());
+                    ds.TInvoices.Merge(ta.GetData());
                 }
                 catch (Exception ex) { throw ex; }
             }
@@ -84,14 +84,14 @@ namespace BMS_Service
             {
                 try
                 {
-                    ds.Merge(ta.GetData());
+                    ds.TInvoiceDetails.Merge(ta.GetData());
                 }
                 catch (Exception ex) { throw ex; }
             }
             return ds;
         }
 
-        public int UpdateFixtureRelation(BMS_DAL.DS.BMSDS ds)
+        public int UpdateFixtureWithRelation(BMS_DAL.DS.BMSDS ds)
         {
             int r = 0;
 
@@ -116,7 +116,7 @@ namespace BMS_Service
                     r = ta.UpdateWithTrans(ds.TFixtures);
                 }
             }
-           
+
             return r;
         }
 
@@ -171,6 +171,5 @@ namespace BMS_Service
             }
             return r;
         }
-
     }
 }

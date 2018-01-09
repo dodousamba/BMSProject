@@ -13,6 +13,7 @@ namespace DemoLib
     {
         public BMS_DAL.DS.BMSDS.TFixturesRow FixDataRow { get; set; }
         public BMS_DAL.DS.BMSDS.TInvoicesRow DataRowItem { get; set; }
+        public DataView InvoiceDetailDV { get; set; }
         private BMS_Service.DAService _service = new BMS_Service.DAService();
         private const int setPeriods = 20;
         public InvoiceItem()
@@ -78,6 +79,8 @@ namespace DemoLib
             this.dateEdit_RECEIVABLEDATE.DataBindings.Add(new Binding("EditValue", DataRowItem, "RECEIVABLEDATE", false, DataSourceUpdateMode.OnPropertyChanged));
             this.memoEdit_INVOICEREMARK.DataBindings.Add(new Binding("EditValue", DataRowItem, "REMARK", false, DataSourceUpdateMode.OnPropertyChanged));
 
+            this.BindInvoiceDetail();
+
             this.AttachEvent();
         }
 
@@ -90,6 +93,34 @@ namespace DemoLib
         {
             this.AcceptButton.DialogResult = DialogResult.OK;
             this.CancelButton.DialogResult = DialogResult.Cancel;
-        }         
+
+            this.bindingNavigatorAddNewItem.Click += bindingNavigatorAddNewItem_Click;
+            this.bindingNavigatorDeleteItem.Click += bindingNavigatorDeleteItem_Click;
+        }
+
+        void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+            var datarowitem = InvoiceDetailDV.AddNew();
+            datarowitem["INVOICE_ID"] = DataRowItem.ID;
+            datarowitem["C1"] = DateTime.Now.ToString("yyyyMMdd HH:mm");
+            datarowitem["C2"] = DateTime.Now.ToString("yyyyMMdd HH:mm");
+            datarowitem["C3"] = string.Empty;
+            datarowitem["C4"] = string.Empty;
+            datarowitem["C5"] = string.Empty;
+            datarowitem["OPER"] = BMS_Component.UserInfo.UserName;
+            datarowitem["OP_DT"] = DateTimeOffset.Now;
+        }
+
+        void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+            InvoiceDetailDV.Delete(gridView1.GetFocusedDataSourceRowIndex());
+        }
+
+        private void BindInvoiceDetail()
+        {
+            this.bindingSource1.DataSource = InvoiceDetailDV;
+            this.bindingNavigator1.BindingSource = this.bindingSource1;
+            this.gridControl1.DataSource = this.bindingSource1;
+        }
     }
 }

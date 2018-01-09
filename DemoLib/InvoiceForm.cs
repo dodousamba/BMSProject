@@ -34,12 +34,15 @@ namespace DemoLib
         {
             base.OnLoad(e);
 
-            _ds.TFixtures.Merge(_daservice.GetFixture());
-            this.BindData1();
-            _ds.TInvoices.Merge(_daservice.GetInvoice());
-            this.BindData2();
-
             this.AttachEvent();
+        }
+        protected override void OnActivated(EventArgs e)
+        {
+            base.OnActivated(e);
+
+            this._ds = _daservice.GetFixtureWithRelation();
+            this.BindData1();
+            this.BindData2();
         }
 
         protected override void OnClosed(EventArgs e)
@@ -92,16 +95,18 @@ namespace DemoLib
                 item.Text = "Update Invoice";
                 item.FixDataRow = selecteddatarow;
                 item.DataRowItem = datarowitem;
+                item.InvoiceDetailDV = _ds.Relations["TInvoices_TInvoiceDetails"].ChildTable.DefaultView;
+                item.InvoiceDetailDV.RowFilter = string.Format("INVOICE_ID='{0}'", datarowitem.ID);
                 switch (item.ShowDialog())
                 {
                     case DialogResult.OK:
-                        MessageBox.Show(string.Format("Update {0} rows", this._daservice.UpdateInvoice(_ds.TInvoices)));
-                        this._ds.TInvoices.Clear();
-                        this._ds.TInvoices.Merge(_daservice.GetInvoice());
+                        MessageBox.Show(string.Format("Update {0} rows", this._daservice.UpdateFixtureWithRelation(_ds)));
+                        this._ds = _daservice.GetFixtureWithRelation();
+                        this.BindData1();
                         this.BindData2();
                         break;
                     case DialogResult.Cancel:
-                        this._ds.TInvoices.RejectChanges();
+                        this._ds.RejectChanges();
                         break;
                 }
             }
@@ -119,9 +124,9 @@ namespace DemoLib
             if (MessageBox.Show(nString, "Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk).Equals(DialogResult.OK))
             {
                 datarowitem.Delete();
-                MessageBox.Show(string.Format("Delete {0} rows", this._daservice.UpdateInvoice(this._ds.TInvoices)));
-                _ds.TInvoices.Clear();
-                _ds.TInvoices.Merge(_daservice.GetInvoice());
+                MessageBox.Show(string.Format("Delete {0} rows", this._daservice.UpdateFixtureWithRelation(this._ds)));
+                this._ds = _daservice.GetFixtureWithRelation();
+                this.BindData1();
                 this.BindData2();
             }
             else
@@ -171,33 +176,32 @@ namespace DemoLib
             item.Text = "Add Invoice";
             item.FixDataRow = selecteddatarow;
             item.DataRowItem = datarowitem;
+            item.InvoiceDetailDV = _ds.Relations["TInvoices_TInvoiceDetails"].ChildTable.DefaultView;
+            item.InvoiceDetailDV.RowFilter = string.Format("INVOICE_ID='{0}'", datarowitem.ID);
             switch (item.ShowDialog())
             {
                 case DialogResult.OK:
                     this._ds.TInvoices.AddTInvoicesRow(datarowitem);
-                    MessageBox.Show(string.Format("Add {0} rows", this._daservice.UpdateInvoice(this._ds.TInvoices)));
-                    this._ds.TInvoices.Merge(_daservice.GetInvoice());
+                    MessageBox.Show(string.Format("Add {0} rows", this._daservice.UpdateFixtureWithRelation(this._ds)));
+                    this._ds = _daservice.GetFixtureWithRelation();
+                    this.BindData1();
                     this.BindData2();
                     break;
                 case DialogResult.Cancel:
                     datarowitem = null;
-                    this._ds.TInvoices.RejectChanges();
+                    this._ds.RejectChanges();
                     break;
             }
         }
 
         private void BindData1()
         {
-            this.bindingSource1.DataSource = _ds.TFixtures;
+            this.bindingSource1.DataSource = _ds.Relations["TFixtures_TInvoices"].ParentTable;
             this.gridControl1.DataSource = this.bindingSource1;
         }
         private void BindData2()
         {
-            this.bindingSource2.DataSource = _ds.TInvoices;
-            if (this.bindingSource1.Current != null)
-            {
-                this.bindingSource2.Filter = string.Format("FIX_ID='{0}'", ((DataRowView)this.bindingSource1.Current)["ID"]);
-            }
+            this.bindingSource2.DataSource = _ds.Relations["TFixtures_TInvoices"].ChildTable;
             this.bindingNavigator1.BindingSource = this.bindingSource2;
             this.gridControl2.DataSource = this.bindingSource2;
         }

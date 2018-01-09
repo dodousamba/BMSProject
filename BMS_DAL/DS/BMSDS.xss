@@ -7,25 +7,13 @@
 <DiagramLayout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ex:showrelationlabel="False" ViewPortX="60" ViewPortY="0" xmlns:ex="urn:schemas-microsoft-com:xml-msdatasource-layout-extended" xmlns="urn:schemas-microsoft-com:xml-msdatasource-layout">
   <Shapes>
     <Shape ID="DesignTable:TSys_Users" ZOrder="7" X="70" Y="70" Height="87" Width="257" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="0" OldDataTableHeight="122" SplitterPosition="28" />
-    <Shape ID="DesignTable:TInvoices" ZOrder="4" X="731" Y="75" Height="365" Width="245" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="306" />
+    <Shape ID="DesignTable:TInvoices" ZOrder="4" X="731" Y="75" Height="365" Width="245" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="24" OldDataTableHeight="0" SplitterPosition="306" />
     <Shape ID="DesignTable:TVessels" ZOrder="6" X="73" Y="172" Height="83" Width="238" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="0" OldDataTableHeight="168" SplitterPosition="24" />
     <Shape ID="DesignTable:TFixtures" ZOrder="5" X="470" Y="68" Height="305" Width="207" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:TInvoiceDetails" ZOrder="3" X="1007" Y="74" Height="296" Width="291" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="237" />
   </Shapes>
   <Connectors>
-    <Connector ID="DesignRelation:TFixtures_TInvoices" ZOrder="2" LineWidth="11">
-      <RoutePoints>
-        <Point>
-          <X>677</X>
-          <Y>208</Y>
-        </Point>
-        <Point>
-          <X>731</X>
-          <Y>208</Y>
-        </Point>
-      </RoutePoints>
-    </Connector>
-    <Connector ID="DesignRelation:TInvoices_TInvoiceDetails" ZOrder="1" LineWidth="11">
+    <Connector ID="DesignRelation:TInvoices_TInvoiceDetails" ZOrder="2" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>976</X>
@@ -34,6 +22,18 @@
         <Point>
           <X>1007</X>
           <Y>222</Y>
+        </Point>
+      </RoutePoints>
+    </Connector>
+    <Connector ID="DesignRelation:TFixtures_TInvoices" ZOrder="1" LineWidth="11">
+      <RoutePoints>
+        <Point>
+          <X>677</X>
+          <Y>208</Y>
+        </Point>
+        <Point>
+          <X>731</X>
+          <Y>208</Y>
         </Point>
       </RoutePoints>
     </Connector>
