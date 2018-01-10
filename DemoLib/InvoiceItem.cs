@@ -96,6 +96,20 @@ namespace DemoLib
 
             this.bindingNavigatorAddNewItem.Click += bindingNavigatorAddNewItem_Click;
             this.bindingNavigatorDeleteItem.Click += bindingNavigatorDeleteItem_Click;
+
+            this.toolStripButton_Print.Click += toolStripButton_Print_Click;
+        }
+
+        void toolStripButton_Print_Click(object sender, EventArgs e)
+        {
+
+            BMS_DAL.DS.BMSDS ds = new BMS_DAL.DS.BMSDS();
+            ds.Merge(new DataRow[] { FixDataRow });
+            ds.Merge(new DataRow[] { DataRowItem });
+            ds.Merge(DataRowItem.GetTInvoiceDetailsRows());
+            ds.Merge(new DataRow[]{((BMS_DAL.DS.BMSDS)InvoiceDetailDV.Table.DataSet).TVessels.FindByID(FixDataRow.VSL_ID)});
+            RPT.XtraReport1 xr = new RPT.XtraReport1(ds, DataRowItem.ID);
+            xr.ShowPreviewDialog();
         }
 
         void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)

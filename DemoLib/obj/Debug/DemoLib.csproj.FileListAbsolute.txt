@@ -46,3 +46,4 @@ C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\DemoLib\obj\Debu
 C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\DemoLib\obj\Debug\DemoLib.InvoiceItem.resources
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\DemoLib\obj\Debug\DemoLib.dll.licenses
 C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\DemoLib\obj\Debug\DemoLib.dll.licenses
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\DemoLib\obj\Debug\DemoLib.RPT.XtraReport1.resources

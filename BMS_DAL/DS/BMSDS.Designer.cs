@@ -4144,7 +4144,7 @@ namespace BMS_DAL.DS.BMSDSTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::BMS_DAL.Properties.Settings.Default.bds248164437_dbConnectionString;
+            this._connection.ConnectionString = global::BMS_DAL.Properties.Settings.Default.dbConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4527,7 +4527,7 @@ SELECT ID, FIXNO, REFNO, MESSES, VSL_ID, CP_DATE, CP_TYPE, CP_DESC, HRORFRT, DAY
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::BMS_DAL.Properties.Settings.Default.bds248164437_dbConnectionString;
+            this._connection.ConnectionString = global::BMS_DAL.Properties.Settings.Default.dbConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5167,7 +5167,7 @@ FROM      TInvoices";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::BMS_DAL.Properties.Settings.Default.bds248164437_dbConnectionString;
+            this._connection.ConnectionString = global::BMS_DAL.Properties.Settings.Default.dbConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5607,7 +5607,7 @@ SELECT ID, VSL_ID, CP_DATE, CP_TYPE, CP_DESC, PAYER, HRORFRT, DAYSORMT, OWR, BRK
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::BMS_DAL.Properties.Settings.Default.bds248164437_dbConnectionString;
+            this._connection.ConnectionString = global::BMS_DAL.Properties.Settings.Default.dbConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6237,7 +6237,7 @@ SELECT ID, C1, C2, C3, C4, C5, OPER, OP_DT, INVOICE_ID, DEBIT, CREDIT FROM TInvo
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::BMS_DAL.Properties.Settings.Default.bds248164437_dbConnectionString;
+            this._connection.ConnectionString = global::BMS_DAL.Properties.Settings.Default.dbConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

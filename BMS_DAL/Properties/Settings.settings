@@ -2,13 +2,13 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="BMS_DAL.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="bds248164437_dbConnectionString" Type="(Connection string)" Scope="Application">
+    <Setting Name="dbConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=bds248164437.my3w.com;Initial Catalog=bds248164437_db;Persist Security Info=True;User ID=bds248164437;Password=yZ99101031&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Data Source=bds256276142.my3w.com;Initial Catalog=bds256276142_db;Persist Security Info=True;User ID=bds256276142;Password=yZ99101031&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=bds248164437.my3w.com;Initial Catalog=bds248164437_db;Persist Security Info=True;User ID=bds248164437;Password=yZ99101031</Value>
+      <Value Profile="(Default)">Data Source=bds256276142.my3w.com;Initial Catalog=bds256276142_db;Persist Security Info=True;User ID=bds256276142;Password=yZ99101031</Value>
     </Setting>
   </Settings>
 </SettingsFile>

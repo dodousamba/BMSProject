@@ -41,6 +41,7 @@ namespace DemoLib
             base.OnActivated(e);
 
             this._ds = _daservice.GetFixtureWithRelation();
+            this._ds.Merge(_daservice.GetVessel());
             this.BindData1();
             this.BindData2();
         }
