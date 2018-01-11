@@ -124,7 +124,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>bW/c4yOelBsRKM3TIv9zdaMp1e0=</dsig:DigestValue>
+        <dsig:DigestValue>XRwx5akPcs0OwV2VeRT/jd8X88I=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -136,7 +136,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>v7IUMSnGIxtDEQtjYev+uhAQxwk=</dsig:DigestValue>
+        <dsig:DigestValue>cfCXJi+T/tfON4ipfC18jEPI9VE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -148,7 +148,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>OxSg1O9Po8h3MHSy4k7Xx38Axyc=</dsig:DigestValue>
+        <dsig:DigestValue>RFOkHpn6PTM0YzJdhzQAWvoyPlI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -160,19 +160,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>zXF1jtlS2nnNx2XMChllO28f+PA=</dsig:DigestValue>
+        <dsig:DigestValue>FLzNDz5+GhEJMZI4+2jMD4Ba3pw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DemoLib.dll" size="150528">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DemoLib.dll" size="152064">
       <assemblyIdentity name="DemoLib" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>IyUo8luXiDa204vm83bdvey44rw=</dsig:DigestValue>
+        <dsig:DigestValue>UR3ajYnWwG45fe7PgaU+M/Q+zmg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

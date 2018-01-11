@@ -32,6 +32,7 @@ namespace DemoLib
             this.navBarItem_Fixture.LinkClicked += navBarItem_LinkClicked;
             this.navBarItem_Invoice.LinkClicked += navBarItem_LinkClicked;
             this.navBarItem_Vessel.LinkClicked += navBarItem_LinkClicked;
+            this.navBarItem_InvoiceReport.LinkClicked += navBarItem_LinkClicked;
 
             this.barButtonItem_Exit.ItemClick += barButtonItem_Exit_ItemClick;
 

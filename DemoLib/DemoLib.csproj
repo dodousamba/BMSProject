@@ -67,6 +67,12 @@
     <Compile Include="FixtureForm.Designer.cs">
       <DependentUpon>FixtureForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="InvoiceReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InvoiceReportForm.Designer.cs">
+      <DependentUpon>InvoiceReportForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="OnProgressForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FixtureForm.resx">
       <DependentUpon>FixtureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InvoiceReportForm.resx">
+      <DependentUpon>InvoiceReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OnProgressForm.resx">
       <DependentUpon>OnProgressForm.cs</DependentUpon>

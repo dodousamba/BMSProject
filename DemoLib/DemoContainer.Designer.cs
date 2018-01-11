@@ -59,6 +59,8 @@
             this.navBarItem_Fixture = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup_Account = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItem_Invoice = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarGroup_Report = new DevExpress.XtraNavBar.NavBarGroup();
+            this.navBarItem_InvoiceReport = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -252,18 +254,20 @@
             // 
             // navBarControl1
             // 
-            this.navBarControl1.ActiveGroup = this.navBarGroup_Sys;
+            this.navBarControl1.ActiveGroup = this.navBarGroup_Report;
             this.navBarControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.navBarControl1.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
             this.navBarGroup_Flow,
             this.navBarGroup_Broker,
             this.navBarGroup_Account,
+            this.navBarGroup_Report,
             this.navBarGroup_Sys});
             this.navBarControl1.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
             this.navBarItem_OnProgress,
             this.navBarItem_Fixture,
             this.navBarItem_Invoice,
-            this.navBarItem_Vessel});
+            this.navBarItem_Vessel,
+            this.navBarItem_InvoiceReport});
             this.navBarControl1.Location = new System.Drawing.Point(2, 22);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 196;
@@ -327,6 +331,20 @@
             this.navBarItem_Invoice.Name = "navBarItem_Invoice";
             this.navBarItem_Invoice.Tag = "DemoLib.InvoiceForm";
             // 
+            // navBarGroup_Report
+            // 
+            this.navBarGroup_Report.Caption = "Report";
+            this.navBarGroup_Report.Expanded = true;
+            this.navBarGroup_Report.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem_InvoiceReport)});
+            this.navBarGroup_Report.Name = "navBarGroup_Report";
+            // 
+            // navBarItem_InvoiceReport
+            // 
+            this.navBarItem_InvoiceReport.Caption = "InvoiceReport";
+            this.navBarItem_InvoiceReport.Name = "navBarItem_InvoiceReport";
+            this.navBarItem_InvoiceReport.Tag = "DemoLib.InvoiceReportForm";
+            // 
             // DemoContainer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -382,5 +400,7 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItem_Fixture;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup_Account;
         private DevExpress.XtraNavBar.NavBarItem navBarItem_Invoice;
+        private DevExpress.XtraNavBar.NavBarGroup navBarGroup_Report;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem_InvoiceReport;
     }
 }
