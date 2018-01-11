@@ -34,6 +34,8 @@ namespace BMS_DAL.DS {
         
         private TInvoiceDetailsDataTable tableTInvoiceDetails;
         
+        private VFixture_InvoiceDataTable tableVFixture_Invoice;
+        
         private global::System.Data.DataRelation relationTFixtures_TInvoices;
         
         private global::System.Data.DataRelation relationTInvoices_TInvoiceDetails;
@@ -80,6 +82,9 @@ namespace BMS_DAL.DS {
                 }
                 if ((ds.Tables["TInvoiceDetails"] != null)) {
                     base.Tables.Add(new TInvoiceDetailsDataTable(ds.Tables["TInvoiceDetails"]));
+                }
+                if ((ds.Tables["VFixture_Invoice"] != null)) {
+                    base.Tables.Add(new VFixture_InvoiceDataTable(ds.Tables["VFixture_Invoice"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -146,6 +151,16 @@ namespace BMS_DAL.DS {
         public TInvoiceDetailsDataTable TInvoiceDetails {
             get {
                 return this.tableTInvoiceDetails;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public VFixture_InvoiceDataTable VFixture_Invoice {
+            get {
+                return this.tableVFixture_Invoice;
             }
         }
         
@@ -231,6 +246,9 @@ namespace BMS_DAL.DS {
                 if ((ds.Tables["TInvoiceDetails"] != null)) {
                     base.Tables.Add(new TInvoiceDetailsDataTable(ds.Tables["TInvoiceDetails"]));
                 }
+                if ((ds.Tables["VFixture_Invoice"] != null)) {
+                    base.Tables.Add(new VFixture_InvoiceDataTable(ds.Tables["VFixture_Invoice"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -294,6 +312,12 @@ namespace BMS_DAL.DS {
                     this.tableTInvoiceDetails.InitVars();
                 }
             }
+            this.tableVFixture_Invoice = ((VFixture_InvoiceDataTable)(base.Tables["VFixture_Invoice"]));
+            if ((initTable == true)) {
+                if ((this.tableVFixture_Invoice != null)) {
+                    this.tableVFixture_Invoice.InitVars();
+                }
+            }
             this.relationTFixtures_TInvoices = this.Relations["TFixtures_TInvoices"];
             this.relationTInvoices_TInvoiceDetails = this.Relations["TInvoices_TInvoiceDetails"];
         }
@@ -316,6 +340,8 @@ namespace BMS_DAL.DS {
             base.Tables.Add(this.tableTFixtures);
             this.tableTInvoiceDetails = new TInvoiceDetailsDataTable();
             base.Tables.Add(this.tableTInvoiceDetails);
+            this.tableVFixture_Invoice = new VFixture_InvoiceDataTable();
+            base.Tables.Add(this.tableVFixture_Invoice);
             global::System.Data.ForeignKeyConstraint fkc;
             fkc = new global::System.Data.ForeignKeyConstraint("TFixtures_TInvoices", new global::System.Data.DataColumn[] {
                         this.tableTFixtures.IDColumn}, new global::System.Data.DataColumn[] {
@@ -368,6 +394,12 @@ namespace BMS_DAL.DS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeTInvoiceDetails() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeVFixture_Invoice() {
             return false;
         }
         
@@ -440,6 +472,9 @@ namespace BMS_DAL.DS {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void TInvoiceDetailsRowChangeEventHandler(object sender, TInvoiceDetailsRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void VFixture_InvoiceRowChangeEventHandler(object sender, VFixture_InvoiceRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -2886,6 +2921,831 @@ namespace BMS_DAL.DS {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class VFixture_InvoiceDataTable : global::System.Data.TypedTableBase<VFixture_InvoiceRow> {
+            
+            private global::System.Data.DataColumn columnVSL_ID;
+            
+            private global::System.Data.DataColumn columnCP_DATE;
+            
+            private global::System.Data.DataColumn columnCP_TYPE;
+            
+            private global::System.Data.DataColumn columnCP_DESC;
+            
+            private global::System.Data.DataColumn columnPAYER;
+            
+            private global::System.Data.DataColumn columnHRORFRT;
+            
+            private global::System.Data.DataColumn columnDAYSORMT;
+            
+            private global::System.Data.DataColumn columnOWR;
+            
+            private global::System.Data.DataColumn columnBRKRATE_OWR;
+            
+            private global::System.Data.DataColumn columnBRKAMOUNT_OWR;
+            
+            private global::System.Data.DataColumn columnCHR;
+            
+            private global::System.Data.DataColumn columnBRKRATE_CHR;
+            
+            private global::System.Data.DataColumn columnBRKAMOUNT_CHR;
+            
+            private global::System.Data.DataColumn columnESTBRK;
+            
+            private global::System.Data.DataColumn columnBROKER1;
+            
+            private global::System.Data.DataColumn columnBROKER2;
+            
+            private global::System.Data.DataColumn columnSIGNOPER;
+            
+            private global::System.Data.DataColumn columnCAP_RATE;
+            
+            private global::System.Data.DataColumn columnCAP_AMOUNT;
+            
+            private global::System.Data.DataColumn columnTFCB;
+            
+            private global::System.Data.DataColumn columnFIXNO;
+            
+            private global::System.Data.DataColumn columnFIXSTATUS;
+            
+            private global::System.Data.DataColumn columnID;
+            
+            private global::System.Data.DataColumn columnREFNO;
+            
+            private global::System.Data.DataColumn columnINVOICE_DATE;
+            
+            private global::System.Data.DataColumn columnMESSES;
+            
+            private global::System.Data.DataColumn columnATIN;
+            
+            private global::System.Data.DataColumn columnCWNO;
+            
+            private global::System.Data.DataColumn columnPERIODS;
+            
+            private global::System.Data.DataColumn columnBANKACCOUNT;
+            
+            private global::System.Data.DataColumn columnRECEIVABLEAMOUNT;
+            
+            private global::System.Data.DataColumn columnINVOICE_STATUS;
+            
+            private global::System.Data.DataColumn columnRECEIVABLEDATE;
+            
+            private global::System.Data.DataColumn columnNAME;
+            
+            private global::System.Data.DataColumn columnSIZE;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public VFixture_InvoiceDataTable() {
+                this.TableName = "VFixture_Invoice";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal VFixture_InvoiceDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected VFixture_InvoiceDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn VSL_IDColumn {
+                get {
+                    return this.columnVSL_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CP_DATEColumn {
+                get {
+                    return this.columnCP_DATE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CP_TYPEColumn {
+                get {
+                    return this.columnCP_TYPE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CP_DESCColumn {
+                get {
+                    return this.columnCP_DESC;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PAYERColumn {
+                get {
+                    return this.columnPAYER;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn HRORFRTColumn {
+                get {
+                    return this.columnHRORFRT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DAYSORMTColumn {
+                get {
+                    return this.columnDAYSORMT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn OWRColumn {
+                get {
+                    return this.columnOWR;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn BRKRATE_OWRColumn {
+                get {
+                    return this.columnBRKRATE_OWR;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn BRKAMOUNT_OWRColumn {
+                get {
+                    return this.columnBRKAMOUNT_OWR;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CHRColumn {
+                get {
+                    return this.columnCHR;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn BRKRATE_CHRColumn {
+                get {
+                    return this.columnBRKRATE_CHR;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn BRKAMOUNT_CHRColumn {
+                get {
+                    return this.columnBRKAMOUNT_CHR;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ESTBRKColumn {
+                get {
+                    return this.columnESTBRK;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn BROKER1Column {
+                get {
+                    return this.columnBROKER1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn BROKER2Column {
+                get {
+                    return this.columnBROKER2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SIGNOPERColumn {
+                get {
+                    return this.columnSIGNOPER;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CAP_RATEColumn {
+                get {
+                    return this.columnCAP_RATE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CAP_AMOUNTColumn {
+                get {
+                    return this.columnCAP_AMOUNT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TFCBColumn {
+                get {
+                    return this.columnTFCB;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn FIXNOColumn {
+                get {
+                    return this.columnFIXNO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn FIXSTATUSColumn {
+                get {
+                    return this.columnFIXSTATUS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IDColumn {
+                get {
+                    return this.columnID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn REFNOColumn {
+                get {
+                    return this.columnREFNO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn INVOICE_DATEColumn {
+                get {
+                    return this.columnINVOICE_DATE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MESSESColumn {
+                get {
+                    return this.columnMESSES;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ATINColumn {
+                get {
+                    return this.columnATIN;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CWNOColumn {
+                get {
+                    return this.columnCWNO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PERIODSColumn {
+                get {
+                    return this.columnPERIODS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn BANKACCOUNTColumn {
+                get {
+                    return this.columnBANKACCOUNT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn RECEIVABLEAMOUNTColumn {
+                get {
+                    return this.columnRECEIVABLEAMOUNT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn INVOICE_STATUSColumn {
+                get {
+                    return this.columnINVOICE_STATUS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn RECEIVABLEDATEColumn {
+                get {
+                    return this.columnRECEIVABLEDATE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NAMEColumn {
+                get {
+                    return this.columnNAME;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SIZEColumn {
+                get {
+                    return this.columnSIZE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public VFixture_InvoiceRow this[int index] {
+                get {
+                    return ((VFixture_InvoiceRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event VFixture_InvoiceRowChangeEventHandler VFixture_InvoiceRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event VFixture_InvoiceRowChangeEventHandler VFixture_InvoiceRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event VFixture_InvoiceRowChangeEventHandler VFixture_InvoiceRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event VFixture_InvoiceRowChangeEventHandler VFixture_InvoiceRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddVFixture_InvoiceRow(VFixture_InvoiceRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public VFixture_InvoiceRow AddVFixture_InvoiceRow(
+                        int VSL_ID, 
+                        System.DateTimeOffset CP_DATE, 
+                        string CP_TYPE, 
+                        string CP_DESC, 
+                        string PAYER, 
+                        decimal HRORFRT, 
+                        decimal DAYSORMT, 
+                        string OWR, 
+                        decimal BRKRATE_OWR, 
+                        decimal BRKAMOUNT_OWR, 
+                        string CHR, 
+                        decimal BRKRATE_CHR, 
+                        decimal BRKAMOUNT_CHR, 
+                        decimal ESTBRK, 
+                        string BROKER1, 
+                        string BROKER2, 
+                        string SIGNOPER, 
+                        decimal CAP_RATE, 
+                        decimal CAP_AMOUNT, 
+                        int TFCB, 
+                        string FIXNO, 
+                        string FIXSTATUS, 
+                        string REFNO, 
+                        System.DateTimeOffset INVOICE_DATE, 
+                        string MESSES, 
+                        string ATIN, 
+                        string CWNO, 
+                        string PERIODS, 
+                        string BANKACCOUNT, 
+                        decimal RECEIVABLEAMOUNT, 
+                        string INVOICE_STATUS, 
+                        System.DateTimeOffset RECEIVABLEDATE, 
+                        string NAME, 
+                        string SIZE) {
+                VFixture_InvoiceRow rowVFixture_InvoiceRow = ((VFixture_InvoiceRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        VSL_ID,
+                        CP_DATE,
+                        CP_TYPE,
+                        CP_DESC,
+                        PAYER,
+                        HRORFRT,
+                        DAYSORMT,
+                        OWR,
+                        BRKRATE_OWR,
+                        BRKAMOUNT_OWR,
+                        CHR,
+                        BRKRATE_CHR,
+                        BRKAMOUNT_CHR,
+                        ESTBRK,
+                        BROKER1,
+                        BROKER2,
+                        SIGNOPER,
+                        CAP_RATE,
+                        CAP_AMOUNT,
+                        TFCB,
+                        FIXNO,
+                        FIXSTATUS,
+                        null,
+                        REFNO,
+                        INVOICE_DATE,
+                        MESSES,
+                        ATIN,
+                        CWNO,
+                        PERIODS,
+                        BANKACCOUNT,
+                        RECEIVABLEAMOUNT,
+                        INVOICE_STATUS,
+                        RECEIVABLEDATE,
+                        NAME,
+                        SIZE};
+                rowVFixture_InvoiceRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowVFixture_InvoiceRow);
+                return rowVFixture_InvoiceRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public VFixture_InvoiceRow FindByID(int ID) {
+                return ((VFixture_InvoiceRow)(this.Rows.Find(new object[] {
+                            ID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                VFixture_InvoiceDataTable cln = ((VFixture_InvoiceDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new VFixture_InvoiceDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnVSL_ID = base.Columns["VSL_ID"];
+                this.columnCP_DATE = base.Columns["CP_DATE"];
+                this.columnCP_TYPE = base.Columns["CP_TYPE"];
+                this.columnCP_DESC = base.Columns["CP_DESC"];
+                this.columnPAYER = base.Columns["PAYER"];
+                this.columnHRORFRT = base.Columns["HRORFRT"];
+                this.columnDAYSORMT = base.Columns["DAYSORMT"];
+                this.columnOWR = base.Columns["OWR"];
+                this.columnBRKRATE_OWR = base.Columns["BRKRATE_OWR"];
+                this.columnBRKAMOUNT_OWR = base.Columns["BRKAMOUNT_OWR"];
+                this.columnCHR = base.Columns["CHR"];
+                this.columnBRKRATE_CHR = base.Columns["BRKRATE_CHR"];
+                this.columnBRKAMOUNT_CHR = base.Columns["BRKAMOUNT_CHR"];
+                this.columnESTBRK = base.Columns["ESTBRK"];
+                this.columnBROKER1 = base.Columns["BROKER1"];
+                this.columnBROKER2 = base.Columns["BROKER2"];
+                this.columnSIGNOPER = base.Columns["SIGNOPER"];
+                this.columnCAP_RATE = base.Columns["CAP_RATE"];
+                this.columnCAP_AMOUNT = base.Columns["CAP_AMOUNT"];
+                this.columnTFCB = base.Columns["TFCB"];
+                this.columnFIXNO = base.Columns["FIXNO"];
+                this.columnFIXSTATUS = base.Columns["FIXSTATUS"];
+                this.columnID = base.Columns["ID"];
+                this.columnREFNO = base.Columns["REFNO"];
+                this.columnINVOICE_DATE = base.Columns["INVOICE_DATE"];
+                this.columnMESSES = base.Columns["MESSES"];
+                this.columnATIN = base.Columns["ATIN"];
+                this.columnCWNO = base.Columns["CWNO"];
+                this.columnPERIODS = base.Columns["PERIODS"];
+                this.columnBANKACCOUNT = base.Columns["BANKACCOUNT"];
+                this.columnRECEIVABLEAMOUNT = base.Columns["RECEIVABLEAMOUNT"];
+                this.columnINVOICE_STATUS = base.Columns["INVOICE_STATUS"];
+                this.columnRECEIVABLEDATE = base.Columns["RECEIVABLEDATE"];
+                this.columnNAME = base.Columns["NAME"];
+                this.columnSIZE = base.Columns["SIZE"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnVSL_ID = new global::System.Data.DataColumn("VSL_ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVSL_ID);
+                this.columnCP_DATE = new global::System.Data.DataColumn("CP_DATE", typeof(global::System.DateTimeOffset), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCP_DATE);
+                this.columnCP_TYPE = new global::System.Data.DataColumn("CP_TYPE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCP_TYPE);
+                this.columnCP_DESC = new global::System.Data.DataColumn("CP_DESC", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCP_DESC);
+                this.columnPAYER = new global::System.Data.DataColumn("PAYER", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPAYER);
+                this.columnHRORFRT = new global::System.Data.DataColumn("HRORFRT", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHRORFRT);
+                this.columnDAYSORMT = new global::System.Data.DataColumn("DAYSORMT", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDAYSORMT);
+                this.columnOWR = new global::System.Data.DataColumn("OWR", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOWR);
+                this.columnBRKRATE_OWR = new global::System.Data.DataColumn("BRKRATE_OWR", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBRKRATE_OWR);
+                this.columnBRKAMOUNT_OWR = new global::System.Data.DataColumn("BRKAMOUNT_OWR", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBRKAMOUNT_OWR);
+                this.columnCHR = new global::System.Data.DataColumn("CHR", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCHR);
+                this.columnBRKRATE_CHR = new global::System.Data.DataColumn("BRKRATE_CHR", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBRKRATE_CHR);
+                this.columnBRKAMOUNT_CHR = new global::System.Data.DataColumn("BRKAMOUNT_CHR", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBRKAMOUNT_CHR);
+                this.columnESTBRK = new global::System.Data.DataColumn("ESTBRK", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnESTBRK);
+                this.columnBROKER1 = new global::System.Data.DataColumn("BROKER1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBROKER1);
+                this.columnBROKER2 = new global::System.Data.DataColumn("BROKER2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBROKER2);
+                this.columnSIGNOPER = new global::System.Data.DataColumn("SIGNOPER", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSIGNOPER);
+                this.columnCAP_RATE = new global::System.Data.DataColumn("CAP_RATE", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCAP_RATE);
+                this.columnCAP_AMOUNT = new global::System.Data.DataColumn("CAP_AMOUNT", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCAP_AMOUNT);
+                this.columnTFCB = new global::System.Data.DataColumn("TFCB", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTFCB);
+                this.columnFIXNO = new global::System.Data.DataColumn("FIXNO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFIXNO);
+                this.columnFIXSTATUS = new global::System.Data.DataColumn("FIXSTATUS", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFIXSTATUS);
+                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID);
+                this.columnREFNO = new global::System.Data.DataColumn("REFNO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnREFNO);
+                this.columnINVOICE_DATE = new global::System.Data.DataColumn("INVOICE_DATE", typeof(global::System.DateTimeOffset), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnINVOICE_DATE);
+                this.columnMESSES = new global::System.Data.DataColumn("MESSES", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMESSES);
+                this.columnATIN = new global::System.Data.DataColumn("ATIN", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnATIN);
+                this.columnCWNO = new global::System.Data.DataColumn("CWNO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCWNO);
+                this.columnPERIODS = new global::System.Data.DataColumn("PERIODS", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPERIODS);
+                this.columnBANKACCOUNT = new global::System.Data.DataColumn("BANKACCOUNT", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBANKACCOUNT);
+                this.columnRECEIVABLEAMOUNT = new global::System.Data.DataColumn("RECEIVABLEAMOUNT", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRECEIVABLEAMOUNT);
+                this.columnINVOICE_STATUS = new global::System.Data.DataColumn("INVOICE_STATUS", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnINVOICE_STATUS);
+                this.columnRECEIVABLEDATE = new global::System.Data.DataColumn("RECEIVABLEDATE", typeof(global::System.DateTimeOffset), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRECEIVABLEDATE);
+                this.columnNAME = new global::System.Data.DataColumn("NAME", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNAME);
+                this.columnSIZE = new global::System.Data.DataColumn("SIZE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSIZE);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnID}, true));
+                this.columnVSL_ID.AllowDBNull = false;
+                this.columnCP_DATE.AllowDBNull = false;
+                this.columnCP_TYPE.AllowDBNull = false;
+                this.columnCP_TYPE.MaxLength = 2147483647;
+                this.columnCP_DESC.AllowDBNull = false;
+                this.columnCP_DESC.MaxLength = 2147483647;
+                this.columnPAYER.AllowDBNull = false;
+                this.columnPAYER.MaxLength = 2147483647;
+                this.columnHRORFRT.AllowDBNull = false;
+                this.columnDAYSORMT.AllowDBNull = false;
+                this.columnOWR.AllowDBNull = false;
+                this.columnOWR.MaxLength = 2147483647;
+                this.columnBRKRATE_OWR.AllowDBNull = false;
+                this.columnBRKAMOUNT_OWR.AllowDBNull = false;
+                this.columnCHR.AllowDBNull = false;
+                this.columnCHR.MaxLength = 2147483647;
+                this.columnBRKRATE_CHR.AllowDBNull = false;
+                this.columnBRKAMOUNT_CHR.AllowDBNull = false;
+                this.columnESTBRK.AllowDBNull = false;
+                this.columnBROKER1.AllowDBNull = false;
+                this.columnBROKER1.MaxLength = 2147483647;
+                this.columnBROKER2.AllowDBNull = false;
+                this.columnBROKER2.MaxLength = 2147483647;
+                this.columnSIGNOPER.AllowDBNull = false;
+                this.columnSIGNOPER.MaxLength = 2147483647;
+                this.columnCAP_RATE.AllowDBNull = false;
+                this.columnCAP_AMOUNT.AllowDBNull = false;
+                this.columnTFCB.AllowDBNull = false;
+                this.columnFIXNO.AllowDBNull = false;
+                this.columnFIXNO.MaxLength = 2147483647;
+                this.columnFIXSTATUS.AllowDBNull = false;
+                this.columnFIXSTATUS.MaxLength = 2147483647;
+                this.columnID.AutoIncrement = true;
+                this.columnID.AutoIncrementSeed = -1;
+                this.columnID.AutoIncrementStep = -1;
+                this.columnID.AllowDBNull = false;
+                this.columnID.ReadOnly = true;
+                this.columnID.Unique = true;
+                this.columnREFNO.AllowDBNull = false;
+                this.columnREFNO.MaxLength = 2147483647;
+                this.columnINVOICE_DATE.AllowDBNull = false;
+                this.columnMESSES.AllowDBNull = false;
+                this.columnMESSES.MaxLength = 2147483647;
+                this.columnATIN.AllowDBNull = false;
+                this.columnATIN.MaxLength = 2147483647;
+                this.columnCWNO.AllowDBNull = false;
+                this.columnCWNO.MaxLength = 2147483647;
+                this.columnPERIODS.AllowDBNull = false;
+                this.columnPERIODS.MaxLength = 2147483647;
+                this.columnBANKACCOUNT.AllowDBNull = false;
+                this.columnBANKACCOUNT.MaxLength = 2147483647;
+                this.columnRECEIVABLEAMOUNT.AllowDBNull = false;
+                this.columnINVOICE_STATUS.AllowDBNull = false;
+                this.columnINVOICE_STATUS.MaxLength = 2147483647;
+                this.columnRECEIVABLEDATE.AllowDBNull = false;
+                this.columnNAME.AllowDBNull = false;
+                this.columnNAME.MaxLength = 2147483647;
+                this.columnSIZE.AllowDBNull = false;
+                this.columnSIZE.MaxLength = 2147483647;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public VFixture_InvoiceRow NewVFixture_InvoiceRow() {
+                return ((VFixture_InvoiceRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new VFixture_InvoiceRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(VFixture_InvoiceRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.VFixture_InvoiceRowChanged != null)) {
+                    this.VFixture_InvoiceRowChanged(this, new VFixture_InvoiceRowChangeEvent(((VFixture_InvoiceRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.VFixture_InvoiceRowChanging != null)) {
+                    this.VFixture_InvoiceRowChanging(this, new VFixture_InvoiceRowChangeEvent(((VFixture_InvoiceRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.VFixture_InvoiceRowDeleted != null)) {
+                    this.VFixture_InvoiceRowDeleted(this, new VFixture_InvoiceRowChangeEvent(((VFixture_InvoiceRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.VFixture_InvoiceRowDeleting != null)) {
+                    this.VFixture_InvoiceRowDeleting(this, new VFixture_InvoiceRowChangeEvent(((VFixture_InvoiceRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveVFixture_InvoiceRow(VFixture_InvoiceRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                BMSDS ds = new BMSDS();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "VFixture_InvoiceDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class TSys_UsersRow : global::System.Data.DataRow {
@@ -3830,6 +4690,406 @@ namespace BMS_DAL.DS {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class VFixture_InvoiceRow : global::System.Data.DataRow {
+            
+            private VFixture_InvoiceDataTable tableVFixture_Invoice;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal VFixture_InvoiceRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableVFixture_Invoice = ((VFixture_InvoiceDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int VSL_ID {
+                get {
+                    return ((int)(this[this.tableVFixture_Invoice.VSL_IDColumn]));
+                }
+                set {
+                    this[this.tableVFixture_Invoice.VSL_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTimeOffset CP_DATE {
+                get {
+                    return ((global::System.DateTimeOffset)(this[this.tableVFixture_Invoice.CP_DATEColumn]));
+                }
+                set {
+                    this[this.tableVFixture_Invoice.CP_DATEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CP_TYPE {
+                get {
+                    return ((string)(this[this.tableVFixture_Invoice.CP_TYPEColumn]));
+                }
+                set {
+                    this[this.tableVFixture_Invoice.CP_TYPEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CP_DESC {
+                get {
+                    return ((string)(this[this.tableVFixture_Invoice.CP_DESCColumn]));
+                }
+                set {
+                    this[this.tableVFixture_Invoice.CP_DESCColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string PAYER {
+                get {
+                    return ((string)(this[this.tableVFixture_Invoice.PAYERColumn]));
+                }
+                set {
+                    this[this.tableVFixture_Invoice.PAYERColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal HRORFRT {
+                get {
+                    return ((decimal)(this[this.tableVFixture_Invoice.HRORFRTColumn]));
+                }
+                set {
+                    this[this.tableVFixture_Invoice.HRORFRTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal DAYSORMT {
+                get {
+                    return ((decimal)(this[this.tableVFixture_Invoice.DAYSORMTColumn]));
+                }
+                set {
+                    this[this.tableVFixture_Invoice.DAYSORMTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string OWR {
+                get {
+                    return ((string)(this[this.tableVFixture_Invoice.OWRColumn]));
+                }
+                set {
+                    this[this.tableVFixture_Invoice.OWRColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal BRKRATE_OWR {
+                get {
+                    return ((decimal)(this[this.tableVFixture_Invoice.BRKRATE_OWRColumn]));
+                }
+                set {
+                    this[this.tableVFixture_Invoice.BRKRATE_OWRColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal BRKAMOUNT_OWR {
+                get {
+                    return ((decimal)(this[this.tableVFixture_Invoice.BRKAMOUNT_OWRColumn]));
+                }
+                set {
+                    this[this.tableVFixture_Invoice.BRKAMOUNT_OWRColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CHR {
+                get {
+                    return ((string)(this[this.tableVFixture_Invoice.CHRColumn]));
+                }
+                set {
+                    this[this.tableVFixture_Invoice.CHRColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal BRKRATE_CHR {
+                get {
+                    return ((decimal)(this[this.tableVFixture_Invoice.BRKRATE_CHRColumn]));
+                }
+                set {
+                    this[this.tableVFixture_Invoice.BRKRATE_CHRColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal BRKAMOUNT_CHR {
+                get {
+                    return ((decimal)(this[this.tableVFixture_Invoice.BRKAMOUNT_CHRColumn]));
+                }
+                set {
+                    this[this.tableVFixture_Invoice.BRKAMOUNT_CHRColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal ESTBRK {
+                get {
+                    return ((decimal)(this[this.tableVFixture_Invoice.ESTBRKColumn]));
+                }
+                set {
+                    this[this.tableVFixture_Invoice.ESTBRKColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string BROKER1 {
+                get {
+                    return ((string)(this[this.tableVFixture_Invoice.BROKER1Column]));
+                }
+                set {
+                    this[this.tableVFixture_Invoice.BROKER1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string BROKER2 {
+                get {
+                    return ((string)(this[this.tableVFixture_Invoice.BROKER2Column]));
+                }
+                set {
+                    this[this.tableVFixture_Invoice.BROKER2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string SIGNOPER {
+                get {
+                    return ((string)(this[this.tableVFixture_Invoice.SIGNOPERColumn]));
+                }
+                set {
+                    this[this.tableVFixture_Invoice.SIGNOPERColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal CAP_RATE {
+                get {
+                    return ((decimal)(this[this.tableVFixture_Invoice.CAP_RATEColumn]));
+                }
+                set {
+                    this[this.tableVFixture_Invoice.CAP_RATEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal CAP_AMOUNT {
+                get {
+                    return ((decimal)(this[this.tableVFixture_Invoice.CAP_AMOUNTColumn]));
+                }
+                set {
+                    this[this.tableVFixture_Invoice.CAP_AMOUNTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int TFCB {
+                get {
+                    return ((int)(this[this.tableVFixture_Invoice.TFCBColumn]));
+                }
+                set {
+                    this[this.tableVFixture_Invoice.TFCBColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string FIXNO {
+                get {
+                    return ((string)(this[this.tableVFixture_Invoice.FIXNOColumn]));
+                }
+                set {
+                    this[this.tableVFixture_Invoice.FIXNOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string FIXSTATUS {
+                get {
+                    return ((string)(this[this.tableVFixture_Invoice.FIXSTATUSColumn]));
+                }
+                set {
+                    this[this.tableVFixture_Invoice.FIXSTATUSColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int ID {
+                get {
+                    return ((int)(this[this.tableVFixture_Invoice.IDColumn]));
+                }
+                set {
+                    this[this.tableVFixture_Invoice.IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string REFNO {
+                get {
+                    return ((string)(this[this.tableVFixture_Invoice.REFNOColumn]));
+                }
+                set {
+                    this[this.tableVFixture_Invoice.REFNOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTimeOffset INVOICE_DATE {
+                get {
+                    return ((global::System.DateTimeOffset)(this[this.tableVFixture_Invoice.INVOICE_DATEColumn]));
+                }
+                set {
+                    this[this.tableVFixture_Invoice.INVOICE_DATEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string MESSES {
+                get {
+                    return ((string)(this[this.tableVFixture_Invoice.MESSESColumn]));
+                }
+                set {
+                    this[this.tableVFixture_Invoice.MESSESColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ATIN {
+                get {
+                    return ((string)(this[this.tableVFixture_Invoice.ATINColumn]));
+                }
+                set {
+                    this[this.tableVFixture_Invoice.ATINColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CWNO {
+                get {
+                    return ((string)(this[this.tableVFixture_Invoice.CWNOColumn]));
+                }
+                set {
+                    this[this.tableVFixture_Invoice.CWNOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string PERIODS {
+                get {
+                    return ((string)(this[this.tableVFixture_Invoice.PERIODSColumn]));
+                }
+                set {
+                    this[this.tableVFixture_Invoice.PERIODSColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string BANKACCOUNT {
+                get {
+                    return ((string)(this[this.tableVFixture_Invoice.BANKACCOUNTColumn]));
+                }
+                set {
+                    this[this.tableVFixture_Invoice.BANKACCOUNTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal RECEIVABLEAMOUNT {
+                get {
+                    return ((decimal)(this[this.tableVFixture_Invoice.RECEIVABLEAMOUNTColumn]));
+                }
+                set {
+                    this[this.tableVFixture_Invoice.RECEIVABLEAMOUNTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string INVOICE_STATUS {
+                get {
+                    return ((string)(this[this.tableVFixture_Invoice.INVOICE_STATUSColumn]));
+                }
+                set {
+                    this[this.tableVFixture_Invoice.INVOICE_STATUSColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTimeOffset RECEIVABLEDATE {
+                get {
+                    return ((global::System.DateTimeOffset)(this[this.tableVFixture_Invoice.RECEIVABLEDATEColumn]));
+                }
+                set {
+                    this[this.tableVFixture_Invoice.RECEIVABLEDATEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string NAME {
+                get {
+                    return ((string)(this[this.tableVFixture_Invoice.NAMEColumn]));
+                }
+                set {
+                    this[this.tableVFixture_Invoice.NAMEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string SIZE {
+                get {
+                    return ((string)(this[this.tableVFixture_Invoice.SIZEColumn]));
+                }
+                set {
+                    this[this.tableVFixture_Invoice.SIZEColumn] = value;
+                }
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -3985,6 +5245,40 @@ namespace BMS_DAL.DS {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public TInvoiceDetailsRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class VFixture_InvoiceRowChangeEvent : global::System.EventArgs {
+            
+            private VFixture_InvoiceRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public VFixture_InvoiceRowChangeEvent(VFixture_InvoiceRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public VFixture_InvoiceRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -6480,6 +7774,223 @@ SELECT ID, C1, C2, C3, C4, C5, OPER, OP_DT, INVOICE_ID, DEBIT, CREDIT FROM TInvo
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(string C1, string C2, string C3, string C4, string C5, string OPER, System.DateTimeOffset OP_DT, int INVOICE_ID, decimal DEBIT, decimal CREDIT, int Original_ID, System.DateTimeOffset Original_OP_DT, int Original_INVOICE_ID, decimal Original_DEBIT, decimal Original_CREDIT) {
             return this.Update(C1, C2, C3, C4, C5, OPER, OP_DT, INVOICE_ID, DEBIT, CREDIT, Original_ID, Original_OP_DT, Original_INVOICE_ID, Original_DEBIT, Original_CREDIT, Original_ID);
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class VFixture_InvoiceTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public VFixture_InvoiceTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "VFixture_Invoice";
+            tableMapping.ColumnMappings.Add("VSL_ID", "VSL_ID");
+            tableMapping.ColumnMappings.Add("CP_DATE", "CP_DATE");
+            tableMapping.ColumnMappings.Add("CP_TYPE", "CP_TYPE");
+            tableMapping.ColumnMappings.Add("CP_DESC", "CP_DESC");
+            tableMapping.ColumnMappings.Add("PAYER", "PAYER");
+            tableMapping.ColumnMappings.Add("HRORFRT", "HRORFRT");
+            tableMapping.ColumnMappings.Add("DAYSORMT", "DAYSORMT");
+            tableMapping.ColumnMappings.Add("OWR", "OWR");
+            tableMapping.ColumnMappings.Add("BRKRATE_OWR", "BRKRATE_OWR");
+            tableMapping.ColumnMappings.Add("BRKAMOUNT_OWR", "BRKAMOUNT_OWR");
+            tableMapping.ColumnMappings.Add("CHR", "CHR");
+            tableMapping.ColumnMappings.Add("BRKRATE_CHR", "BRKRATE_CHR");
+            tableMapping.ColumnMappings.Add("BRKAMOUNT_CHR", "BRKAMOUNT_CHR");
+            tableMapping.ColumnMappings.Add("ESTBRK", "ESTBRK");
+            tableMapping.ColumnMappings.Add("BROKER1", "BROKER1");
+            tableMapping.ColumnMappings.Add("BROKER2", "BROKER2");
+            tableMapping.ColumnMappings.Add("SIGNOPER", "SIGNOPER");
+            tableMapping.ColumnMappings.Add("CAP_RATE", "CAP_RATE");
+            tableMapping.ColumnMappings.Add("CAP_AMOUNT", "CAP_AMOUNT");
+            tableMapping.ColumnMappings.Add("TFCB", "TFCB");
+            tableMapping.ColumnMappings.Add("FIXNO", "FIXNO");
+            tableMapping.ColumnMappings.Add("FIXSTATUS", "FIXSTATUS");
+            tableMapping.ColumnMappings.Add("ID", "ID");
+            tableMapping.ColumnMappings.Add("REFNO", "REFNO");
+            tableMapping.ColumnMappings.Add("INVOICE_DATE", "INVOICE_DATE");
+            tableMapping.ColumnMappings.Add("MESSES", "MESSES");
+            tableMapping.ColumnMappings.Add("ATIN", "ATIN");
+            tableMapping.ColumnMappings.Add("CWNO", "CWNO");
+            tableMapping.ColumnMappings.Add("PERIODS", "PERIODS");
+            tableMapping.ColumnMappings.Add("BANKACCOUNT", "BANKACCOUNT");
+            tableMapping.ColumnMappings.Add("RECEIVABLEAMOUNT", "RECEIVABLEAMOUNT");
+            tableMapping.ColumnMappings.Add("INVOICE_STATUS", "INVOICE_STATUS");
+            tableMapping.ColumnMappings.Add("RECEIVABLEDATE", "RECEIVABLEDATE");
+            tableMapping.ColumnMappings.Add("NAME", "NAME");
+            tableMapping.ColumnMappings.Add("SIZE", "SIZE");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::BMS_DAL.Properties.Settings.Default.dbConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"SELECT  TFixtures.VSL_ID, TFixtures.CP_DATE, TFixtures.CP_TYPE, TFixtures.CP_DESC, TFixtures.PAYER, TFixtures.HRORFRT, 
+                   TFixtures.DAYSORMT, TFixtures.OWR, TFixtures.BRKRATE_OWR, TFixtures.BRKAMOUNT_OWR, TFixtures.CHR, 
+                   TFixtures.BRKRATE_CHR, TFixtures.BRKAMOUNT_CHR, TFixtures.ESTBRK, TFixtures.BROKER1, TFixtures.BROKER2, 
+                   TFixtures.SIGNOPER, TFixtures.CAP_RATE, TFixtures.CAP_AMOUNT, TFixtures.TFCB, TFixtures.FIXNO, 
+                   TFixtures.STATUS AS FIXSTATUS, TFixtures.ID, TInvoices.REFNO, TInvoices.INVOICE_DATE, TInvoices.MESSES, 
+                   TInvoices.ATIN, TInvoices.CWNO, TInvoices.PERIODS, TInvoices.BANKACCOUNT, TInvoices.RECEIVABLEAMOUNT, 
+                   TInvoices.STATUS AS INVOICE_STATUS, TInvoices.RECEIVABLEDATE, TVessels.NAME, TVessels.SIZE
+FROM      TFixtures INNER JOIN
+                   TInvoices ON TFixtures.ID = TInvoices.ID INNER JOIN
+                   TVessels ON TFixtures.VSL_ID = TVessels.ID
+WHERE   (TFixtures.CP_DATE >= @datefrom) AND (TFixtures.CP_DATE <= @dateto)";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@datefrom", global::System.Data.SqlDbType.DateTimeOffset, 10, global::System.Data.ParameterDirection.Input, 0, 0, "CP_DATE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dateto", global::System.Data.SqlDbType.DateTimeOffset, 10, global::System.Data.ParameterDirection.Input, 0, 0, "CP_DATE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int FillByCPDATE(BMSDS.VFixture_InvoiceDataTable dataTable, System.DateTimeOffset datefrom, System.DateTimeOffset dateto) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTimeOffset)(datefrom));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTimeOffset)(dateto));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual BMSDS.VFixture_InvoiceDataTable GetDataByCPDATE(System.DateTimeOffset datefrom, System.DateTimeOffset dateto) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTimeOffset)(datefrom));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTimeOffset)(dateto));
+            BMSDS.VFixture_InvoiceDataTable dataTable = new BMSDS.VFixture_InvoiceDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
         }
     }
     

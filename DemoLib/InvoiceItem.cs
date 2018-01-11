@@ -117,8 +117,8 @@ namespace DemoLib
             var datarowitem = InvoiceDetailDV.Table.NewRow();
             datarowitem["INVOICE_ID"] = DataRowItem.ID;
             datarowitem["C1"] = "FROM";
-            datarowitem["C2"] = DateTime.Now.ToString("yyyyMMdd HH:mm");
-            datarowitem["C3"] = DateTime.Now.ToString("yyyyMMdd HH:mm");
+            datarowitem["C2"] = DateTime.Now.ToString("yyyyMMdd");
+            datarowitem["C3"] = DateTime.Now.ToString("yyyyMMdd");
             datarowitem["C4"] = "GMT";
             datarowitem["C5"] = string.Empty;
             datarowitem["OPER"] = BMS_Component.UserInfo.UserName;
@@ -130,8 +130,8 @@ namespace DemoLib
             datarowitem = InvoiceDetailDV.Table.NewRow();
             datarowitem["INVOICE_ID"] = DataRowItem.ID;
             datarowitem["C1"] = "TO";
-            datarowitem["C2"] = DateTime.Now.ToString("yyyyMMdd HH:mm");
-            datarowitem["C3"] = DateTime.Now.ToString("yyyyMMdd HH:mm");
+            datarowitem["C2"] = DateTime.Now.ToString("yyyyMMdd");
+            datarowitem["C3"] = DateTime.Now.ToString("yyyyMMdd");
             datarowitem["C4"] = "GMT";
             datarowitem["C5"] = string.Empty;
             datarowitem["OPER"] = BMS_Component.UserInfo.UserName;

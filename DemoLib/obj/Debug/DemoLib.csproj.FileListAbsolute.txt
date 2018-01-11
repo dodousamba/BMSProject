@@ -49,3 +49,4 @@ C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\DemoLib\obj\Debu
 C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\DemoLib\obj\Debug\DemoLib.RPT.XtraReport1.resources
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\DemoLib\obj\Debug\DemoLib.InvoiceReportForm.resources
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\DemoLib\obj\Debug\DemoLib.RPT.XtraReport1.resources
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\DemoLib\obj\Debug\DemoLib.InvoiceReportForm.resources

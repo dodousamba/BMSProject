@@ -43,7 +43,7 @@ namespace DemoLib
         {
             base.OnActivated(e);
 
-            this._ds = _daservice.GetFixtureWithRelation();
+            this._ds.Merge( _daservice.GetFixtureWithRelation());
             barEditItem1_EditValueChanged(barEditItem1, new EventArgs());
         }
         protected override void OnClosed(EventArgs e)

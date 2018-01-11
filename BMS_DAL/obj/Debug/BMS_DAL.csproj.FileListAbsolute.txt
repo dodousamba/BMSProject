@@ -15,4 +15,3 @@ C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_DAL\bin\Debu
 C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_DAL\obj\Debug\BMS_DAL.dll
 C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_DAL\obj\Debug\BMS_DAL.pdb
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\BMS_DAL\obj\Debug\BMS_DAL.csprojResolveAssemblyReference.cache
-C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_DAL\obj\Debug\BMS_DAL.csprojResolveAssemblyReference.cache

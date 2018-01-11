@@ -33,7 +33,7 @@ namespace DemoLib
         {
             base.OnLoad(e);
 
-            this._dt = _daservice.GetVessel();
+            this._dt.Merge( _daservice.GetVessel());
             this.BindData();
 
             this.AttachEvent();

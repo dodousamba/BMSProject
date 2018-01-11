@@ -207,5 +207,18 @@ namespace BMS_Service
             }
             return r;
         }
+
+
+        public BMS_DAL.DS.BMSDS.VFixture_InvoiceDataTable GetFixture_InvoiceByCPDATE(DateTimeOffset datefrom, DateTimeOffset dateto)
+        {
+            using (BMS_DAL.DS.BMSDSTableAdapters.VFixture_InvoiceTableAdapter ta = new BMS_DAL.DS.BMSDSTableAdapters.VFixture_InvoiceTableAdapter())
+            {
+                try
+                {
+                    return ta.GetDataByCPDATE(datefrom, dateto);
+                }
+                catch (Exception ex) { throw ex; }
+            }
+        }
     }
 }

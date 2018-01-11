@@ -159,7 +159,7 @@
             this.C2.StylePriority.UseTextAlignment = false;
             this.C2.Text = "C2";
             this.C2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.C2.Weight = 0.2739930623769391D;
+            this.C2.Weight = 0.38814354950630842D;
             // 
             // C3
             // 
@@ -177,7 +177,7 @@
             this.C3.StylePriority.UseTextAlignment = false;
             this.C3.Text = "C3";
             this.C3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.C3.Weight = 0.25716747409026719D;
+            this.C3.Weight = 0.31432407147911939D;
             // 
             // C4
             // 
@@ -187,7 +187,7 @@
             this.C4.StylePriority.UseTextAlignment = false;
             this.C4.Text = "C4";
             this.C4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.C4.Weight = 0.21411641711749255D;
+            this.C4.Weight = 0.20265224802456708D;
             // 
             // C5
             // 
@@ -199,7 +199,7 @@
             this.C5.StylePriority.UseTextAlignment = false;
             this.C5.Text = "C5";
             this.C5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.C5.Weight = 0.21411641711749255D;
+            this.C5.Weight = 0.23094219795759444D;
             // 
             // DEBIT
             // 
@@ -211,7 +211,7 @@
             this.DEBIT.StylePriority.UseTextAlignment = false;
             this.DEBIT.Text = "DEBIT";
             this.DEBIT.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.DEBIT.Weight = 0.40818801536333582D;
+            this.DEBIT.Weight = 0.35350499784672462D;
             // 
             // CREDIT
             // 
@@ -223,7 +223,7 @@
             this.CREDIT.StylePriority.UseTextAlignment = false;
             this.CREDIT.Text = "CREDIT";
             this.CREDIT.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.CREDIT.Weight = 0.40818755323510392D;
+            this.CREDIT.Weight = 0.28620187448631712D;
             // 
             // xrTableCell17
             // 
@@ -579,7 +579,7 @@
             // xrTableCell24
             // 
             this.xrTableCell24.Name = "xrTableCell24";
-            this.xrTableCell24.Weight = 0.80085530071704714D;
+            this.xrTableCell24.Weight = 0.97416501194155447D;
             // 
             // xrTableCell25
             // 
@@ -593,7 +593,7 @@
             this.xrTableCell25.StylePriority.UseTextAlignment = false;
             this.xrTableCell25.Text = "DEBIT";
             this.xrTableCell25.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xrTableCell25.Weight = 0.40042765035852357D;
+            this.xrTableCell25.Weight = 0.3467841323332852D;
             // 
             // xrTableCell22
             // 
@@ -607,7 +607,7 @@
             this.xrTableCell22.StylePriority.UseTextAlignment = false;
             this.xrTableCell22.Text = "CREDIT";
             this.xrTableCell22.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xrTableCell22.Weight = 0.40042765035852357D;
+            this.xrTableCell22.Weight = 0.2807614571592546D;
             // 
             // xrTableCell23
             // 
@@ -645,17 +645,17 @@
             // xrTableCell29
             // 
             this.xrTableCell29.Name = "xrTableCell29";
-            this.xrTableCell29.Weight = 0.80085530071704714D;
+            this.xrTableCell29.Weight = 0.97416504972008988D;
             // 
             // xrTableCell30
             // 
             this.xrTableCell30.Name = "xrTableCell30";
-            this.xrTableCell30.Weight = 0.40042765035852357D;
+            this.xrTableCell30.Weight = 0.34678409455474979D;
             // 
             // xrTableCell31
             // 
             this.xrTableCell31.Name = "xrTableCell31";
-            this.xrTableCell31.Weight = 0.40042765035852357D;
+            this.xrTableCell31.Weight = 0.2807614571592546D;
             // 
             // xrTableCell32
             // 

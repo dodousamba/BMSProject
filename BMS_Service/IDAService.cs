@@ -43,5 +43,8 @@ namespace BMS_Service
 
         [OperationContract]
         int UpdateInvoiceDetail(BMS_DAL.DS.BMSDS.TInvoiceDetailsDataTable dt);
+
+        [OperationContract]
+        BMS_DAL.DS.BMSDS.VFixture_InvoiceDataTable GetFixture_InvoiceByCPDATE(DateTimeOffset datefrom, DateTimeOffset dateto);
     }
 }

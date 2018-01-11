@@ -40,7 +40,7 @@ namespace DemoLib
         {
             base.OnActivated(e);
 
-            this._ds = _daservice.GetFixtureWithRelation();
+            this._ds.Merge(_daservice.GetFixtureWithRelation());
             this._ds.Merge(_daservice.GetVessel());
             this.BindData();
         }
@@ -130,11 +130,11 @@ namespace DemoLib
             datarowitem.BRKAMOUNT_OWR = 0;
             datarowitem.BRKRATE_CHR = 1.25M;
             datarowitem.BRKAMOUNT_CHR = 0;
-            datarowitem.OWR = "owr";
-            datarowitem.CHR = "chr";
+            datarowitem.OWR = "OWR";
+            datarowitem.CHR = "CHR";
             datarowitem.ESTBRK = 0;
-            datarowitem.BROKER1 = "broker1";
-            datarowitem.BROKER2 = "broker2";
+            datarowitem.BROKER1 = "BROKER1";
+            datarowitem.BROKER2 = "BROKER2";
             datarowitem.SIGNOPER = "OP";
             datarowitem.CAP_RATE = 0.5M;
             datarowitem.CAP_AMOUNT = 0;

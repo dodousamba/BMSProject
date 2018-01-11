@@ -7,4 +7,3 @@ C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\BMS_Comp
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\BMS_Component\obj\Debug\BMS_Component.csprojResolveAssemblyReference.cache
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\BMS_Component\obj\Debug\BMS_Component.dll
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\BMS_Component\obj\Debug\BMS_Component.pdb
-C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_Component\obj\Debug\BMS_Component.csprojResolveAssemblyReference.cache
