@@ -84,7 +84,10 @@ namespace DemoLib
                 {
                     case DialogResult.OK:
                         MessageBox.Show(string.Format("Update {0} rows", this._daservice.UpdateFixtureWithRelation(this._ds)));
-                        this._ds = _daservice.GetFixtureWithRelation();
+                        this._ds.TFixtures.Clear();
+                        this._ds.TInvoices.Clear();
+                        this._ds.TInvoiceDetails.Clear();
+                        this._ds.Merge(_daservice.GetFixtureWithRelation());
                         this.BindData();
                         break;
                     case DialogResult.Cancel:
@@ -107,7 +110,10 @@ namespace DemoLib
             {
                 datarowitem.Delete();
                 MessageBox.Show(string.Format("Delete {0} rows", this._daservice.DeleteFixtureWithRelation(this._ds)));
-                this._ds = _daservice.GetFixtureWithRelation();
+                this._ds.TFixtures.Clear();
+                this._ds.TInvoices.Clear();
+                this._ds.TInvoiceDetails.Clear();
+                this._ds.Merge(_daservice.GetFixtureWithRelation());
                 this.BindData();
             }
             else
@@ -152,7 +158,10 @@ namespace DemoLib
             {
                 case DialogResult.OK:
                     MessageBox.Show(string.Format("Add {0} rows", this._daservice.UpdateFixtureWithRelation(this._ds)));
-                    this._ds = _daservice.GetFixtureWithRelation();
+                    this._ds.TFixtures.Clear();
+                    this._ds.TInvoices.Clear();
+                    this._ds.TInvoiceDetails.Clear();
+                    this._ds.Merge(_daservice.GetFixtureWithRelation());
                     this.BindData();
                     break;
                 case DialogResult.Cancel:

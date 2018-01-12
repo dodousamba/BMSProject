@@ -79,7 +79,8 @@ namespace DemoLib
                 {
                     case DialogResult.OK:
                         MessageBox.Show(string.Format("Update {0} rows", this._daservice.UpdateVessel(this._dt)));
-                        this._dt = _daservice.GetVessel();
+                        this._dt.Clear();
+                        this._dt.Merge(_daservice.GetVessel());
                         this.BindData();
                         break;
                     case DialogResult.Cancel:
@@ -102,7 +103,8 @@ namespace DemoLib
             {
                 datarowitem.Delete();
                 MessageBox.Show(string.Format("Delete {0} rows", this._daservice.UpdateVessel(this._dt)));
-                this._dt = _daservice.GetVessel();
+                this._dt.Clear();
+                this._dt.Merge(_daservice.GetVessel());
                 this.BindData();
             }
             else
@@ -127,7 +129,8 @@ namespace DemoLib
             {
                 case DialogResult.OK:
                     MessageBox.Show(string.Format("Add {0} rows", this._daservice.UpdateVessel(this._dt)));
-                    this._dt = _daservice.GetVessel();
+                    this._dt.Clear();
+                    this._dt.Merge(_daservice.GetVessel());
                     this.BindData();
                     break;
                 case DialogResult.Cancel:

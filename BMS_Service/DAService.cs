@@ -101,16 +101,23 @@ namespace BMS_Service
             {
                 r += ta.UpdateWithTrans((BMS_DAL.DS.BMSDS.TFixturesDataTable)dschanges.Tables["TFixtures"]);
             }
+            foreach (DataRow idrow in dschanges.Tables["TInvoices"].AsEnumerable().Where(t => t.RowState.Equals(DataRowState.Unchanged)))
+            {
+                if ((int)idrow["ID"] < 0)
+                {
+                    idrow.SetAdded();
+                }
+                else
+                {
+                    idrow.SetModified();
+                }
+            }
             using (BMS_DAL.DS.BMSDSTableAdapters.TInvoicesTableAdapter ta = new BMS_DAL.DS.BMSDSTableAdapters.TInvoicesTableAdapter())
             {
                 r += ta.UpdateWithTrans((BMS_DAL.DS.BMSDS.TInvoicesDataTable)dschanges.Tables["TInvoices"]);
             }
-            foreach (DataRow idrow in dschanges.Tables["TInvoiceDetails"].Rows)
+            foreach (DataRow idrow in dschanges.Tables["TInvoiceDetails"].AsEnumerable().Where(t => t.RowState.Equals(DataRowState.Unchanged)))
             {
-                if (idrow.RowState.Equals(DataRowState.Deleted))
-                {
-                    continue;
-                }
                 if ((int)idrow["ID"] < 0)
                 {
                     idrow.SetAdded();
@@ -219,6 +226,19 @@ namespace BMS_Service
                 }
                 catch (Exception ex) { throw ex; }
             }
+        }
+
+        public int UpdateDS(BMS_DAL.DS.BMSDS ds)
+        {
+            int r = 0;
+            if (ds.GetChanges() != null)
+            {
+                using (BMS_DAL.DS.BMSDSTableAdapters.TInvoicesTableAdapter ta = new BMS_DAL.DS.BMSDSTableAdapters.TInvoicesTableAdapter())
+                {
+                    r = ta.Update(ds);
+                }
+            }
+            return r;
         }
     }
 }

@@ -136,19 +136,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>yuINI4RiB5Z3HWcRRMcpDf9WxDk=</dsig:DigestValue>
+        <dsig:DigestValue>5TbKyX9eiKUztsrKkmSCVzhQI48=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BMS_Service.dll" size="8192">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BMS_Service.dll" size="8704">
       <assemblyIdentity name="BMS_Service" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>Yt3PdZGcI4omYVF0czUK70F8M7s=</dsig:DigestValue>
+        <dsig:DigestValue>VobD6X/c/8Iwa/Gzj4B+E+9TILw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -160,19 +160,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>voFcp9fXZYdezrrWPR8CzRoP8V8=</dsig:DigestValue>
+        <dsig:DigestValue>FUDUMmzqXhuduO3SSCQ6PTlMgeg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DemoLib.dll" size="158208">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DemoLib.dll" size="156672">
       <assemblyIdentity name="DemoLib" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>xodURYNi6oxiOfPv2MNoUIfYX40=</dsig:DigestValue>
+        <dsig:DigestValue>raY4wkNDef1meHqOFqUexWYT3pg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
