@@ -48,10 +48,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DS\BMSDS.cs">
-      <DependentUpon>BMSDS.xsd</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="DS\BMSDS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -75,6 +71,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BMSModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Entity\TClient.cs">
+      <DependentUpon>BMSModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity\TFixture.cs">
       <DependentUpon>BMSModel.tt</DependentUpon>
     </Compile>
@@ -84,7 +83,13 @@
     <Compile Include="Entity\TInvoiceDetail.cs">
       <DependentUpon>BMSModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entity\TSys_User.cs">
+    <Compile Include="Entity\TLog.cs">
+      <DependentUpon>BMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TMenu.cs">
+      <DependentUpon>BMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TUser.cs">
       <DependentUpon>BMSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\TVessel.cs">

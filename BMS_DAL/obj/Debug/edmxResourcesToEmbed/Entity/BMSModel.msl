@@ -1,13 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="BMSModelStoreContainer" CdmEntityContainer="BMSModelContainer">
-    <EntitySetMapping Name="TSys_Users">
-      <EntityTypeMapping TypeName="IsTypeOf(BMSModel.TSys_User)">
-        <MappingFragment StoreEntitySet="TSys_Users">
+    <EntitySetMapping Name="TUsers">
+      <EntityTypeMapping TypeName="IsTypeOf(BMSModel.TUser)">
+        <MappingFragment StoreEntitySet="TUsers">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="NAME" ColumnName="NAME" />
           <ScalarProperty Name="PWD" ColumnName="PWD" />
           <ScalarProperty Name="USERTYPE" ColumnName="USERTYPE" />
+          <ScalarProperty Name="OPER" ColumnName="OPER" />
+          <ScalarProperty Name="OP_DT" ColumnName="OP_DT" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -86,6 +88,7 @@
           <ScalarProperty Name="OP_DT" ColumnName="OP_DT" />
           <ScalarProperty Name="RECEIVABLEDATE" ColumnName="RECEIVABLEDATE" />
           <ScalarProperty Name="FIX_ID" ColumnName="FIX_ID" />
+          <ScalarProperty Name="PAIDIN" ColumnName="PAIDIN" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -103,6 +106,32 @@
           <ScalarProperty Name="INVOICE_ID" ColumnName="INVOICE_ID" />
           <ScalarProperty Name="DEBIT" ColumnName="DEBIT" />
           <ScalarProperty Name="CREDIT" ColumnName="CREDIT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TClients">
+      <EntityTypeMapping TypeName="IsTypeOf(BMSModel.TClient)">
+        <MappingFragment StoreEntitySet="TClients">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TMenus">
+      <EntityTypeMapping TypeName="IsTypeOf(BMSModel.TMenu)">
+        <MappingFragment StoreEntitySet="TMenus">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DISPLAYNAME" ColumnName="DISPLAYNAME" />
+          <ScalarProperty Name="ASSEMBLY" ColumnName="ASSEMBLY" />
+          <ScalarProperty Name="OPER" ColumnName="OPER" />
+          <ScalarProperty Name="OP_DT" ColumnName="OP_DT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TLogs">
+      <EntityTypeMapping TypeName="IsTypeOf(BMSModel.TLog)">
+        <MappingFragment StoreEntitySet="TLogs">
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

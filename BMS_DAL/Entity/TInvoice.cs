@@ -42,5 +42,6 @@ namespace BMS_DAL.Entity
         public System.DateTimeOffset OP_DT { get; set; }
         public System.DateTimeOffset RECEIVABLEDATE { get; set; }
         public int FIX_ID { get; set; }
+        public decimal PAIDIN { get; set; }
     }
 }

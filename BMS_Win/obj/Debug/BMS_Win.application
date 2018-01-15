@@ -14,14 +14,14 @@
     <framework targetVersion="4.0" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="BMS_Win.exe.manifest" size="48199">
+    <dependentAssembly dependencyType="install" codebase="BMS_Win.exe.manifest" size="32436">
       <assemblyIdentity name="BMS_Win.exe" version="1.0.0.11" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>qoQ/gxldxXWxO+AJr0oQU99HC2Y=</dsig:DigestValue>
+        <dsig:DigestValue>Xtpi4v0NYBUsI+QntPZuf9OqueE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

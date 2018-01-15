@@ -25,10 +25,13 @@ namespace BMS_DAL.Entity
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<TSys_User> TSys_Users { get; set; }
+        public DbSet<TUser> TUsers { get; set; }
         public DbSet<TFixture> TFixtures { get; set; }
         public DbSet<TVessel> TVessels { get; set; }
         public DbSet<TInvoice> TInvoices { get; set; }
         public DbSet<TInvoiceDetail> TInvoiceDetails { get; set; }
+        public DbSet<TClient> TClients { get; set; }
+        public DbSet<TMenu> TMenus { get; set; }
+        public DbSet<TLog> TLogs { get; set; }
     }
 }

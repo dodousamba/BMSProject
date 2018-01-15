@@ -15,7 +15,7 @@ namespace BMS_Win
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DemoLib.DemoContainer());
+            Application.Run(new HomeForm());
         }
     }
 }

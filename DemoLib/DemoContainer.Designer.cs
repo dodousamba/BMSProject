@@ -51,16 +51,16 @@
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
-            this.navBarGroup_Sys = new DevExpress.XtraNavBar.NavBarGroup();
-            this.navBarItem_Vessel = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarGroup_Report = new DevExpress.XtraNavBar.NavBarGroup();
+            this.navBarItem_InvoiceReport = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup_Flow = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItem_OnProgress = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup_Broker = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItem_Fixture = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup_Account = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItem_Invoice = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarGroup_Report = new DevExpress.XtraNavBar.NavBarGroup();
-            this.navBarItem_InvoiceReport = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarGroup_Sys = new DevExpress.XtraNavBar.NavBarGroup();
+            this.navBarItem_Vessel = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -175,28 +175,32 @@
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Size = new System.Drawing.Size(1064, 22);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControlTop.Size = new System.Drawing.Size(1419, 27);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 656);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1064, 25);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 821);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1419, 30);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 22);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 634);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 27);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 794);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1064, 22);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 634);
+            this.barDockControlRight.Location = new System.Drawing.Point(1419, 27);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 794);
             // 
             // barSubItem1
             // 
@@ -240,15 +244,16 @@
             // 
             // defaultLookAndFeel1
             // 
-            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2010 Silver";
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "VS2010";
             // 
             // groupControl1
             // 
             this.groupControl1.Controls.Add(this.navBarControl1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupControl1.Location = new System.Drawing.Point(0, 22);
+            this.groupControl1.Location = new System.Drawing.Point(0, 27);
+            this.groupControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(200, 634);
+            this.groupControl1.Size = new System.Drawing.Size(267, 794);
             this.groupControl1.TabIndex = 7;
             this.groupControl1.Text = "MENU";
             // 
@@ -268,26 +273,27 @@
             this.navBarItem_Invoice,
             this.navBarItem_Vessel,
             this.navBarItem_InvoiceReport});
-            this.navBarControl1.Location = new System.Drawing.Point(2, 22);
+            this.navBarControl1.Location = new System.Drawing.Point(2, 26);
+            this.navBarControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.navBarControl1.Name = "navBarControl1";
-            this.navBarControl1.OptionsNavPane.ExpandedWidth = 196;
-            this.navBarControl1.Size = new System.Drawing.Size(196, 610);
+            this.navBarControl1.OptionsNavPane.ExpandedWidth = 263;
+            this.navBarControl1.Size = new System.Drawing.Size(263, 766);
             this.navBarControl1.TabIndex = 3;
             this.navBarControl1.Text = "navBarControl";
             // 
-            // navBarGroup_Sys
+            // navBarGroup_Report
             // 
-            this.navBarGroup_Sys.Caption = "Sys";
-            this.navBarGroup_Sys.Expanded = true;
-            this.navBarGroup_Sys.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem_Vessel)});
-            this.navBarGroup_Sys.Name = "navBarGroup_Sys";
+            this.navBarGroup_Report.Caption = "Report";
+            this.navBarGroup_Report.Expanded = true;
+            this.navBarGroup_Report.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem_InvoiceReport)});
+            this.navBarGroup_Report.Name = "navBarGroup_Report";
             // 
-            // navBarItem_Vessel
+            // navBarItem_InvoiceReport
             // 
-            this.navBarItem_Vessel.Caption = "Vessel";
-            this.navBarItem_Vessel.Name = "navBarItem_Vessel";
-            this.navBarItem_Vessel.Tag = "DemoLib.VesselForm";
+            this.navBarItem_InvoiceReport.Caption = "InvoiceReport";
+            this.navBarItem_InvoiceReport.Name = "navBarItem_InvoiceReport";
+            this.navBarItem_InvoiceReport.Tag = "DemoLib.InvoiceReportForm";
             // 
             // navBarGroup_Flow
             // 
@@ -331,31 +337,32 @@
             this.navBarItem_Invoice.Name = "navBarItem_Invoice";
             this.navBarItem_Invoice.Tag = "DemoLib.InvoiceForm";
             // 
-            // navBarGroup_Report
+            // navBarGroup_Sys
             // 
-            this.navBarGroup_Report.Caption = "Report";
-            this.navBarGroup_Report.Expanded = true;
-            this.navBarGroup_Report.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem_InvoiceReport)});
-            this.navBarGroup_Report.Name = "navBarGroup_Report";
+            this.navBarGroup_Sys.Caption = "Sys";
+            this.navBarGroup_Sys.Expanded = true;
+            this.navBarGroup_Sys.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem_Vessel)});
+            this.navBarGroup_Sys.Name = "navBarGroup_Sys";
             // 
-            // navBarItem_InvoiceReport
+            // navBarItem_Vessel
             // 
-            this.navBarItem_InvoiceReport.Caption = "InvoiceReport";
-            this.navBarItem_InvoiceReport.Name = "navBarItem_InvoiceReport";
-            this.navBarItem_InvoiceReport.Tag = "DemoLib.InvoiceReportForm";
+            this.navBarItem_Vessel.Caption = "Vessel";
+            this.navBarItem_Vessel.Name = "navBarItem_Vessel";
+            this.navBarItem_Vessel.Tag = "DemoLib.VesselForm";
             // 
             // DemoContainer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1064, 681);
+            this.ClientSize = new System.Drawing.Size(1419, 851);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.IsMdiContainer = true;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "DemoContainer";
             this.Text = "DemoContainer";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

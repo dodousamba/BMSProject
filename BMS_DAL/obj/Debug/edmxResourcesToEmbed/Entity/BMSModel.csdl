@@ -1,13 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="BMSModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
   <EntityContainer Name="BMSModelContainer" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="TSys_Users" EntityType="BMSModel.TSys_User" />
+    <EntitySet Name="TUsers" EntityType="BMSModel.TUser" />
     <EntitySet Name="TFixtures" EntityType="BMSModel.TFixture" />
     <EntitySet Name="TVessels" EntityType="BMSModel.TVessel" />
     <EntitySet Name="TInvoices" EntityType="BMSModel.TInvoice" />
     <EntitySet Name="TInvoiceDetails" EntityType="BMSModel.TInvoiceDetail" />
+    <EntitySet Name="TClients" EntityType="BMSModel.TClient" />
+    <EntitySet Name="TMenus" EntityType="BMSModel.TMenu" />
+    <EntitySet Name="TLogs" EntityType="BMSModel.TLog" />
   </EntityContainer>
-  <EntityType Name="TSys_User">
+  <EntityType Name="TUser">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
@@ -15,6 +18,8 @@
     <Property Type="String" Name="NAME" Nullable="false" />
     <Property Type="String" Name="PWD" Nullable="false" />
     <Property Type="String" Name="USERTYPE" Nullable="false" />
+    <Property Type="String" Name="OPER" Nullable="false" />
+    <Property Type="DateTimeOffset" Name="OP_DT" Nullable="false" />
   </EntityType>
   <EntityType Name="TFixture">
     <Key>
@@ -90,6 +95,7 @@
     <Property Type="DateTimeOffset" Name="OP_DT" Nullable="false" />
     <Property Type="DateTimeOffset" Name="RECEIVABLEDATE" Nullable="false" />
     <Property Type="Int32" Name="FIX_ID" Nullable="false" />
+    <Property Type="Decimal" Name="PAIDIN" Nullable="false" />
   </EntityType>
   <EntityType Name="TInvoiceDetail">
     <Key>
@@ -106,5 +112,28 @@
     <Property Type="Int32" Name="INVOICE_ID" Nullable="false" />
     <Property Type="Decimal" Name="DEBIT" Nullable="false" />
     <Property Type="Decimal" Name="CREDIT" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TClient">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="NAME" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TMenu">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="DISPLAYNAME" Nullable="false" />
+    <Property Type="String" Name="ASSEMBLY" Nullable="false" />
+    <Property Type="String" Name="OPER" Nullable="false" />
+    <Property Type="DateTimeOffset" Name="OP_DT" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TLog">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
   </EntityType>
 </Schema>

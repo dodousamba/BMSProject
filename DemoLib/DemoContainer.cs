@@ -22,6 +22,7 @@ namespace DemoLib
             base.OnLoad(e);
 
             BMS_Component.UserInfo.UserName = "ADMIN";
+            BMS_Component.StaticMethods.GetServerDate("http://hyw2583870001.my3w.com");
 
             this.AttachEvent();
         }

@@ -1,2 +1,2 @@
 obj\Debug\_BMS_ActivityLibrary.g.cs
-obj\Debug\Activity1.g.cs
+obj\Debug\Activity.g.cs

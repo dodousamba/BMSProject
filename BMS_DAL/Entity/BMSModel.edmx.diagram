@@ -4,12 +4,15 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="f0dadc5cd33a4a42ad6ff9d384431e08" Name="关系图1" >
-        <EntityTypeShape EntityType="BMSModel.TSys_User" Width="1.5" PointX="1" PointY="1.25" />
-        <EntityTypeShape EntityType="BMSModel.TFixture" Width="1.5" PointX="5.125" PointY="0.5" />
-        <EntityTypeShape EntityType="BMSModel.TVessel" Width="1.5" PointX="2.625" PointY="1.25" />
-        <EntityTypeShape EntityType="BMSModel.TInvoice" Width="1.5" PointX="6.875" PointY="0.5" />
-        <EntityTypeShape EntityType="BMSModel.TInvoiceDetail" Width="1.5" PointX="9" PointY="1.375" />
+      <Diagram DiagramId="f0dadc5cd33a4a42ad6ff9d384431e08" Name="关系图1" ZoomLevel="83" >
+        <EntityTypeShape EntityType="BMSModel.TUser" Width="1.5" PointX="2.25" PointY="0.5" />
+        <EntityTypeShape EntityType="BMSModel.TFixture" Width="1.5" PointX="5.75" PointY="0.5" />
+        <EntityTypeShape EntityType="BMSModel.TVessel" Width="1.5" PointX="0.5" PointY="0.5" />
+        <EntityTypeShape EntityType="BMSModel.TInvoice" Width="1.5" PointX="7.375" PointY="0.5" />
+        <EntityTypeShape EntityType="BMSModel.TInvoiceDetail" Width="1.5" PointX="9" PointY="0.5" />
+        <EntityTypeShape EntityType="BMSModel.TClient" Width="1.5" PointX="0.5" PointY="2.875" />
+        <EntityTypeShape EntityType="BMSModel.TMenu" Width="1.5" PointX="3.875" PointY="0.5" />
+        <EntityTypeShape EntityType="BMSModel.TLog" Width="1.5" PointX="9" PointY="3.625" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

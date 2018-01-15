@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace BMS_DAL.DS.BMSDSTableAdapters
 {
-    public partial class TSys_UsersTableAdapter
+    public partial class TUsersTableAdapter
     {
-        public int UpdateWithTrans(BMS_DAL.DS.BMSDS.TSys_UsersDataTable dt)
+        public int UpdateWithTrans(BMS_DAL.DS.BMSDS.TUsersDataTable dt)
         {
             int r = 0;
             using (System.Transactions.TransactionScope ts = new System.Transactions.TransactionScope())

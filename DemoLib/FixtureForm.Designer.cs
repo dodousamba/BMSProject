@@ -300,7 +300,7 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FixtureForm";
             this.Text = "FFixture";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

@@ -8,3 +8,13 @@ C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\BMS_Acti
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\BMS_ActivityLibrary\obj\Debug\BMS_ActivityLibrary.csproj.XamlGeneratedXamlFileListAbsolute.txt
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\BMS_ActivityLibrary\obj\Debug\BMS_ActivityLibrary.dll
 C:\Users\Administrator\Documents\Visual Studio 2012\Projects\BMSProject\BMS_ActivityLibrary\obj\Debug\BMS_ActivityLibrary.pdb
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_ActivityLibrary\bin\Debug\BMS_ActivityLibrary.dll
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_ActivityLibrary\bin\Debug\BMS_ActivityLibrary.pdb
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_ActivityLibrary\obj\Debug\BMS_ActivityLibrary.csprojResolveAssemblyReference.cache
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_ActivityLibrary\obj\Debug\Activity.g.xaml
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_ActivityLibrary\obj\Debug\_BMS_ActivityLibrary.g.cs
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_ActivityLibrary\obj\Debug\Activity.g.cs
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_ActivityLibrary\obj\Debug\BMS_ActivityLibrary.csproj.XamlGeneratedCodeFileListAbsolute.txt
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_ActivityLibrary\obj\Debug\BMS_ActivityLibrary.csproj.XamlGeneratedXamlFileListAbsolute.txt
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_ActivityLibrary\obj\Debug\BMS_ActivityLibrary.dll
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_ActivityLibrary\obj\Debug\BMS_ActivityLibrary.pdb

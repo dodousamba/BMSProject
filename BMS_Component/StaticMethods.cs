@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Net;
 
 namespace BMS_Component
 {
@@ -26,6 +27,17 @@ namespace BMS_Component
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
+            }
+        }
+
+        public static DateTimeOffset GetServerDate(string urlstring)
+        {
+            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(urlstring);
+            request.MediaType = "GET";
+            using (WebResponse respones = request.GetResponse())
+            {
+                DateTimeOffset r = DateTimeOffset.Parse(respones.Headers["DATE"]);
+                return r;
             }
         }
     }

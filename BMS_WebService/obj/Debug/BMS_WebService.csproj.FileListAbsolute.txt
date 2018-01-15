@@ -1,0 +1,5 @@
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_WebService\bin\BMS_WebService.dll
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_WebService\bin\BMS_WebService.pdb
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_WebService\obj\Debug\BMS_WebService.csprojResolveAssemblyReference.cache
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_WebService\obj\Debug\BMS_WebService.dll
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_WebService\obj\Debug\BMS_WebService.pdb

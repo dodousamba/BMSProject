@@ -1,13 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="BMSModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
   <EntityContainer Name="BMSModelStoreContainer">
-    <EntitySet Name="TSys_Users" EntityType="BMSModel.Store.TSys_Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TUsers" EntityType="BMSModel.Store.TUsers" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TFixtures" EntityType="BMSModel.Store.TFixtures" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TVessels" EntityType="BMSModel.Store.TVessels" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TInvoices" EntityType="BMSModel.Store.TInvoices" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TInvoiceDetails" EntityType="BMSModel.Store.TInvoiceDetails" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TClients" EntityType="BMSModel.Store.TClients" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TMenus" EntityType="BMSModel.Store.TMenus" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TLogs" EntityType="BMSModel.Store.TLogs" store:Type="Tables" Schema="dbo" />
   </EntityContainer>
-  <EntityType Name="TSys_Users">
+  <EntityType Name="TUsers">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
@@ -15,6 +18,8 @@
     <Property Name="NAME" Type="nvarchar(max)" Nullable="false" />
     <Property Name="PWD" Type="nvarchar(max)" Nullable="false" />
     <Property Name="USERTYPE" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OPER" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OP_DT" Type="datetimeoffset" Nullable="false" />
   </EntityType>
   <EntityType Name="TFixtures">
     <Key>
@@ -26,7 +31,7 @@
     <Property Name="CP_TYPE" Type="nvarchar(max)" Nullable="false" />
     <Property Name="CP_DESC" Type="nvarchar(max)" Nullable="false" />
     <Property Name="PAYER" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="HRORFRT" Type="decimal" Nullable="false" />
+    <Property Name="HRORFRT" Type="decimal" Nullable="false" Precision="2" />
     <Property Name="DAYSORMT" Type="decimal" Nullable="false" />
     <Property Name="OWR" Type="nvarchar(max)" Nullable="false" />
     <Property Name="BRKRATE_OWR" Type="decimal" Nullable="false" />
@@ -90,6 +95,7 @@
     <Property Name="OP_DT" Type="datetimeoffset" Nullable="false" />
     <Property Name="RECEIVABLEDATE" Type="datetimeoffset" Nullable="false" />
     <Property Name="FIX_ID" Type="int" Nullable="false" />
+    <Property Name="PAIDIN" Type="decimal" Nullable="false" />
   </EntityType>
   <EntityType Name="TInvoiceDetails">
     <Key>
@@ -106,5 +112,28 @@
     <Property Name="INVOICE_ID" Type="int" Nullable="false" />
     <Property Name="DEBIT" Type="decimal" Nullable="false" />
     <Property Name="CREDIT" Type="decimal" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TClients">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAME" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TMenus">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DISPLAYNAME" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ASSEMBLY" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OPER" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OP_DT" Type="datetimeoffset" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TLogs">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
   </EntityType>
 </Schema>

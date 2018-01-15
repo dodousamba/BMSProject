@@ -2,13 +2,13 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
--- Date Created: 01/10/2018 16:59:18
+-- Date Created: 01/15/2018 00:24:11
 -- Generated from EDMX file: C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_DAL\Entity\BMSModel.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
 GO
-USE [bds256276142_db];
+USE [hds192879581_db];
 GO
 IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
 GO
@@ -22,8 +22,8 @@ GO
 -- Dropping existing tables
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[TSys_Users]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[TSys_Users];
+IF OBJECT_ID(N'[dbo].[TUsers]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[TUsers];
 GO
 IF OBJECT_ID(N'[dbo].[TFixtures]', 'U') IS NOT NULL
     DROP TABLE [dbo].[TFixtures];
@@ -37,17 +37,28 @@ GO
 IF OBJECT_ID(N'[dbo].[TInvoiceDetails]', 'U') IS NOT NULL
     DROP TABLE [dbo].[TInvoiceDetails];
 GO
+IF OBJECT_ID(N'[dbo].[TClients]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[TClients];
+GO
+IF OBJECT_ID(N'[dbo].[TMenus]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[TMenus];
+GO
+IF OBJECT_ID(N'[dbo].[TLogs]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[TLogs];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
 -- --------------------------------------------------
 
--- Creating table 'TSys_Users'
-CREATE TABLE [dbo].[TSys_Users] (
+-- Creating table 'TUsers'
+CREATE TABLE [dbo].[TUsers] (
     [ID] nvarchar(max)  NOT NULL,
     [NAME] nvarchar(max)  NOT NULL,
     [PWD] nvarchar(max)  NOT NULL,
-    [USERTYPE] nvarchar(max)  NOT NULL
+    [USERTYPE] nvarchar(max)  NOT NULL,
+    [OPER] nvarchar(max)  NOT NULL,
+    [OP_DT] datetimeoffset  NOT NULL
 );
 GO
 
@@ -59,7 +70,7 @@ CREATE TABLE [dbo].[TFixtures] (
     [CP_TYPE] nvarchar(max)  NOT NULL,
     [CP_DESC] nvarchar(max)  NOT NULL,
     [PAYER] nvarchar(max)  NOT NULL,
-    [HRORFRT] decimal(18,0)  NOT NULL,
+    [HRORFRT] decimal(2,0)  NOT NULL,
     [DAYSORMT] decimal(18,0)  NOT NULL,
     [OWR] nvarchar(max)  NOT NULL,
     [BRKRATE_OWR] decimal(18,0)  NOT NULL,
@@ -122,7 +133,8 @@ CREATE TABLE [dbo].[TInvoices] (
     [OPER] nvarchar(max)  NOT NULL,
     [OP_DT] datetimeoffset  NOT NULL,
     [RECEIVABLEDATE] datetimeoffset  NOT NULL,
-    [FIX_ID] int  NOT NULL
+    [FIX_ID] int  NOT NULL,
+    [PAIDIN] decimal(18,0)  NOT NULL
 );
 GO
 
@@ -142,13 +154,36 @@ CREATE TABLE [dbo].[TInvoiceDetails] (
 );
 GO
 
+-- Creating table 'TClients'
+CREATE TABLE [dbo].[TClients] (
+    [ID] int IDENTITY(1,1) NOT NULL,
+    [NAME] nvarchar(max)  NOT NULL
+);
+GO
+
+-- Creating table 'TMenus'
+CREATE TABLE [dbo].[TMenus] (
+    [ID] int IDENTITY(1,1) NOT NULL,
+    [DISPLAYNAME] nvarchar(max)  NOT NULL,
+    [ASSEMBLY] nvarchar(max)  NOT NULL,
+    [OPER] nvarchar(max)  NOT NULL,
+    [OP_DT] datetimeoffset  NOT NULL
+);
+GO
+
+-- Creating table 'TLogs'
+CREATE TABLE [dbo].[TLogs] (
+    [ID] int IDENTITY(1,1) NOT NULL
+);
+GO
+
 -- --------------------------------------------------
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
 
--- Creating primary key on [ID] in table 'TSys_Users'
-ALTER TABLE [dbo].[TSys_Users]
-ADD CONSTRAINT [PK_TSys_Users]
+-- Creating primary key on [ID] in table 'TUsers'
+ALTER TABLE [dbo].[TUsers]
+ADD CONSTRAINT [PK_TUsers]
     PRIMARY KEY CLUSTERED ([ID] ASC);
 GO
 
@@ -173,6 +208,24 @@ GO
 -- Creating primary key on [ID] in table 'TInvoiceDetails'
 ALTER TABLE [dbo].[TInvoiceDetails]
 ADD CONSTRAINT [PK_TInvoiceDetails]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- Creating primary key on [ID] in table 'TClients'
+ALTER TABLE [dbo].[TClients]
+ADD CONSTRAINT [PK_TClients]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- Creating primary key on [ID] in table 'TMenus'
+ALTER TABLE [dbo].[TMenus]
+ADD CONSTRAINT [PK_TMenus]
+    PRIMARY KEY CLUSTERED ([ID] ASC);
+GO
+
+-- Creating primary key on [ID] in table 'TLogs'
+ALTER TABLE [dbo].[TLogs]
+ADD CONSTRAINT [PK_TLogs]
     PRIMARY KEY CLUSTERED ([ID] ASC);
 GO
 

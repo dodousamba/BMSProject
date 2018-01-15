@@ -6,13 +6,16 @@
     <edmx:StorageModels>
     <Schema Namespace="BMSModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
   <EntityContainer Name="BMSModelStoreContainer">
-    <EntitySet Name="TSys_Users" EntityType="BMSModel.Store.TSys_Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TUsers" EntityType="BMSModel.Store.TUsers" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TFixtures" EntityType="BMSModel.Store.TFixtures" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TVessels" EntityType="BMSModel.Store.TVessels" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TInvoices" EntityType="BMSModel.Store.TInvoices" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TInvoiceDetails" EntityType="BMSModel.Store.TInvoiceDetails" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TClients" EntityType="BMSModel.Store.TClients" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TMenus" EntityType="BMSModel.Store.TMenus" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TLogs" EntityType="BMSModel.Store.TLogs" store:Type="Tables" Schema="dbo" />
   </EntityContainer>
-  <EntityType Name="TSys_Users">
+  <EntityType Name="TUsers">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
@@ -20,6 +23,8 @@
     <Property Name="NAME" Type="nvarchar(max)" Nullable="false" />
     <Property Name="PWD" Type="nvarchar(max)" Nullable="false" />
     <Property Name="USERTYPE" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OPER" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OP_DT" Type="datetimeoffset" Nullable="false" />
   </EntityType>
   <EntityType Name="TFixtures">
     <Key>
@@ -31,7 +36,7 @@
     <Property Name="CP_TYPE" Type="nvarchar(max)" Nullable="false" />
     <Property Name="CP_DESC" Type="nvarchar(max)" Nullable="false" />
     <Property Name="PAYER" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="HRORFRT" Type="decimal" Nullable="false" />
+    <Property Name="HRORFRT" Type="decimal" Nullable="false" Precision="2" />
     <Property Name="DAYSORMT" Type="decimal" Nullable="false" />
     <Property Name="OWR" Type="nvarchar(max)" Nullable="false" />
     <Property Name="BRKRATE_OWR" Type="decimal" Nullable="false" />
@@ -95,6 +100,7 @@
     <Property Name="OP_DT" Type="datetimeoffset" Nullable="false" />
     <Property Name="RECEIVABLEDATE" Type="datetimeoffset" Nullable="false" />
     <Property Name="FIX_ID" Type="int" Nullable="false" />
+    <Property Name="PAIDIN" Type="decimal" Nullable="false" />
   </EntityType>
   <EntityType Name="TInvoiceDetails">
     <Key>
@@ -112,18 +118,44 @@
     <Property Name="DEBIT" Type="decimal" Nullable="false" />
     <Property Name="CREDIT" Type="decimal" Nullable="false" />
   </EntityType>
+  <EntityType Name="TClients">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAME" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TMenus">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DISPLAYNAME" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ASSEMBLY" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OPER" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OP_DT" Type="datetimeoffset" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TLogs">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="BMSModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" >
         <EntityContainer Name="BMSModelContainer" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="TSys_Users" EntityType="BMSModel.TSys_User" />
+          <EntitySet Name="TUsers" EntityType="BMSModel.TUser" />
           <EntitySet Name="TFixtures" EntityType="BMSModel.TFixture" />
           <EntitySet Name="TVessels" EntityType="BMSModel.TVessel" />
           <EntitySet Name="TInvoices" EntityType="BMSModel.TInvoice" />
           <EntitySet Name="TInvoiceDetails" EntityType="BMSModel.TInvoiceDetail" />
+          <EntitySet Name="TClients" EntityType="BMSModel.TClient" />
+          <EntitySet Name="TMenus" EntityType="BMSModel.TMenu" />
+          <EntitySet Name="TLogs" EntityType="BMSModel.TLog" />
         </EntityContainer>
-        <EntityType Name="TSys_User">
+        <EntityType Name="TUser">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -131,6 +163,8 @@
           <Property Type="String" Name="NAME" Nullable="false" />
           <Property Type="String" Name="PWD" Nullable="false" />
           <Property Type="String" Name="USERTYPE" Nullable="false" />
+          <Property Type="String" Name="OPER" Nullable="false" />
+          <Property Type="DateTimeOffset" Name="OP_DT" Nullable="false" />
         </EntityType>
         <EntityType Name="TFixture">
           <Key>
@@ -206,6 +240,7 @@
           <Property Type="DateTimeOffset" Name="OP_DT" Nullable="false" />
           <Property Type="DateTimeOffset" Name="RECEIVABLEDATE" Nullable="false" />
           <Property Type="Int32" Name="FIX_ID" Nullable="false" />
+          <Property Type="Decimal" Name="PAIDIN" Nullable="false" />
         </EntityType>
         <EntityType Name="TInvoiceDetail">
           <Key>
@@ -223,19 +258,44 @@
           <Property Type="Decimal" Name="DEBIT" Nullable="false" />
           <Property Type="Decimal" Name="CREDIT" Nullable="false" />
         </EntityType>
+        <EntityType Name="TClient">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="NAME" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TMenu">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="DISPLAYNAME" Nullable="false" />
+          <Property Type="String" Name="ASSEMBLY" Nullable="false" />
+          <Property Type="String" Name="OPER" Nullable="false" />
+          <Property Type="DateTimeOffset" Name="OP_DT" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
     <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="BMSModelStoreContainer" CdmEntityContainer="BMSModelContainer">
-    <EntitySetMapping Name="TSys_Users">
-      <EntityTypeMapping TypeName="IsTypeOf(BMSModel.TSys_User)">
-        <MappingFragment StoreEntitySet="TSys_Users">
+    <EntitySetMapping Name="TUsers">
+      <EntityTypeMapping TypeName="IsTypeOf(BMSModel.TUser)">
+        <MappingFragment StoreEntitySet="TUsers">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="NAME" ColumnName="NAME" />
           <ScalarProperty Name="PWD" ColumnName="PWD" />
           <ScalarProperty Name="USERTYPE" ColumnName="USERTYPE" />
+          <ScalarProperty Name="OPER" ColumnName="OPER" />
+          <ScalarProperty Name="OP_DT" ColumnName="OP_DT" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -314,6 +374,7 @@
           <ScalarProperty Name="OP_DT" ColumnName="OP_DT" />
           <ScalarProperty Name="RECEIVABLEDATE" ColumnName="RECEIVABLEDATE" />
           <ScalarProperty Name="FIX_ID" ColumnName="FIX_ID" />
+          <ScalarProperty Name="PAIDIN" ColumnName="PAIDIN" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -331,6 +392,32 @@
           <ScalarProperty Name="INVOICE_ID" ColumnName="INVOICE_ID" />
           <ScalarProperty Name="DEBIT" ColumnName="DEBIT" />
           <ScalarProperty Name="CREDIT" ColumnName="CREDIT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TClients">
+      <EntityTypeMapping TypeName="IsTypeOf(BMSModel.TClient)">
+        <MappingFragment StoreEntitySet="TClients">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TMenus">
+      <EntityTypeMapping TypeName="IsTypeOf(BMSModel.TMenu)">
+        <MappingFragment StoreEntitySet="TMenus">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DISPLAYNAME" ColumnName="DISPLAYNAME" />
+          <ScalarProperty Name="ASSEMBLY" ColumnName="ASSEMBLY" />
+          <ScalarProperty Name="OPER" ColumnName="OPER" />
+          <ScalarProperty Name="OP_DT" ColumnName="OP_DT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TLogs">
+      <EntityTypeMapping TypeName="IsTypeOf(BMSModel.TLog)">
+        <MappingFragment StoreEntitySet="TLogs">
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

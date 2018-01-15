@@ -66,6 +66,11 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Data.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v12.1, Version=12.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -78,8 +83,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeForm.Designer.cs">
+      <DependentUpon>HomeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="HomeForm.resx">
+      <DependentUpon>HomeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -123,13 +138,17 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BMS_DAL\BMS_DAL.csproj">
-      <Project>{84dd6e33-dcd5-478a-bf06-98b8bf5a6158}</Project>
-      <Name>BMS_DAL</Name>
+    <ProjectReference Include="..\BMS_BaseInfo\BMS_BaseInfo.csproj">
+      <Project>{298ee793-bdd2-421d-b719-091b7ae825e4}</Project>
+      <Name>BMS_BaseInfo</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DemoLib\DemoLib.csproj">
-      <Project>{353162a7-c5b6-4a2e-9a5b-c2a3a21b8f5d}</Project>
-      <Name>DemoLib</Name>
+    <ProjectReference Include="..\BMS_Component\BMS_Component.csproj">
+      <Project>{41a4d4e5-fa54-4f15-88df-6936ad31e026}</Project>
+      <Name>BMS_Component</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BMS_Core\BMS_Core.csproj">
+      <Project>{4bd1a714-5711-4346-bf0f-f58e28aca498}</Project>
+      <Name>BMS_Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

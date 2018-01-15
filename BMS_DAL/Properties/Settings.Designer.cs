@@ -26,8 +26,8 @@ namespace BMS_DAL.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=bds256276142.my3w.com;Initial Catalog=bds256276142_db;Persist Securit" +
-            "y Info=True;User ID=bds256276142;Password=yZ99101031")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=hds192879581.my3w.com;Initial Catalog=hds192879581_db;Persist Securit" +
+            "y Info=True;User ID=hds192879581;Password=bromar2018")]
         public string dbConnectionString {
             get {
                 return ((string)(this["dbConnectionString"]));

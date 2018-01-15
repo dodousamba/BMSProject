@@ -1,0 +1,4 @@
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_WebService\bin\BMS_WebService.dll
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_WebService\bin\BMS_WebService.pdb
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_WebService\obj\Release\BMS_WebService.dll
+C:\Users\yangz\Documents\Visual Studio 2012\Projects\BMSProject\BMS_WebService\obj\Release\BMS_WebService.pdb
